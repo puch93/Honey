@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_fafafa"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="23dp"
+                android:paddingRight="13dp">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/getmarried_btn_back_190902" />
+            </FrameLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="약관확인"
+                android:textColor="@color/color_2"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@drawable/getmarried_img_1pxline_190902" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_term01"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="이용약관"
+                    android:textColor="@color/col_profreading"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/iv_read01"
+                    android:layout_width="match_parent"
+                    android:layout_height="6px"
+                    android:background="@drawable/sel_profreading" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_term02"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="개인정보 취급방침"
+                    android:textColor="@color/col_profreading"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/iv_read02"
+                    android:layout_width="match_parent"
+                    android:layout_height="6px"
+                    android:background="@drawable/sel_profreading" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_term03"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="위치기반 서비스"
+                    android:textColor="@color/col_profreading"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/iv_read03"
+                    android:layout_width="match_parent"
+                    android:layout_height="6px"
+                    android:background="@drawable/sel_profreading"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@drawable/getmarried_img_1pxline_190902" />
+
+        <ScrollView
+            android:id="@+id/sv_term"
+            android:layout_width="match_parent"
+            android:background="@color/white_color"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_term"
+                    android:background="@color/white_color"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/color_222222"
+                    android:textSize="14dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</layout>

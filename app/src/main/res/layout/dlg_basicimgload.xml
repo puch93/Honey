@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="284dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="17dp"
+        android:background="@drawable/getmarried_bg_pop_back03_190902"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@color/color_fafafa"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="2dp"
+            android:text="사진 불러오기"
+            android:gravity="center"
+            android:textColor="@color/color_222222"
+            android:textSize="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 본인 식별이 어려운 경우 "
+                    android:textColor="@color/color_222222"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="인증 불가"
+                    android:textColor="@color/color_ed1c24"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="합니다 *"
+                    android:textColor="@color/color_222222"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이미지 도용 및 불건전한 사진은 "
+                    android:textColor="@color/color_222222"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="삭제"
+                    android:textColor="@color/color_ed1c24"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="됩니다"
+                    android:textColor="@color/color_222222"
+                    android:textSize="11dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/btn_album"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:textColor="@color/white_color"
+            android:textSize="14dp"
+            android:paddingRight="2dp"
+            android:layout_marginRight="14dp"
+            android:text="앨범에서 가져오기"
+            android:background="@drawable/sel_imgload01"/>
+
+
+        <TextView
+            android:id="@+id/btn_camera"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:textColor="@color/white_color"
+            android:textSize="14dp"
+            android:paddingRight="2dp"
+            android:layout_marginRight="14dp"
+            android:text="카메라로 촬영하기"
+            android:background="@drawable/sel_imgload02"/>
+    </LinearLayout>
+</LinearLayout>

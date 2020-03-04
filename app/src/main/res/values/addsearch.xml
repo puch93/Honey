@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 추가검색 -->
+
+    <!-- 종교 -->
+    <string-array name="add_religion">
+        <item>전체</item>
+        <item>기독교</item>
+        <item>불교</item>
+        <item>천주교</item>
+        <item>원불교</item>
+        <item>무교</item>
+        <item>유교</item>
+        <item>도교</item>
+        <item>이슬람교</item>
+        <item>힌두교</item>
+        <item>기타(상관없음)</item>
+    </string-array>
+    <string-array name="gender">
+        <item>전체</item>
+        <item>남성</item>
+        <item>여성</item>
+    </string-array>
+    <string-array name="age">
+        <item>전체</item>
+        <item>20~25</item>
+        <item>26~30</item>
+        <item>31~35</item>
+        <item>36~40</item>
+        <item>41~45</item>
+        <item>46~50</item>
+        <item>51~55</item>
+        <item>56~60</item>
+        <item>60초과</item>
+    </string-array>
+
+    <!-- 연봉 -->
+    <string-array name="add_salary">
+        <item>전체</item>
+        <item>3,000만원 이상</item>
+        <item>5,000만원 이상</item>
+        <item>1억 이상</item>
+    </string-array>
+
+    <!-- 재산 -->
+    <string-array name="add_property">
+        <item>전체</item>
+        <item>1억 이상</item>
+        <item>3억 이상</item>
+        <item>5억 이상</item>
+        <item>10억 이상</item>
+    </string-array>
+
+    <!-- 혈액형 -->
+    <string-array name="add_blood">
+        <item>전체</item>
+        <item>A형</item>
+        <item>B형</item>
+        <item>O형</item>
+        <item>AB형</item>
+    </string-array>
+
+    <!-- 학력 -->
+    <string-array name="add_edu">
+        <item>전체</item>
+        <item>고졸 이하</item>
+        <item>대학재학(중퇴)</item>
+        <item>대학(2년)졸</item>
+        <item>대학(3년)졸</item>
+        <item>대학(4년)졸</item>
+        <item>대학원재학(중퇴)</item>
+        <item>대학원졸</item>
+    </string-array>
+
+    <!-- 흡연 -->
+    <string-array name="add_smoke">
+<!--        <item>전체</item>-->
+<!--        <item>비 흡연자</item>-->
+<!--        <item>흡연자</item>-->
+        <item>전체</item>
+        <item>경험없음</item>
+        <item>금연</item>
+        <item>흡연</item>
+    </string-array>
+
+    <!-- 음주 -->
+    <string-array name="add_drinking">
+<!--        <item>경험없음</item>-->
+<!--        <item>비 음주자</item>-->
+<!--        <item>음주자</item>-->
+        <item>전체</item>
+        <item>음주안함</item>
+        <item>월1~2회</item>
+        <item>주1~2회</item>
+        <item>주3회이상</item>
+    </string-array>
+
+    <!-- 자녀 -->
+    <string-array name="add_child">
+        <item>전체</item>
+        <item>무자녀</item>
+        <item>유자녀</item>
+    </string-array>
+
+    <!-- 결혼유형 -->
+    <string-array name="add_marriage">
+        <item>전체</item>
+        <item>결혼</item>
+        <item>재혼</item>
+    </string-array>
+
+</resources>

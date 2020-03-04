@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_fafafa"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="23dp"
+                android:paddingRight="13dp">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/getmarried_btn_back_190902" />
+            </FrameLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="신규 접속회원"
+                android:textColor="@color/color_2"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@drawable/getmarried_img_1pxline_190902" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="13dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="배우자 희망지역과 함께 내위치반경 30km,"
+                android:textColor="@color/color_222222"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="거주인근지역, "
+                    android:textColor="@color/color_222222"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="신규접속회원"
+                    android:textColor="@color/color_8345f3"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="을 볼 수 있습니다"
+                    android:textColor="@color/color_222222"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/getmarried_img_1000line_190902" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingTop="6dp"
+            android:paddingRight="8dp"
+
+            android:paddingBottom="6dp">
+
+            <LinearLayout
+                android:id="@+id/ll_hopeloc_area"
+                android:layout_width="192dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/getmarried_bg_today_searchinputbg_190902"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="6dp">
+
+                <TextView
+                    android:id="@+id/tv_hopeloc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="전체"
+                    android:textColor="@color/color_aaaaaa"
+                    android:textSize="14dp" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0.7dp"
+                        android:layout_marginRight="0.5dp"
+                        android:layout_marginBottom="0.7dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/sel_today_btn" />
+
+                    <ImageView
+                        android:layout_width="19dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/getmarried_btn_today_searchicon_190902" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/ll_onlinemem"
+                android:layout_width="126dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/sel_onairmem"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="접속중 회원"
+                    android:textColor="@color/white_color"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="3dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/getmarried_btn_today_onairmemicon_190902" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@drawable/getmarried_img_1pxline_190902" />
+
+        <!-- recyclerview area -->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcv_hopeloc"
+            android:background="@color/color_eaeaea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+</layout>

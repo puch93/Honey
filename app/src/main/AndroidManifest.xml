@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.match.marryme">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:name=".GlobalApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.PushAct"></activity>
+        <activity
+            android:name=".activity.FirstAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.QnaReportAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.QnaReportDetailAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.QnaNomemberAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.PauseAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.FriendBlockAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.OnlineMemberActivity"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.TokboardCommentAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.ReviewRegAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.UserLockAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.QnaDetailAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.NoticeDetailAct"
+            android:theme="@style/status_matarial" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" /> <!-- <activity android:name="com.facebook.CustomTabActivity" android:exported="true"> -->
+        <!-- <intent-filter> <action android:name="android.intent.action.VIEW" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+        <!-- <data android:scheme="@string/fb_login_protocol_scheme" /> </intent-filter> -->
+        <!-- </activity> -->
+        <activity android:name=".activity.SplashAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.PermissionActivity"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.QnaReportRegAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.LoginAct"
+            android:launchMode="singleTop"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.JoinAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.MsgboxAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.NoticeAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.ReviewAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.LastnameSearchAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.AddsearchAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.BasicinfoSettingAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.BlockmemberAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.ItemmanageAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.ServiceCenterAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.AllianceAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.TokboardAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.HistorysetAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.AlarmsetAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.SecessionAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.ChatAct"
+            android:theme="@style/status_matarial"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.ReviewDetailAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.QnaAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.TokboardDetailAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.ProfileDetailAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.MyProfileAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.MyprofileModifyAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.RecordAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.RecordAudioAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.TermsActivity"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.VideoPlayAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.MoreimgActivity"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.FindAccountAct"
+            android:theme="@style/status_matarial" />
+        <activity
+            android:name=".activity.ListDlgAct"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".activity.MultipleListDlgAct"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".dialog.DlgUserlock"
+            android:theme="@style/myDialog" />
+        <activity
+            android:name=".dialog.DlgRegFiles"
+            android:theme="@style/myDialog" />
+        <activity
+            android:name=".dialog.DlgHopestyle"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".dialog.DlgPopupAds"
+            android:theme="@style/myDialog" />
+        <activity
+            android:name=".dialog.DlgBuyinterest"
+            android:theme="@style/myDialog" />
+        <activity
+            android:name=".dialog.DlgBuyprofup"
+            android:theme="@style/myDialog" />
+        <activity
+            android:name=".dialog.DlgPush"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".dialog.DlgAdviewFullScreen"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+
+        <activity
+            android:name=".dialog.DlgPopUpAd"
+            android:theme="@style/ActivityDialog" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" /> <!-- FCM ID -->
+        <service android:name=".firebase.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service> <!-- FCM MESSAGE -->
+        <service android:name=".firebase.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.match.marryme.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

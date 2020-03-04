@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
+                    android:background="@color/color_f0eef6"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="23dp"
+                    android:paddingRight="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/getmarried_img_logo_190902" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+
+                    <LinearLayout
+                        android:id="@+id/btn_totalmenu"
+                        android:layout_width="68dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_main_topmenuicon01_190902" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="메뉴관리"
+                            android:textColor="@color/color_8345f3"
+                            android:textSize="13dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_myprofile"
+                        android:layout_width="68dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_main_topmenuicon02_190902" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="내프로필"
+                            android:textColor="@color/color_8345f3"
+                            android:textSize="13dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_refresh"
+                        android:layout_width="68dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_main_topmenuicon03_190902" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="새로고침"
+                            android:textColor="@color/color_8345f3"
+                            android:textSize="13dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@drawable/getmarried_img_1pxline_190902" />
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="49dp"
+                            android:background="@color/color_fafafa"
+                            android:orientation="horizontal"
+                            android:paddingLeft="6dp">
+
+                            <LinearLayout
+                                android:id="@+id/ll_filter_total"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.7"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/totalsearch_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="지역"
+                                    android:textColor="@color/color_2"
+                                    android:textSize="14dp" />
+
+
+                                <ImageView
+                                    android:id="@+id/total_arrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="7dp"
+                                    android:layout_marginLeft="7dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/sel_drop_btn" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_filter_recency"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/recency_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="상세지역"
+                                    android:textColor="@color/color_2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:id="@+id/recency_arrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="7dp"
+                                    android:layout_marginLeft="7dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/sel_drop_btn" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_filter_lastname"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/lastnamesearch_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="나이별"
+                                    android:textColor="@color/color_2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:id="@+id/lastname_arrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="7dp"
+                                    android:layout_marginLeft="7dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/sel_drop_btn" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_filter_gender"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.7"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/gendersearch_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="성별"
+                                    android:textColor="@color/color_2"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:id="@+id/gender_arrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="7dp"
+                                    android:layout_marginLeft="7dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/sel_drop_btn" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_btn_addsearch"
+                                android:layout_width="92dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginRight="6dp"
+                                android:layout_marginBottom="6dp"
+                                android:background="@drawable/sel_search_btn"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="추가검색"
+                                    android:textColor="@color/white_color"
+                                    android:textSize="16dp" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/getmarried_btn_main_moresearchicon_190902" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:background="@drawable/getmarried_img_1pxline_190902" />
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rcv_member"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/color_eaeaea" />
+
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/layout_totalmenu"
+                        layout="@layout/totalmainmenu_layout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </LinearLayout>
+
+
+            <!-- bottom menu -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/getmarried_bg_mainmenubg_190902"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_today_member"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="12dp"
+                    android:paddingRight="17dp"
+                    android:paddingBottom="11dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/sel_mainmenu_btn01" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_view_member"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="12dp"
+                    android:paddingRight="17dp"
+                    android:paddingBottom="11dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/sel_mainmenu_btn02" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_message_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="12dp"
+                    android:paddingRight="17dp"
+                    android:paddingBottom="11dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/sel_mainmenu_btn03" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_new_member"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="12dp"
+                    android:paddingRight="17dp"
+                    android:paddingBottom="11dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/sel_mainmenu_btn04" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_like_member"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="24dp"
+                    android:paddingTop="12dp"
+                    android:paddingRight="24dp"
+                    android:paddingBottom="11dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/sel_mainmenu_btn05" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/touch_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </FrameLayout>
+</layout>

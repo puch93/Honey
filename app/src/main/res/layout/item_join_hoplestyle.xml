@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_hopestyle"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/getmarried_bg_join_categorybg_190902"
+        android:gravity="center"
+        android:text="뚜렷한 경제관념"
+        android:textColor="@color/color_222222"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_item_area"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="@drawable/getmarried_bg_boardcomment_listbg_190902"
+        android:orientation="horizontal"
+        android:paddingLeft="7dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="10dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/iv_profimg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                android:src="@drawable/getmarried_bg_plistimgarea_190902" />
+
+            <ImageView
+                android:id="@+id/iv_noprofimg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/getmarried_img_main_mnoimg_190918" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="9dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="욜로"
+                    android:textColor="@color/color_222222"
+                    android:textSize="15dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:background="@drawable/getmarried_img_textcutline_190902" />
+
+                <TextView
+                    android:id="@+id/tv_regdate"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:text="2019.08.17 08:13"
+                    android:textColor="@color/color_aaaaaa"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/tv_new"
+                    android:layout_width="40dp"
+                    android:visibility="visible"
+                    android:layout_marginLeft="5dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/getmarried_bg_review_newbg_190902"
+                    android:gravity="center"
+                    android:text="NEW"
+                    android:textColor="@color/white_color"
+                    android:textSize="13dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_board_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="결혼할래에서 좋은 사람을 만나서\n친구가 되었고 다음달에 결혼하게 되었어요!.."
+                android:textColor="@color/color_222222"
+                android:textSize="15dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

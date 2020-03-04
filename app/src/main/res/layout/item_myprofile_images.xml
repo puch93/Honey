@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/fl_imgarea"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+<!--        <FrameLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:layout_marginRight="12dp">-->
+
+            <ImageView
+                android:id="@+id/iv_imgitem"
+                android:layout_width="74dp"
+                android:layout_height="73dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/getmarried_bg_join_photoarea_190902" />
+
+<!--            <ImageView-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:src="@drawable/getmarried_btn_join_addphoto_190902" />-->
+<!--        </FrameLayout>-->
+
+        <ImageView
+            android:id="@+id/btn_remove"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:adjustViewBounds="true"
+            android:src="@drawable/getmarried_btn_join_photoclose_190902" />
+    </FrameLayout>
+
+</LinearLayout>

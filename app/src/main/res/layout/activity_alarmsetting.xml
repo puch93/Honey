@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_color"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="@color/color_fafafa"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="23dp"
+                android:paddingRight="13dp">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/getmarried_btn_back_190902" />
+            </FrameLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="알림설정"
+                android:textColor="@color/color_2"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/ll_home"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="22dp">
+
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/getmarried_btn_home_190902" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="홈으로"
+                    android:textColor="@color/color_8345f3"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@drawable/getmarried_img_1pxline_190902" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="13dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:text="- 나에게 새로운 메시지/관심있어요가 도착하면 알림을 받습니다"
+                android:textColor="@color/color_aaaaaa"
+                android:textSize="11dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:background="@drawable/getmarried_bg_visited_inputbg_190902"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="19dp"
+                android:paddingBottom="3dp">
+
+                <CheckBox
+                    android:id="@+id/cb_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:button="@drawable/sel_check_btn2"
+                    android:layoutDirection="rtl"
+                    android:text="신규메세지/관심있어요 알림"
+                    android:textColor="@color/color_222222"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="12dp"
+                android:text="- 공지사항이 등록되면 즉시 알림을 받습니다"
+                android:textColor="@color/color_aaaaaa"
+                android:textSize="11dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:background="@drawable/getmarried_bg_visited_inputbg_190902"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="19dp"
+                android:paddingBottom="3dp">
+
+                <CheckBox
+                    android:id="@+id/cb_notice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:button="@drawable/sel_check_btn2"
+                    android:layoutDirection="rtl"
+                    android:text="공지사항 알림"
+                    android:textColor="@color/color_222222"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="12dp"
+                android:text="- 내 주변 지역에서 회원이 신규 가입하면 실시간 알림을 받습니다"
+                android:textColor="@color/color_aaaaaa"
+                android:textSize="11dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:background="@drawable/getmarried_bg_visited_inputbg_190902"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="19dp"
+                android:paddingBottom="3dp">
+
+                <CheckBox
+                    android:id="@+id/cb_newuser"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:button="@drawable/sel_check_btn2"
+                    android:layoutDirection="rtl"
+                    android:text="신규가입회원 알림"
+                    android:textColor="@color/color_222222"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="9dp"-->
+<!--                android:layout_marginBottom="12dp"-->
+<!--                android:text="- 회원의 프로필이 업데이트 되면 알림을 받습니다"-->
+<!--                android:textColor="@color/color_aaaaaa"-->
+<!--                android:textSize="11dp" />-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="51dp"-->
+<!--                android:background="@drawable/getmarried_bg_visited_inputbg_190902"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:paddingLeft="16dp"-->
+<!--                android:paddingRight="19dp"-->
+<!--                android:paddingBottom="3dp">-->
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/cb_profupdate"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:button="@drawable/sel_check_btn2"-->
+<!--                    android:layoutDirection="rtl"-->
+<!--                    android:text="프로필업데이트 알림"-->
+<!--                    android:textColor="@color/color_222222"-->
+<!--                    android:textSize="14dp"-->
+<!--                    android:textStyle="bold" />-->
+<!--            </LinearLayout>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="12dp"
+                android:text="- 회원님의 프로필이 열람되면 알림을 받습니다"
+                android:textColor="@color/color_aaaaaa"
+                android:textSize="11dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:background="@drawable/getmarried_bg_visited_inputbg_190902"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="19dp"
+                android:paddingBottom="3dp">
+
+                <CheckBox
+                    android:id="@+id/cb_profread"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:button="@drawable/sel_check_btn2"
+                    android:layoutDirection="rtl"
+                    android:text="프로필열람 알림"
+                    android:textColor="@color/color_222222"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="12dp"
+                android:text="- 회원님이 찜을 받게되면 알림을 받습니다"
+                android:textColor="@color/color_aaaaaa"
+                android:textSize="11dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:background="@drawable/getmarried_bg_visited_inputbg_190902"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="19dp"
+                android:paddingBottom="3dp">
+
+                <CheckBox
+                    android:id="@+id/cb_like"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:button="@drawable/sel_check_btn2"
+                    android:layoutDirection="rtl"
+                    android:text="찜 알림"
+                    android:textColor="@color/color_222222"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

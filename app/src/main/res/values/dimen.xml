@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="totalsearch_areaheight">47dp</dimen>
+    <dimen name="searcharea_height34">34dp</dimen>
+
+
+    <dimen name="profile_width">70dp</dimen>
+
+
+</resources>

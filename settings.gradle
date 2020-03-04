@@ -1,0 +1,3 @@
+include ':app', ':videocompress', ':matisse'
+project(':videocompress').projectDir = new File('app/libs/videocompress')
+project(':matisse').projectDir = new File('app/libs/matisse')

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_color"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:background="@color/color_fafafa"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <FrameLayout
+                    android:id="@+id/fl_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="23dp"
+                    android:paddingRight="13dp">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/getmarried_btn_back_190902" />
+                </FrameLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="제휴제안"
+                    android:textColor="@color/color_2"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/ll_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="22dp">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/getmarried_btn_home_190902" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="홈으로"
+                        android:textColor="@color/color_8345f3"
+                        android:textSize="13dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="@drawable/getmarried_img_1pxline_190902" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="217dp"
+                android:background="@color/color_eff1f8"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/getmarried_img_suggest_suggestimg_190902" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="2dp"
+                    android:text="결혼할래와 함께할 수 있는 사업계획이 있다면?!\n망설임 NO! 성공적인 비지니스를 함께 할 제안을 기다립니다."
+                    android:textColor="@color/color_222222"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/getmarried_bg_suggest_contboxbg_190902"
+                android:orientation="vertical"
+                android:paddingLeft="1dp"
+                android:paddingTop="1dp"
+                android:paddingRight="2dp"
+                android:paddingBottom="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="119dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_fafafa"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="18dp"
+                        android:text="구분"
+                        android:textColor="@color/color_222222"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/getmarried_img_textcutline_190902" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dp">
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/rdo_item1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:button="@drawable/sel_check_btn2"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="8dp"
+                            android:text="기업"
+                            android:textColor="@color/color_222222"
+                            android:textSize="15dp" />
+
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/rdo_item2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:button="@drawable/sel_check_btn2"
+                            android:paddingLeft="8dp"
+                            android:text="개인"
+                            android:textColor="@color/color_222222"
+                            android:textSize="15dp" />
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/rdo_item3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:button="@drawable/sel_check_btn2"
+                            android:paddingLeft="8dp"
+                            android:text="기타"
+                            android:textColor="@color/color_222222"
+                            android:textSize="15dp" />
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@drawable/getmarried_img_1pxline_190902" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="119dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_fafafa"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="18dp"
+                        android:text="제안유형"
+                        android:textColor="@color/color_222222"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/getmarried_img_textcutline_190902" />
+
+                    <TextView
+                        android:id="@+id/tv_proposetype"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="17dp"
+                        android:hint="제안유형을 선택해주세요"
+                        android:textColor="@color/color_aaaaaa"
+                        android:textSize="14dp" />
+
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="19dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/getmarried_btn_drop_190902" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@drawable/getmarried_img_1pxline_190902" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="119dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_fafafa"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="18dp"
+                        android:text="회사(기관)명"
+                        android:textColor="@color/color_222222"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/getmarried_img_textcutline_190902" />
+
+                    <EditText
+                        android:id="@+id/et_compname"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="17dp"
+                        android:paddingRight="17dp"
+                        android:hint="회사명 또는 성명을 입력해주세요"
+                        android:textColor="@color/color_aaaaaa"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@drawable/getmarried_img_1pxline_190902" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="119dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_fafafa"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="18dp"
+                        android:text="이메일"
+                        android:textColor="@color/color_222222"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/getmarried_img_textcutline_190902" />
+
+                    <EditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:inputType="textEmailAddress"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="17dp"
+                        android:paddingRight="17dp"
+                        android:hint="연락받으실 이메일을 입력해주세요"
+                        android:textColor="@color/color_aaaaaa"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@drawable/getmarried_img_1pxline_190902" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="119dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_fafafa"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="18dp"
+                        android:text="연락처"
+                        android:textColor="@color/color_222222"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/getmarried_img_textcutline_190902" />
+
+                    <EditText
+                        android:id="@+id/et_cellnum"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="17dp"
+                        android:inputType="number"
+                        android:paddingRight="17dp"
+                        android:hint="연락받으실 연락처를 입력해주세요"
+                        android:textColor="@color/color_aaaaaa"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@drawable/getmarried_img_1pxline_190902" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="119dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_fafafa"
+                        android:gravity="top"
+                        android:paddingLeft="18dp"
+                        android:paddingTop="15dp"
+                        android:text="제안내용"
+                        android:textColor="@color/color_222222"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/getmarried_img_textcutline_190902" />
+
+                    <EditText
+                        android:id="@+id/et_contents"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:paddingLeft="17dp"
+                        android:paddingTop="15dp"
+                        android:paddingRight="17dp"
+                        android:paddingBottom="15dp"
+                        android:hint="제휴제안 내용을 입력해주세요"
+                        android:textColor="@color/color_aaaaaa"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@drawable/getmarried_img_1pxline_190902" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="71dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="119dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_fafafa"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="18dp"
+                        android:text="파일첨부"
+                        android:textColor="@color/color_222222"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/getmarried_img_textcutline_190902" />
+
+                    <TextView
+                        android:id="@+id/tv_attachfile"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="17dp"
+                        android:paddingRight="17dp"
+                        android:text="첨부파일 선택"
+                        android:textColor="@color/color_aaaaaa"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/btn_findfile"
+                        android:layout_width="85dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/sel_alliance_btn"
+                        android:gravity="center"
+                        android:paddingRight="2dp"
+                        android:text="파일찾기"
+                        android:textColor="@color/white_color"
+                        android:textSize="15dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 등록하신 정보는 "
+                    android:textColor="@color/color_222222"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="문의 회신을 위한 용도로만 "
+                    android:textColor="@color/color_ed1c24"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사용됩니다 *"
+                    android:textColor="@color/color_222222"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="등록하신 제안은 진행 여부에 따라 담당자가 개별연락 드립니다"
+                android:textColor="@color/color_222222"
+                android:textSize="11dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="제안이 진행되지 않은 경우에는 등록자료는 파기됩니다"
+                android:textColor="@color/color_222222"
+                android:textSize="11dp" />
+
+            <TextView
+                android:id="@+id/btn_propose"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/sel_searchenter_btn"
+                android:gravity="center"
+                android:text="제안하기"
+                android:textColor="@color/white_color"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

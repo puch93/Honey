@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/getmarried_bg_login_background_190902"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:gravity="center_horizontal"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:paddingLeft="42dp"
+            android:paddingRight="42dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="138dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/getmarried_img_login_logo_190902" />
+
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginTop="38dp"
+                android:background="@drawable/getmarried_bg_login_inputbg_190902"
+                android:hint="아이디를 입력하세요"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="14dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/color_34"
+                android:textColorHint="@color/et_hint_color"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/et_pw"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginTop="9dp"
+                android:background="@drawable/getmarried_bg_login_inputbg_190902"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:paddingLeft="14dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/color_34"
+                android:textColorHint="@color/et_hint_color"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/sel_login_btn"
+                android:gravity="center"
+                android:text="로그인"
+                android:textColor="@color/white_color"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_join"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/sel_login_btn2"
+                    android:gravity="center"
+                    android:text="회원가입"
+                    android:textColor="@color/col_login_press"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/btn_findaccount"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/sel_login_btn2"
+                    android:gravity="center"
+                    android:text="ID/PW찾기"
+                    android:textColor="@color/col_login_press"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_nomember_qna"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/sel_login_btn2"
+                android:gravity="center"
+                android:text="비회원문의"
+                android:textColor="@color/col_login_press"
+                android:textSize="16dp" />
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="고객센터 1600-8062"-->
+<!--                    android:textSize="15dp"-->
+<!--                    android:textColor="@color/color_222222"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"/>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_nomember_qna"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="문의하기"-->
+<!--                    android:paddingTop="10dp"-->
+<!--                    android:paddingBottom="10dp"-->
+<!--                    android:paddingLeft="10dp"-->
+<!--                    android:paddingRight="10dp"-->
+<!--                    android:textSize="15dp"-->
+<!--                    android:textColor="@color/color_8345f3"/>-->
+<!--            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3" />
+
+                <LinearLayout
+                    android:id="@+id/ll_btn_kakao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="73dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/getmarried_img_login_sns01_190902" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="카카오톡"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_btn_naver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="73dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/getmarried_img_login_sns02_190902" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="네이버"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_btn_facebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="73dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/getmarried_img_login_sns03_190902" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:text="페이스북"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

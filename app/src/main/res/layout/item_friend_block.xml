@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_all_area"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingRight="15dp"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp">
+
+        <CheckBox
+            android:id="@+id/cb_address"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:paddingLeft="15dp"
+            android:text="010-7471-7614"
+            android:gravity="left|center_vertical"
+            android:layoutDirection="rtl"
+            android:button="@drawable/sel_check_btn2" />
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@drawable/getmarried_img_1pxline_190902" />
+
+</LinearLayout>

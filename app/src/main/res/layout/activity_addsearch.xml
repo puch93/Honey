@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_color"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="@color/color_fafafa"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/fl_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="23dp"
+                android:paddingRight="13dp">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/getmarried_btn_back_190902" />
+            </FrameLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="추가검색"
+                android:textColor="@color/color_2"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/ll_home"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="22dp">
+
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/getmarried_btn_home_190902" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="홈으로"
+                    android:textColor="@color/color_8345f3"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@drawable/getmarried_img_1pxline_190902" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="15dp"
+            android:paddingRight="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:layout_width="53dp"
+                        android:layout_height="wrap_content"
+                        android:text="분류"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_marriage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_marriage"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="전체"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="7dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_drop_190902" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:layout_width="53dp"
+                        android:layout_height="wrap_content"
+                        android:text="연봉"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_salary"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_salary"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="전체"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="7dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_drop_190902" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:layout_width="53dp"
+                        android:layout_height="wrap_content"
+                        android:text="종교"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_religion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_religion"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="전체"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="7dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_drop_190902" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:layout_width="53dp"
+                        android:layout_height="wrap_content"
+                        android:text="학력"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_edu"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_edu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="전체"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="7dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_drop_190902" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:layout_width="53dp"
+                        android:layout_height="wrap_content"
+                        android:text="재산"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_property"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_property"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="전체"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="7dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_drop_190902" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:layout_width="53dp"
+                        android:layout_height="wrap_content"
+                        android:text="흡연"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_smoke"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_smoke"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="전체"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="7dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_drop_190902" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:layout_width="53dp"
+                        android:layout_height="wrap_content"
+                        android:text="혈액형"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_bloodtype"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_bloodtype"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="전체"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="7dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_drop_190902" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:layout_width="53dp"
+                        android:layout_height="wrap_content"
+                        android:text="자녀"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_children"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_children"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="전체"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="7dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_drop_190902" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:layout_width="53dp"
+                        android:layout_height="wrap_content"
+                        android:text="음주량"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_drinking"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_drinking"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="전체"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="7dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_drop_190902" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="7dp"
+                    android:visibility="invisible"
+                    android:layout_weight="1"
+                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:layout_width="53dp"
+                        android:layout_height="wrap_content"
+                        android:text="자녀"
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="15dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="전체"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="7dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/getmarried_btn_drop_190902" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_reg_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/sel_addsearch_btn"
+                    android:text="사진등록회원"
+                    android:gravity="center"
+                    android:paddingBottom="3dp"
+                    android:paddingRight="3dp"
+                    android:textColor="@color/col_addsearch_press"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/sel_searchenter_btn"
+            android:gravity="center"
+            android:text="검색하기"
+            android:textColor="@color/white_color"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</layout>
