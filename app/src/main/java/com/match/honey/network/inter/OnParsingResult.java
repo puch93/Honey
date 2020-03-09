@@ -1,0 +1,12 @@
+package com.match.honey.network.inter;
+
+
+import com.match.honey.network.netUtil.HttpResult;
+
+/*
+서버에서 받아온 String 파싱하는 인터페이스
+*/
+public interface OnParsingResult {
+    HttpResult onParse(String jsonString);
+}
+

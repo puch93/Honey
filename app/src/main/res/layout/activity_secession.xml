@@ -95,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="결혼할래에서 평생 인연을 만나셨나요?"
+                android:text="여보자기에서 평생 인연을 만나셨나요?"
                 android:textColor="@color/color_222222"
                 android:textSize="14dp"
                 android:textStyle="bold" />
@@ -128,7 +128,7 @@
                     android:adjustViewBounds="true"
                     android:button="@drawable/sel_radio_btn2"
                     android:paddingLeft="9dp"
-                    android:text="결혼할래에서 인연을 만나 탈퇴합니다"
+                    android:text="여보자기에서 인연을 만나 탈퇴합니다"
                     android:textColor="@color/color_4d4d4d"
                     android:textSize="15dp" />
 

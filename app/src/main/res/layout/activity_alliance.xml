@@ -103,7 +103,7 @@
                     android:layout_marginTop="14dp"
                     android:gravity="center"
                     android:lineSpacingExtra="2dp"
-                    android:text="결혼할래와 함께할 수 있는 사업계획이 있다면?!\n망설임 NO! 성공적인 비지니스를 함께 할 제안을 기다립니다."
+                    android:text="여보자기와 함께할 수 있는 사업계획이 있다면?!\n망설임 NO! 성공적인 비지니스를 함께 할 제안을 기다립니다."
                     android:textColor="@color/color_222222"
                     android:textSize="14dp"
                     android:textStyle="bold" />

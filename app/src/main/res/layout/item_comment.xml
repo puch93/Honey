@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="결혼할래에서 좋은 사람을 만나서\n친구가 되었고 다음달에 결혼하게 되었어요!.."
+                android:text="여보자기에서 좋은 사람을 만나서\n친구가 되었고 다음달에 결혼하게 되었어요!.."
                 android:textColor="@color/color_222222"
                 android:textSize="15dp"/>
         </LinearLayout>

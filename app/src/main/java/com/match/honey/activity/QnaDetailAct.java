@@ -1,0 +1,49 @@
+package com.match.honey.activity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.databinding.DataBindingUtil;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+
+import com.match.honey.R;
+import com.match.honey.databinding.ActivityQnaDetailBinding;
+import com.match.honey.utils.StringUtil;
+
+public class QnaDetailAct extends AppCompatActivity {
+    ActivityQnaDetailBinding binding;
+    Activity act;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_qna_detail, null);
+
+        Intent from = getIntent();
+
+        binding.tvQnaType.setText(from.getStringExtra("type"));
+        binding.tvQnaType2.setText(from.getStringExtra("type"));
+        binding.tvQnaType3.setText(from.getStringExtra("type"));
+
+        if (from.getBooleanExtra("state", false)) {
+            binding.tvAnswerState.setText("답변완료");
+        } else {
+            binding.tvAnswerState.setText("답변대기");
+        }
+
+        binding.tvRegdate.setText(from.getStringExtra("regdate"));
+        binding.tvQuestion.setText(from.getStringExtra("question"));
+
+        if (!StringUtil.isNull(from.getStringExtra("answer")))
+            binding.tvAnswer.setText(from.getStringExtra("answer"));
+
+
+        binding.flBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+}

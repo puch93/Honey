@@ -92,7 +92,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="결혼할래에서 "
+                    android:text="여보자기에서 "
                     android:textColor="@color/color_222222"
                     android:textSize="15dp"
                     android:textStyle="bold" />

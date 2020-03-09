@@ -142,7 +142,7 @@
             android:paddingTop="13dp"
             android:paddingRight="15dp"
             android:paddingBottom="13dp"
-            android:text="안녕하세요, 결혼할래 관리자 입니다.\n2019년 8월 12일 결혼할래 앱 서비스 점검 안내드립니다.\n\n점검시간 : 2019년 08월 20일 새벽 3시 ~ 5시\n\n항상 결혼할래를 사랑해주셔서 감사드립니다. \n보다 더 나은 서비스를 위하여\n저희 결혼할래는 항상 노력하겠습니다."
+            android:text="안녕하세요, 여보자기 관리자 입니다.\n2019년 8월 12일 여보자기 앱 서비스 점검 안내드립니다.\n\n점검시간 : 2019년 08월 20일 새벽 3시 ~ 5시\n\n항상 여보자기를 사랑해주셔서 감사드립니다. \n보다 더 나은 서비스를 위하여\n저희 여보자기는 항상 노력하겠습니다."
             android:textColor="@color/color_4d4d4d"
             android:textSize="15dp" />
 

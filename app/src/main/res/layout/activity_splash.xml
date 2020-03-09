@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="결혼할래"
+            android:text="여보자기"
             android:textStyle="bold"
             android:textSize="17dp"
             android:textColor="@color/color_8345f3"/>
