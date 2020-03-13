@@ -31,10 +31,15 @@
 
         <!-- bottom menu -->
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@drawable/getmarried_img_1pxline_190902" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/getmarried_bg_mainmenubg_190902"
+            android:background="@drawable/bottom_menu_bg"
             android:orientation="horizontal">
 
             <FrameLayout
@@ -46,16 +51,27 @@
                     android:id="@+id/ll_today_member"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="17dp"
-                    android:paddingTop="12dp"
-                    android:paddingRight="17dp"
-                    android:paddingBottom="11dp">
+                    android:orientation="vertical"
+                    android:paddingTop="13.3dp"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="15.7dp">
 
                     <ImageView
-                        android:layout_width="match_parent"
+                        android:layout_width="23dp"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:src="@drawable/sel_mainmenu_btn01" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11dp"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="7.7dp"
+                        android:textColor="@color/col_main_menu"
+                        android:text="오늘접속"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -107,16 +123,27 @@
                     android:id="@+id/ll_view_member"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="17dp"
-                    android:paddingTop="12dp"
-                    android:paddingRight="17dp"
-                    android:paddingBottom="11dp">
+                    android:orientation="vertical"
+                    android:paddingTop="13.3dp"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="15.7dp">
 
                     <ImageView
-                        android:layout_width="match_parent"
+                        android:layout_width="23dp"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:src="@drawable/sel_mainmenu_btn02" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11dp"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="7.7dp"
+                        android:textColor="@color/col_main_menu"
+                        android:text="열람회원"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -167,16 +194,27 @@
                     android:id="@+id/ll_message_box"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="17dp"
-                    android:paddingTop="12dp"
-                    android:paddingRight="17dp"
-                    android:paddingBottom="11dp">
+                    android:orientation="vertical"
+                    android:paddingTop="13.3dp"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="15.7dp">
 
                     <ImageView
-                        android:layout_width="match_parent"
+                        android:layout_width="23dp"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:src="@drawable/sel_mainmenu_btn03" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11dp"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="7.7dp"
+                        android:textColor="@color/col_main_menu"
+                        android:text="메시지함"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -227,16 +265,27 @@
                     android:id="@+id/ll_new_member"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="17dp"
-                    android:paddingTop="12dp"
-                    android:paddingRight="17dp"
-                    android:paddingBottom="11dp">
+                    android:orientation="vertical"
+                    android:paddingTop="13.3dp"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="15.7dp">
 
                     <ImageView
-                        android:layout_width="match_parent"
+                        android:layout_width="23dp"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:src="@drawable/sel_mainmenu_btn04" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11dp"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="7.7dp"
+                        android:textColor="@color/col_main_menu"
+                        android:text="열람회원"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -287,16 +336,27 @@
                     android:id="@+id/ll_like_member"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="24dp"
-                    android:paddingTop="12dp"
-                    android:paddingRight="24dp"
-                    android:paddingBottom="11dp">
+                    android:orientation="vertical"
+                    android:paddingTop="13.3dp"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="15.7dp">
 
                     <ImageView
-                        android:layout_width="match_parent"
+                        android:layout_width="23dp"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:src="@drawable/sel_mainmenu_btn05" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11dp"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="7.7dp"
+                        android:textColor="@color/col_main_menu"
+                        android:text="열람회원"
+                        />
                 </LinearLayout>
 
                 <LinearLayout

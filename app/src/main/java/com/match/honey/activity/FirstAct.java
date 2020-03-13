@@ -51,10 +51,10 @@ public class FirstAct extends AppCompatActivity {
         msg_from = getIntent().getStringExtra("msg_from");
         room_idx = getIntent().getStringExtra("room_idx");
 
-        binding.rcvMember.setLayoutManager(new LinearLayoutManager(act));
+        binding.frameMain.rcvMember.setLayoutManager(new LinearLayoutManager(act));
         adapter = new FirstAdapter(act, memlist);
-        binding.rcvMember.setAdapter(adapter);
-        binding.rcvMember.addItemDecoration(new ItemOffsetDecoration(act));
+        binding.frameMain.rcvMember.setAdapter(adapter);
+        binding.frameMain.rcvMember.addItemDecoration(new ItemOffsetDecoration(act));
 
         getMemberList2();
 
@@ -80,6 +80,7 @@ public class FirstAct extends AppCompatActivity {
             }
         });
     }
+
 
     private void getMemberList2() {
         ReqBasic memList = new ReqBasic(act, NetUrls.MEMBERLIST) {

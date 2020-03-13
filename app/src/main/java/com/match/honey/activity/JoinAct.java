@@ -177,42 +177,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
     }
 
 
-    private void showAddressAuth() {
-        LayoutInflater dialog = LayoutInflater.from(this);
-        View dialogLayout = dialog.inflate(R.layout.dlg_address, null);
-        final Dialog menuDlg = new Dialog(this);
-
-        menuDlg.setContentView(dialogLayout);
-
-        menuDlg.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        menuDlg.show();
-
-        TextView btn_cancel = (TextView) dialogLayout.findViewById(R.id.btn_cancel);
-        final TextView tv_cellnum = (TextView) dialogLayout.findViewById(R.id.tv_cellnum);
-        TextView btn_ok = (TextView) dialogLayout.findViewById(R.id.btn_ok);
-
-        btn_ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!StringUtil.isNull(tv_cellnum.getText().toString())) {
-                    checkAuthnum(tv_cellnum.getText().toString(), menuDlg);
-                } else {
-                    Common.showToast(act, "인증번호를 입력해주세요");
-                }
-            }
-        });
-
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (menuDlg.isShowing()) {
-                    menuDlg.dismiss();
-                }
-            }
-        });
-    }
-
     private boolean checkNick(String nick) {
         String regex = "^[ㄱ-ㅣ가-힣]*$";
         Pattern p = Pattern.compile(regex);
@@ -319,19 +283,14 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
         String email = "";
         String pw = "";
         String pw_check = "";
-        if (sns_type.equalsIgnoreCase("general")) {
-            if (binding.llPortalInput.getVisibility() == View.VISIBLE) {
-                email = binding.etEmail.getText().toString() + "@" + binding.etPortal.getText().toString();
-            } else {
-                email = binding.etEmail.getText().toString() + "@" + binding.tvPortal.getText().toString();
-            }
-            pw = binding.etPw.getText().toString();
-            pw_check = binding.etPwcheck.getText().toString();
+
+        if (binding.llPortalInput.getVisibility() == View.VISIBLE) {
+            email = binding.etEmail.getText().toString() + "@" + binding.etPortal.getText().toString();
         } else {
-            email = sns_id;
-            pw = sns_pw;
-            pw_check = sns_pw;
+            email = binding.etEmail.getText().toString() + "@" + binding.tvPortal.getText().toString();
         }
+        pw = binding.etPw.getText().toString();
+        pw_check = binding.etPwcheck.getText().toString();
 
         reqJoin.addParams("id", email);
         reqJoin.addParams("pw", pw);
@@ -347,8 +306,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
         }
 
         reqJoin.addParams("lastnameYN", "Y");
-//        reqJoin.addParams("cellnum", cellNum);
-        reqJoin.addParams("cellnum", binding.etAddress.getText().toString());
         reqJoin.addParams("nick", binding.etMemid.getText().toString());
         reqJoin.addParams("byear", binding.tvBirthYear.getText().toString());
 
@@ -367,10 +324,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
             marriage = "remarry";
         }
 
-//        else if (binding.rdoFriend.isChecked()) {
-//            marriage = "friend";
-//        }
-
         reqJoin.addParams("ct", marriage);
         reqJoin.addParams("addr1", binding.tvMainLoc.getText().toString());
         reqJoin.addParams("addr2", binding.tvMiddleLoc.getText().toString());
@@ -383,11 +336,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
         reqJoin.addParams("bh2", binding.tvFamilyFemale.getText().toString());
         reqJoin.addParams("bh3", binding.tvFamilyOrder.getText().toString());
 
-
-        //TODO
-        // String job = job.getString("job");
-        // if(job.contains("직접입력")
-        // job = job.replace("직접입력", "");
         if (binding.llInputArea.getVisibility() == View.VISIBLE) {
             Log.e(TAG, "job value: " + binding.tvJob.getText().toString() + binding.etJob.getText().toString());
             if (StringUtil.isNull(binding.etJob.getText().toString()) || binding.etJob.getText().toString().equalsIgnoreCase("")) {
@@ -544,9 +492,7 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
         binding.llM03.setTag("chM03");
         binding.llM04.setTag("chM04");
         binding.llM05.setTag("chM05");
-
-        binding.tvAddressOk.setOnClickListener(this);
-    }
+}
 
     private void calFamilyOrder(int male, int female) {
 
@@ -555,24 +501,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tv_address_ok:
-                if (isAvailable) {
-                    if (binding.etAddress.length() == 0) {
-                        Toast.makeText(act, "휴대폰번호를 입력해주세요", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    if (!checkCellnum(binding.etAddress.getText().toString())) {
-                        Toast.makeText(act, "휴대폰번호를 확인해주세요", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    ReqAuthnum();
-                } else {
-                    Common.showToast(act, "*이미 발송하였으니, 1분후에 다시 시도해주세요*");
-                    showAddressAuth();
-                }
-                break;
-
             case R.id.ll_m01:
             case R.id.ll_m02:
             case R.id.ll_m03:
@@ -612,7 +540,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.tv_family_female:
                 // n녀
-
                 Intent bhood2 = new Intent(this, ListDlgAct.class);
                 bhood2.putExtra("subject", "bhood2");
                 bhood2.putExtra("isMen", isMen);
@@ -622,7 +549,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
             case R.id.tv_family_order:
                 int men = Integer.valueOf(binding.tvFamilyMale.getText().toString().replace("남", ""));
                 int women = Integer.valueOf(binding.tvFamilyFemale.getText().toString().replace("녀", ""));
-
                 int total = men + women;
 
                 // n째
@@ -795,61 +721,59 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
 
             case R.id.btn_join:
                 //일반 회원가입일때만
-                if (sns_type.equalsIgnoreCase("general")) {
-                    //이메일
-                    if (binding.etEmail.length() == 0) {
-                        Toast.makeText(this, getString(R.string.input_email), Toast.LENGTH_SHORT).show();
+                //이메일
+                if (binding.etEmail.length() == 0) {
+                    Toast.makeText(this, getString(R.string.input_email), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // 포털 직접입력(naver.com,google.com ...  등)
+                if (binding.llPortalInput.getVisibility() == View.VISIBLE) {
+                    if (binding.etPortal.length() == 0) {
+                        Toast.makeText(this, getString(R.string.input_portal), Toast.LENGTH_SHORT).show();
                         return;
                     }
 
-                    // 포털 직접입력(naver.com,google.com ...  등)
-                    if (binding.llPortalInput.getVisibility() == View.VISIBLE) {
-                        if (binding.etPortal.length() == 0) {
-                            Toast.makeText(this, getString(R.string.input_portal), Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-
-                        if (!checkEmail(binding.etEmail.getText().toString() + "@" + binding.etPortal.getText().toString())) {
-                            Toast.makeText(this, "이메일을 확인해주세요.", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                    } else {
-                        if (!checkEmail(binding.etEmail.getText().toString() + "@" + binding.tvPortal.getText().toString())) {
-                            Toast.makeText(this, "이메일을 확인해주세요.", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                    }
-
-                    //비밀번호
-                    if (binding.etPw.length() == 0) {
-                        Toast.makeText(this, getString(R.string.input_pw), Toast.LENGTH_SHORT).show();
+                    if (!checkEmail(binding.etEmail.getText().toString() + "@" + binding.etPortal.getText().toString())) {
+                        Toast.makeText(this, "이메일을 확인해주세요.", Toast.LENGTH_SHORT).show();
                         return;
                     }
-
-                    if (binding.etPw.length() < 4 || binding.etPw.length() > 12) {
-                        Toast.makeText(this, "비밀번호는 4~12자로 사용할 수 있습니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (!checkEmail(binding.etEmail.getText().toString() + "@" + binding.tvPortal.getText().toString())) {
+                        Toast.makeText(this, "이메일을 확인해주세요.", Toast.LENGTH_SHORT).show();
                         return;
                     }
+                }
 
-                    if (!Pattern.matches(".*[a-zA-Z]+.*", binding.etPw.getText().toString())) {
-                        Toast.makeText(this, "비밀번호에 영어가 포함되어야 합니다", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+                //비밀번호
+                if (binding.etPw.length() == 0) {
+                    Toast.makeText(this, getString(R.string.input_pw), Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                    if (!Pattern.matches(".*[0-9]+.*", binding.etPw.getText().toString())) {
-                        Toast.makeText(this, "비밀번호에 숫자가 포함되어야 합니다", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+                if (binding.etPw.length() < 4 || binding.etPw.length() > 12) {
+                    Toast.makeText(this, "비밀번호는 4~12자로 사용할 수 있습니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                    if (binding.etPwcheck.length() == 0) {
-                        Toast.makeText(this, getString(R.string.input_pwcheck), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+                if (!Pattern.matches(".*[a-zA-Z]+.*", binding.etPw.getText().toString())) {
+                    Toast.makeText(this, "비밀번호에 영어가 포함되어야 합니다", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                    if (!binding.etPw.getText().toString().equalsIgnoreCase(binding.etPwcheck.getText().toString())) {
-                        Toast.makeText(this, getString(R.string.pwcheckfail), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+                if (!Pattern.matches(".*[0-9]+.*", binding.etPw.getText().toString())) {
+                    Toast.makeText(this, "비밀번호에 숫자가 포함되어야 합니다", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (binding.etPwcheck.length() == 0) {
+                    Toast.makeText(this, getString(R.string.input_pwcheck), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (!binding.etPw.getText().toString().equalsIgnoreCase(binding.etPwcheck.getText().toString())) {
+                    Toast.makeText(this, getString(R.string.pwcheckfail), Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 //성, 이름
@@ -872,17 +796,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
                     Toast.makeText(this, "이름은 한글만 사용가능합니다", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-//                //연락처인증
-//                if (binding.etAddress.length() == 0) {
-//                    Toast.makeText(act, "휴대폰번호를 입력해주세요", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//
-//                if (!binding.etAddress.getText().toString().equalsIgnoreCase(cellNum)) {
-//                    Toast.makeText(act, "휴대폰번호 인증을 진행해주세요", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
 
                 //닉네임
                 if (binding.etMemid.length() == 0) {

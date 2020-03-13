@@ -6,7 +6,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_f0eef6"
+        android:background="@color/color_f6f6f6"
         android:fillViewport="true"
         android:orientation="vertical">
 
@@ -17,7 +17,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="63dp"
+                android:layout_height="@dimen/title_bar_height"
                 android:background="@color/color_fafafa"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
@@ -67,9 +67,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginRight="15dp"
                     android:background="@color/white_color"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
@@ -79,7 +79,7 @@
                         android:layout_width="@dimen/profile_width"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                        android:src="@drawable/point_bg" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -95,28 +95,20 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="7dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="3dp"
-                    android:paddingRight="2dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_img_profileicon01_190902" />
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="7dp"
                         android:includeFontPadding="false"
-                        android:text="회원가입"
-                        android:textColor="@color/color_222222"
-                        android:textSize="14dp" />
+                        android:text="회원 정보"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_2f3942"
+                        android:textSize="15dp" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -130,6 +122,7 @@
                         android:text="* 이메일은 가입 후 "
                         android:textColor="@color/color_4d4d4d"
                         android:textSize="11dp" />
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -151,10 +144,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginRight="7dp"
-                    android:background="@drawable/getmarried_bg_join_contboxbg02_190902"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/input_box_00"
                     android:orientation="vertical"
                     android:paddingRight="2dp"
                     android:paddingBottom="2dp"
@@ -175,12 +168,12 @@
 
                             <TextView
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="16dp"
                                 android:text="아이디"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <EditText
                                 android:id="@+id/et_email"
@@ -193,13 +186,13 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
                                 android:text="@string/email_char"
@@ -225,8 +218,9 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:text="naver.com"
+                                        android:textStyle="bold"
                                         android:textColor="@color/color_222222"
-                                        android:textSize="14dp" />
+                                        android:textSize="13dp" />
 
                                     <!--                                <ImageView-->
                                     <!--                                    android:layout_width="13dp"-->
@@ -250,7 +244,7 @@
                                         android:layout_weight="1"
                                         android:background="@null"
                                         android:textColor="@color/color_222222"
-                                        android:textSize="14dp" />
+                                        android:textSize="13dp" />
 
                                     <ImageView
                                         android:id="@+id/iv_input_cancel"
@@ -276,12 +270,12 @@
 
                             <TextView
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="16dp"
                                 android:text="비밀번호"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <EditText
                                 android:id="@+id/et_pw"
@@ -295,7 +289,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
                         </LinearLayout>
 
                         <ImageView
@@ -310,13 +304,13 @@
 
                             <TextView
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:lineSpacingExtra="1dp"
                                 android:paddingLeft="16dp"
                                 android:text="비밀번호\n확인하기"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <EditText
                                 android:id="@+id/et_pwcheck"
@@ -330,7 +324,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
                         </LinearLayout>
 
                         <ImageView
@@ -347,7 +341,7 @@
 
                         <LinearLayout
                             android:layout_width="0dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:layout_weight="1"
                             android:orientation="horizontal">
 
@@ -358,7 +352,7 @@
                                 android:paddingLeft="16dp"
                                 android:text="성"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <EditText
                                 android:id="@+id/et_familyname"
@@ -371,7 +365,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -386,7 +380,7 @@
                                 android:gravity="center"
                                 android:text="이름"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <EditText
                                 android:id="@+id/et_name"
@@ -399,7 +393,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -416,12 +410,12 @@
 
                         <TextView
                             android:layout_width="78dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:gravity="center_vertical"
                             android:paddingLeft="16dp"
                             android:text="성명표시"
                             android:textColor="@color/color_4d4d4d"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
 
                         <RadioGroup
                             android:layout_width="0dp"
@@ -457,51 +451,6 @@
                         </RadioGroup>
                     </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="2px"
-                        android:background="@drawable/getmarried_img_1pxline_190902" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="78dp"
-                            android:layout_height="50dp"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="16dp"
-                            android:text="연락처"
-                            android:textColor="@color/color_4d4d4d"
-                            android:textSize="14dp" />
-
-                        <EditText
-                            android:id="@+id/et_address"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:hint="숫자만 입력"
-                            android:inputType="number"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
-                            android:textColor="@color/color_222222"
-                            android:textColorHint="@color/color_aaaaaa"
-                            android:textSize="14dp" />
-
-                        <TextView
-                            android:id="@+id/tv_address_ok"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.4"
-                            android:background="@drawable/sel_popup_btn02"
-                            android:gravity="center"
-                            android:text="인증하기"
-                            android:textColor="@color/white_color"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -515,12 +464,12 @@
 
                         <TextView
                             android:layout_width="78dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:gravity="center_vertical"
                             android:paddingLeft="16dp"
                             android:text="닉네임"
                             android:textColor="@color/color_4d4d4d"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
 
                         <EditText
                             android:id="@+id/et_memid"
@@ -533,7 +482,7 @@
                             android:paddingRight="10dp"
                             android:textColor="@color/color_222222"
                             android:textColorHint="@color/color_aaaaaa"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
                     </LinearLayout>
 
                     <ImageView
@@ -549,12 +498,12 @@
 
                         <TextView
                             android:layout_width="78dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:gravity="center_vertical"
                             android:paddingLeft="16dp"
                             android:text="생년"
                             android:textColor="@color/color_4d4d4d"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
 
                         <LinearLayout
                             android:id="@+id/ll_birth_year"
@@ -575,7 +524,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -632,12 +581,12 @@
 
                         <TextView
                             android:layout_width="78dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:gravity="center_vertical"
                             android:paddingLeft="16dp"
                             android:text="지역"
                             android:textColor="@color/color_4d4d4d"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
 
                         <LinearLayout
                             android:id="@+id/ll_main_loc"
@@ -658,7 +607,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -687,7 +636,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -721,7 +670,7 @@
 
                             <LinearLayout
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:orientation="vertical"
                                 android:paddingLeft="16dp">
@@ -741,7 +690,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="배"
                                             android:textColor="@color/color_4d4d4d"
-                                            android:textSize="14dp" />
+                                            android:textSize="13dp" />
 
                                         <TextView
                                             android:layout_width="0dp"
@@ -753,7 +702,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="우"
                                             android:textColor="@color/color_4d4d4d"
-                                            android:textSize="14dp" />
+                                            android:textSize="13dp" />
 
                                         <TextView
                                             android:layout_width="0dp"
@@ -765,7 +714,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="자"
                                             android:textColor="@color/color_4d4d4d"
-                                            android:textSize="14dp" />
+                                            android:textSize="13dp" />
                                     </LinearLayout>
 
                                     <TextView
@@ -773,7 +722,7 @@
                                         android:layout_height="wrap_content"
                                         android:text="희망지역"
                                         android:textColor="@color/color_4d4d4d"
-                                        android:textSize="14dp" />
+                                        android:textSize="13dp" />
                                 </LinearLayout>
                             </LinearLayout>
                         </FrameLayout>
@@ -797,7 +746,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -820,12 +769,12 @@
 
                         <TextView
                             android:layout_width="78dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:gravity="center_vertical"
                             android:paddingLeft="16dp"
                             android:text="성혼유형"
                             android:textColor="@color/color_4d4d4d"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
 
                         <RadioGroup
                             android:layout_width="0dp"
@@ -874,313 +823,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="7dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingLeft="3dp"
-                    android:paddingRight="2dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_img_profileicon02_190902" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="7dp"
-                        android:includeFontPadding="false"
-                        android:text="캐릭터선택"
-                        android:textColor="@color/color_222222"
-                        android:textSize="14dp" />
-                </LinearLayout>
-
-
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="7dp"
-                    android:background="@drawable/getmarried_bg_join_contboxbg02_190902"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="20dp"
-                    android:paddingRight="7dp"
-                    android:paddingBottom="17dp"
-                    android:visibility="visible">
-
-                    <LinearLayout
-                        android:id="@+id/ll_ch_warea"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:visibility="gone">
-
-                        <LinearLayout
-                            android:id="@+id/ll_w01"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="77dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_img_pcharacter01_190902" />
-
-                            <ImageView
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="11dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/sel_check_btn" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_w02"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="77dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_img_pcharacter02_190902" />
-
-                            <ImageView
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="11dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/sel_check_btn" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_w03"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="77dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_img_pcharacter03_190902" />
-
-                            <ImageView
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="11dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/sel_check_btn" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_w04"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="77dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_img_pcharacter04_190902" />
-
-                            <ImageView
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="11dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/sel_check_btn" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_w05"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="77dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_img_pcharacter05_190902" />
-
-                            <ImageView
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="11dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/sel_check_btn" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:id="@+id/ll_ch_marea"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:id="@+id/ll_m01"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="77dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_img_pcharacter06_190902" />
-
-                            <ImageView
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="11dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/sel_check_btn" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_m02"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="77dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_img_pcharacter07_190902" />
-
-                            <ImageView
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="11dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/sel_check_btn" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_m03"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="77dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_img_pcharacter08_190902" />
-
-                            <ImageView
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="11dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/sel_check_btn" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_m04"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="77dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_img_pcharacter09_190902" />
-
-                            <ImageView
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="11dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/sel_check_btn" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_m05"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="77dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_img_pcharacter10_190902" />
-
-                            <ImageView
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="11dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/sel_check_btn" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-                </FrameLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1206,7 +848,7 @@
                         android:includeFontPadding="false"
                         android:text="기본정보"
                         android:textColor="@color/color_222222"
-                        android:textSize="14dp" />
+                        android:textSize="13dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1245,7 +887,7 @@
                                 android:paddingLeft="16dp"
                                 android:text="형제관계"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -1266,7 +908,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1293,7 +935,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1320,7 +962,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1349,7 +991,7 @@
                             android:paddingLeft="16dp"
                             android:text="직업"
                             android:textColor="@color/color_4d4d4d"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -1370,7 +1012,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1400,7 +1042,7 @@
                                 android:singleLine="true"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <FrameLayout
                                 android:id="@+id/fl_job_close"
@@ -1449,7 +1091,7 @@
                                 android:paddingLeft="16dp"
                                 android:text="연봉"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -1470,7 +1112,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1509,7 +1151,7 @@
                                 android:paddingLeft="16dp"
                                 android:text="재산"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -1530,7 +1172,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1569,7 +1211,7 @@
                                 android:paddingLeft="16dp"
                                 android:text="학력"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -1590,7 +1232,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1626,7 +1268,7 @@
                         android:includeFontPadding="false"
                         android:text="외모/취미/기타"
                         android:textColor="@color/color_222222"
-                        android:textSize="14dp" />
+                        android:textSize="13dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1654,7 +1296,7 @@
                             android:paddingLeft="16dp"
                             android:text="신체조건"
                             android:textColor="@color/color_4d4d4d"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -1674,7 +1316,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1701,7 +1343,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1750,7 +1392,7 @@
                                         android:layout_height="wrap_content"
                                         android:text="혈액형"
                                         android:textColor="@color/color_4d4d4d"
-                                        android:textSize="14dp" />
+                                        android:textSize="13dp" />
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -1763,7 +1405,7 @@
                                             android:layout_weight="1"
                                             android:text="종"
                                             android:textColor="@color/color_4d4d4d"
-                                            android:textSize="14dp" />
+                                            android:textSize="13dp" />
 
 
                                         <TextView
@@ -1771,7 +1413,7 @@
                                             android:layout_height="wrap_content"
                                             android:text="교"
                                             android:textColor="@color/color_4d4d4d"
-                                            android:textSize="14dp" />
+                                            android:textSize="13dp" />
                                     </LinearLayout>
                                 </LinearLayout>
                             </LinearLayout>
@@ -1796,7 +1438,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1823,7 +1465,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1851,7 +1493,7 @@
                             android:paddingLeft="16dp"
                             android:text="성격"
                             android:textColor="@color/color_4d4d4d"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -1871,7 +1513,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1900,7 +1542,7 @@
                             android:paddingLeft="16dp"
                             android:text="취미"
                             android:textColor="@color/color_4d4d4d"
-                            android:textSize="14dp" />
+                            android:textSize="13dp" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -1920,7 +1562,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -1960,7 +1602,7 @@
                                 android:paddingLeft="16dp"
                                 android:text="흡연여부"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -1981,7 +1623,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -2021,7 +1663,7 @@
                                 android:paddingLeft="16dp"
                                 android:text="음주량"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
                         </FrameLayout>
 
                         <LinearLayout
@@ -2042,7 +1684,7 @@
                                 android:paddingRight="10dp"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -2087,7 +1729,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="자녀수"
                                     android:textColor="@color/color_4d4d4d"
-                                    android:textSize="14dp" />
+                                    android:textSize="13dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -2118,7 +1760,7 @@
                                 android:text="0명"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -2146,7 +1788,7 @@
                                 android:text="0명"
                                 android:textColor="@color/color_222222"
                                 android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                             <ImageView
                                 android:layout_width="13dp"
@@ -2186,7 +1828,7 @@
                                 android:paddingLeft="16dp"
                                 android:text="자녀양육"
                                 android:textColor="@color/color_4d4d4d"
-                                android:textSize="14dp" />
+                                android:textSize="13dp" />
 
                         </FrameLayout>
 
@@ -2273,7 +1915,7 @@
                         android:includeFontPadding="false"
                         android:text="희망 배우자 카테고리"
                         android:textColor="@color/color_222222"
-                        android:textSize="14dp" />
+                        android:textSize="13dp" />
                 </LinearLayout>
 
                 <!-- 선호지역 -->
@@ -2323,7 +1965,7 @@
                         android:includeFontPadding="false"
                         android:text="자기소개글"
                         android:textColor="@color/color_222222"
-                        android:textSize="14dp" />
+                        android:textSize="13dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -2332,7 +1974,7 @@
                         android:includeFontPadding="false"
                         android:text="(한글30자 - 300자까지)"
                         android:textColor="@color/color_aaaaaa"
-                        android:textSize="14dp" />
+                        android:textSize="13dp" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -2345,7 +1987,7 @@
                         android:layout_height="wrap_content"
                         android:text="0"
                         android:textColor="@color/color_222222"
-                        android:textSize="14dp" />
+                        android:textSize="13dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -2353,7 +1995,7 @@
                         android:layout_marginRight="7dp"
                         android:text=" / 300"
                         android:textColor="@color/color_222222"
-                        android:textSize="14dp" />
+                        android:textSize="13dp" />
                 </LinearLayout>
 
                 <!--                <TextView-->

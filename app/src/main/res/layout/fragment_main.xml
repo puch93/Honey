@@ -9,12 +9,12 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:background="@color/color_f0eef6"
+            android:layout_height="54dp"
+            android:background="@color/color_ec4e4e"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingLeft="13dp"
-            android:paddingRight="15dp">
+            android:paddingLeft="5dp"
+            android:paddingRight="16dp">
 
             <FrameLayout
                 android:id="@+id/fl_refresh"
@@ -28,7 +28,7 @@
                     android:layout_height="21dp"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_img_logo_190902" />
+                    android:src="@drawable/main_logo" />
             </FrameLayout>
 
             <TextView
@@ -39,73 +39,76 @@
 
             <LinearLayout
                 android:id="@+id/btn_totalmenu"
-                android:layout_width="68dp"
+                android:layout_width="49dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="17dp"
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_main_topmenuicon01_190902" />
+                    android:src="@drawable/icon_menu" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
+                    android:textStyle="bold"
                     android:text="메뉴관리"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="13dp" />
+                    android:textColor="@color/white_color"
+                    android:textSize="10dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/btn_myprofile"
-                android:layout_width="68dp"
+                android:layout_width="49dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="17dp"
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_main_topmenuicon02_190902" />
+                    android:src="@drawable/icon_profile" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="내프로필"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="13dp" />
+                    android:textColor="@color/white_color"
+                    android:textStyle="bold"
+                    android:textSize="10dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/btn_refresh"
-                android:layout_width="68dp"
+                android:layout_width="49dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="17dp"
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_main_topmenuicon03_190902" />
+                    android:src="@drawable/icon_refresh" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
+                    android:textStyle="bold"
                     android:text="새로고침"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="13dp" />
+                    android:textColor="@color/white_color"
+                    android:textSize="10dp" />
 
             </LinearLayout>
 
@@ -128,7 +131,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="49dp"
+                    android:layout_height="43dp"
                     android:background="@color/color_fafafa"
                     android:orientation="horizontal"
                     android:paddingLeft="6dp">
@@ -151,8 +154,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="지역"
-                            android:textColor="@color/color_2"
-                            android:textSize="14dp" />
+                            android:textColor="@color/color_2f3942"
+                            android:textStyle="bold"
+                            android:textSize="12.8dp"
+                             />
 
 
                         <ImageView
@@ -188,8 +193,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="상세지역"
-                            android:textColor="@color/color_2"
-                            android:textSize="14dp" />
+                            android:textColor="@color/color_2f3942"
+                            android:textStyle="bold"
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:id="@+id/recency_arrow"
@@ -225,8 +231,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="나이별"
-                            android:textColor="@color/color_2"
-                            android:textSize="14dp" />
+                            android:textColor="@color/color_2f3942"
+                            android:textStyle="bold"
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:id="@+id/lastname_arrow"
@@ -262,8 +269,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="성별"
-                            android:textColor="@color/color_2"
-                            android:textSize="14dp" />
+                            android:textColor="@color/color_2f3942"
+                            android:textStyle="bold"
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:id="@+id/gender_arrow"
@@ -283,27 +291,22 @@
 
                     <LinearLayout
                         android:id="@+id/ll_btn_addsearch"
-                        android:layout_width="92dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="75dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="6dp"
                         android:layout_marginRight="6dp"
                         android:layout_marginBottom="6dp"
-                        android:background="@drawable/sel_search_btn"
+                        android:background="@drawable/btn_m_search"
                         android:gravity="center">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="추가검색"
-                            android:textColor="@color/white_color"
-                            android:textSize="16dp" />
+                            android:textColor="@color/color_ec4e4e"
+                            android:textStyle="bold"
+                            android:textSize="13dp" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="4dp"
-                            android:adjustViewBounds="true"
-                            android:src="@drawable/getmarried_btn_main_moresearchicon_190902" />
                     </LinearLayout>
                 </LinearLayout>
 
