@@ -87,7 +87,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
 
         //초기세팅
         binding.rdoMale.setChecked(true);
-        binding.llM01.performClick();
         binding.tvFamilyMale.setText("1남");
         binding.tvFamilyFemale.setText("0녀");
         binding.tvFamilyOrder.setText("1째");
@@ -100,11 +99,7 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    binding.llChMarea.setVisibility(View.VISIBLE);
-                    binding.llChWarea.setVisibility(View.GONE);
-
-                    init(0);
-                    binding.llM01.performClick();
+                    chGender = Common.M1;
 
                     binding.tvFamilyMale.setText("1남");
                     binding.tvFamilyFemale.setText("0녀");
@@ -119,11 +114,7 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    binding.llChMarea.setVisibility(View.GONE);
-                    binding.llChWarea.setVisibility(View.VISIBLE);
-
-                    init(1);
-                    binding.llW01.performClick();
+                    chGender = Common.W1;
 
                     binding.tvFamilyMale.setText("0남");
                     binding.tvFamilyFemale.setText("1녀");
@@ -159,23 +150,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
                 getResources().getDimensionPixelSize(R.dimen.dimen_hope02),
                 getResources().getDimensionPixelSize(R.dimen.dimen_10)));
     }
-
-    private void init(int type) {
-        if (type == 0) {
-            binding.llM01.setSelected(false);
-            binding.llM02.setSelected(false);
-            binding.llM03.setSelected(false);
-            binding.llM04.setSelected(false);
-            binding.llM05.setSelected(false);
-        } else {
-            binding.llW01.setSelected(false);
-            binding.llW02.setSelected(false);
-            binding.llW03.setSelected(false);
-            binding.llW04.setSelected(false);
-            binding.llW05.setSelected(false);
-        }
-    }
-
 
     private boolean checkNick(String nick) {
         String regex = "^[ㄱ-ㅣ가-힣]*$";
@@ -469,29 +443,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
         binding.tvGirl.setOnClickListener(this);
 
         binding.flTerm.setOnClickListener(this);
-
-
-        binding.llW01.setOnClickListener(this);
-        binding.llW02.setOnClickListener(this);
-        binding.llW03.setOnClickListener(this);
-        binding.llW04.setOnClickListener(this);
-        binding.llW05.setOnClickListener(this);
-        binding.llW01.setTag("chW01");
-        binding.llW02.setTag("chW02");
-        binding.llW03.setTag("chW03");
-        binding.llW04.setTag("chW04");
-        binding.llW05.setTag("chW05");
-
-        binding.llM01.setOnClickListener(this);
-        binding.llM02.setOnClickListener(this);
-        binding.llM03.setOnClickListener(this);
-        binding.llM04.setOnClickListener(this);
-        binding.llM05.setOnClickListener(this);
-        binding.llM01.setTag("chM01");
-        binding.llM02.setTag("chM02");
-        binding.llM03.setTag("chM03");
-        binding.llM04.setTag("chM04");
-        binding.llM05.setTag("chM05");
 }
 
     private void calFamilyOrder(int male, int female) {
@@ -501,28 +452,6 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.ll_m01:
-            case R.id.ll_m02:
-            case R.id.ll_m03:
-            case R.id.ll_m04:
-            case R.id.ll_m05:
-                chGender = (findViewById(v.getId())).getTag().toString();
-                Log.e(TAG, "getGenderM: " + chGender);
-                init(0);
-                (findViewById(v.getId())).setSelected(true);
-                break;
-
-            case R.id.ll_w01:
-            case R.id.ll_w02:
-            case R.id.ll_w03:
-            case R.id.ll_w04:
-            case R.id.ll_w05:
-                chGender = (findViewById(v.getId())).getTag().toString();
-                Log.e(TAG, "getGenderW: " + chGender);
-                init(1);
-                (findViewById(v.getId())).setSelected(true);
-                break;
-
             case R.id.fl_term:
                 binding.flTerm.setSelected(!binding.flTerm.isSelected());
                 break;

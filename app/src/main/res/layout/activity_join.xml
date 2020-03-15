@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/title_bar_height"
                 android:background="@color/color_fafafa"
@@ -26,15 +26,18 @@
                     android:id="@+id/fl_back"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:paddingLeft="23dp"
-                    android:paddingRight="13dp">
+                    android:paddingLeft="6.7dp"
+                    android:paddingRight="6.7dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:layout_width="10dp"
+                        android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_back_190902" />
+                        android:src="@drawable/btn_back" />
                 </FrameLayout>
 
 
@@ -43,18 +46,22 @@
                     android:layout_height="wrap_content"
                     android:text="회원가입"
                     android:textColor="@color/color_2"
-                    android:textSize="17dp"
-                    android:textStyle="bold" />
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
-            </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="2px"
+                android:layout_height="1dp"
                 android:background="@drawable/getmarried_img_1pxline_190902" />
 
             <LinearLayout
@@ -66,7 +73,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="@dimen/join_menu_height"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="15dp"
@@ -95,20 +102,20 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp">
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:includeFontPadding="false"
                         android:text="회원 정보"
-                        android:textStyle="bold"
                         android:textColor="@color/color_2f3942"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -151,7 +158,7 @@
                     android:orientation="vertical"
                     android:paddingRight="2dp"
                     android:paddingBottom="2dp"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:id="@+id/ll_general"
@@ -218,15 +225,9 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:text="naver.com"
-                                        android:textStyle="bold"
                                         android:textColor="@color/color_222222"
-                                        android:textSize="13dp" />
-
-                                    <!--                                <ImageView-->
-                                    <!--                                    android:layout_width="13dp"-->
-                                    <!--                                    android:layout_height="wrap_content"-->
-                                    <!--                                    android:adjustViewBounds="true"-->
-                                    <!--                                    android:src="@drawable/getmarried_btn_drop_190902" />-->
+                                        android:textSize="13dp"
+                                        android:textStyle="bold" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -259,7 +260,7 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="2px"
+                            android:layout_height="1dp"
                             android:background="@drawable/getmarried_img_1pxline_190902" />
 
 
@@ -294,7 +295,7 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="2px"
+                            android:layout_height="1dp"
                             android:background="@drawable/getmarried_img_1pxline_190902" />
 
                         <LinearLayout
@@ -329,7 +330,7 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="2px"
+                            android:layout_height="1dp"
                             android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     </LinearLayout>
@@ -370,7 +371,7 @@
 
                         <LinearLayout
                             android:layout_width="0dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:layout_weight="1"
                             android:orientation="horizontal">
 
@@ -399,7 +400,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -454,7 +455,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -487,7 +488,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -570,7 +571,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -648,7 +649,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -662,11 +663,11 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="@dimen/profile_width"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                                android:layout_width="@dimen/profile_bottom_line_width"
+                                android:layout_height="7dp"
+                                android:layout_gravity="center_horizontal|bottom"
+                                android:layout_marginBottom="5dp"
+                                android:background="#fcff00" />
 
                             <LinearLayout
                                 android:layout_width="78dp"
@@ -758,7 +759,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -824,44 +825,29 @@
                 </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="7dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingLeft="3dp"
-                    android:paddingRight="2dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_img_profileicon03_190902" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="7dp"
-                        android:includeFontPadding="false"
-                        android:text="기본정보"
-                        android:textColor="@color/color_222222"
-                        android:textSize="13dp" />
-                </LinearLayout>
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="17.3dp"
+                    android:layout_marginRight="15dp"
+                    android:includeFontPadding="false"
+                    android:text="추가 정보"
+                    android:textColor="@color/color_2f3942"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="7dp"
-                    android:background="@drawable/getmarried_bg_join_contboxbg02_190902"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/input_box_00"
                     android:orientation="vertical"
                     android:paddingRight="2dp"
                     android:paddingBottom="2dp"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -874,15 +860,15 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="@dimen/profile_width"
-                                android:layout_height="wrap_content"
+                                android:layout_width="@dimen/profile_bottom_line_width"
+                                android:layout_height="7dp"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                                android:layout_marginTop="5dp"
+                                android:background="#fcff00" />
 
                             <TextView
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="16dp"
                                 android:text="형제관계"
@@ -975,7 +961,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -986,7 +972,7 @@
 
                         <TextView
                             android:layout_width="78dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:gravity="center_vertical"
                             android:paddingLeft="16dp"
                             android:text="직업"
@@ -1064,7 +1050,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -1078,15 +1064,16 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="@dimen/profile_width"
-                                android:layout_height="wrap_content"
+                                android:layout_width="30dp"
+                                android:layout_height="7dp"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="10dp"
+                                android:background="#fcff00" />
 
                             <TextView
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="16dp"
                                 android:text="연봉"
@@ -1124,7 +1111,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -1138,15 +1125,16 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="@dimen/profile_width"
-                                android:layout_height="wrap_content"
+                                android:layout_width="30dp"
+                                android:layout_height="7dp"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="10dp"
+                                android:background="#fcff00" />
 
                             <TextView
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="16dp"
                                 android:text="재산"
@@ -1184,7 +1172,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -1198,15 +1186,16 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="@dimen/profile_width"
-                                android:layout_height="wrap_content"
+                                android:layout_width="30dp"
+                                android:layout_height="7dp"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="10dp"
+                                android:background="#fcff00" />
 
                             <TextView
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="16dp"
                                 android:text="학력"
@@ -1244,40 +1233,25 @@
                 </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="7dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingLeft="3dp"
-                    android:paddingRight="2dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_img_profileicon04_190902" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="7dp"
-                        android:includeFontPadding="false"
-                        android:text="외모/취미/기타"
-                        android:textColor="@color/color_222222"
-                        android:textSize="13dp" />
-                </LinearLayout>
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="17.3dp"
+                    android:layout_marginRight="15dp"
+                    android:includeFontPadding="false"
+                    android:text="추가 정보"
+                    android:textColor="@color/color_2f3942"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="7dp"
-                    android:background="@drawable/getmarried_bg_join_contboxbg02_190902"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/input_box_00"
                     android:orientation="vertical"
                     android:paddingRight="2dp"
                     android:paddingBottom="2dp"
@@ -1291,7 +1265,7 @@
 
                         <TextView
                             android:layout_width="78dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:gravity="center_vertical"
                             android:paddingLeft="16dp"
                             android:text="신체조건"
@@ -1355,7 +1329,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -1364,60 +1338,68 @@
                         android:orientation="horizontal"
                         android:paddingRight="16dp">
 
-                        <FrameLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="78dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="13dp">
 
-                            <ImageView
-                                android:layout_width="@dimen/profile_width"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
 
-                            <LinearLayout
-                                android:layout_width="78dp"
-                                android:layout_height="50dp"
-                                android:gravity="center_vertical"
-                                android:orientation="vertical"
-                                android:paddingLeft="16dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="7dp"
+                                    android:layout_gravity="center_horizontal|bottom"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="#fcff00" />
 
                                 <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="혈액형"
-                                        android:textColor="@color/color_4d4d4d"
-                                        android:textSize="13dp" />
+                                    android:layout_height="@dimen/join_menu_height"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="3dp"
+                                    android:paddingRight="3dp">
 
                                     <LinearLayout
-                                        android:layout_width="match_parent"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"
-                                            android:text="종"
-                                            android:textColor="@color/color_4d4d4d"
-                                            android:textSize="13dp" />
-
+                                        android:orientation="vertical">
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="교"
+                                            android:text="혈액형"
                                             android:textColor="@color/color_4d4d4d"
                                             android:textSize="13dp" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="종"
+                                                android:textColor="@color/color_4d4d4d"
+                                                android:textSize="13dp" />
+
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="교"
+                                                android:textColor="@color/color_4d4d4d"
+                                                android:textSize="13dp" />
+                                        </LinearLayout>
                                     </LinearLayout>
                                 </LinearLayout>
-                            </LinearLayout>
-                        </FrameLayout>
+
+                            </FrameLayout>
+                        </LinearLayout>
 
 
                         <LinearLayout
@@ -1477,7 +1459,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -1488,7 +1470,7 @@
 
                         <TextView
                             android:layout_width="78dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:gravity="center_vertical"
                             android:paddingLeft="16dp"
                             android:text="성격"
@@ -1526,7 +1508,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -1537,7 +1519,7 @@
 
                         <TextView
                             android:layout_width="78dp"
-                            android:layout_height="50dp"
+                            android:layout_height="@dimen/join_menu_height"
                             android:gravity="center_vertical"
                             android:paddingLeft="16dp"
                             android:text="취미"
@@ -1575,7 +1557,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -1589,15 +1571,15 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="@dimen/profile_width"
-                                android:layout_height="wrap_content"
+                                android:layout_width="55dp"
+                                android:layout_height="7dp"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                                android:layout_marginTop="5dp"
+                                android:background="#fcff00" />
 
                             <TextView
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="16dp"
                                 android:text="흡연여부"
@@ -1636,7 +1618,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -1650,15 +1632,16 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="@dimen/profile_width"
-                                android:layout_height="wrap_content"
+                                android:layout_width="40dp"
+                                android:layout_height="7dp"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="#fcff00" />
 
                             <TextView
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="16dp"
                                 android:text="음주량"
@@ -1697,7 +1680,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -1711,15 +1694,16 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="@dimen/profile_width"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                                android:layout_width="40dp"
+                                android:layout_height="7dp"
+                                android:layout_gravity="center_horizontal|top"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginRight="5dp"
+                                android:background="#fcff00" />
 
                             <LinearLayout
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:orientation="vertical"
                                 android:paddingLeft="16dp">
@@ -1801,7 +1785,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="2px"
+                        android:layout_height="1dp"
                         android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
@@ -1815,15 +1799,15 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="@dimen/profile_width"
-                                android:layout_height="wrap_content"
+                                android:layout_width="55dp"
+                                android:layout_height="7dp"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/getmarried_bg_profile_nopay01_191219" />
+                                android:layout_marginTop="5dp"
+                                android:background="#fcff00" />
 
                             <TextView
                                 android:layout_width="78dp"
-                                android:layout_height="50dp"
+                                android:layout_height="@dimen/join_menu_height"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="16dp"
                                 android:text="자녀양육"
@@ -1890,47 +1874,26 @@
                 </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="7dp"
-                    android:gravity="center_vertical"
-
-                    android:orientation="horizontal"
-                    android:paddingLeft="3dp"
-                    android:paddingRight="2dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_img_profileicon05_190902" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="7dp"
-                        android:includeFontPadding="false"
-                        android:text="희망 배우자 카테고리"
-                        android:textColor="@color/color_222222"
-                        android:textSize="13dp" />
-                </LinearLayout>
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="17.3dp"
+                    android:layout_marginRight="15dp"
+                    android:includeFontPadding="false"
+                    android:text="희망 배우자 카테고리"
+                    android:textColor="@color/color_2f3942"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
                 <!-- 선호지역 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="7dp"
-                    android:background="@drawable/getmarried_bg_join_contboxbg02_190902"
-                    android:orientation="vertical"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="16dp"
-                    android:paddingRight="8dp"
-                    android:paddingBottom="18dp">
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:orientation="vertical">
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/rcv_join_hoplestyle"
@@ -1943,36 +1906,29 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="7dp"
-
-                    android:gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="17.3dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="bottom"
                     android:orientation="horizontal"
                     android:paddingLeft="3dp"
                     android:paddingRight="2dp">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_img_profileicon06_190902" />
-
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="7dp"
+                        android:layout_height="wrap_content"
                         android:includeFontPadding="false"
                         android:text="자기소개글"
-                        android:textColor="@color/color_222222"
-                        android:textSize="13dp" />
+                        android:textColor="@color/color_2f3942"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="7dp"
                         android:includeFontPadding="false"
-                        android:text="(한글30자 - 300자까지)"
+                        android:text="한글30자 - 300자까지"
                         android:textColor="@color/color_aaaaaa"
                         android:textSize="13dp" />
 
@@ -2012,15 +1968,15 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="7dp"
-                    android:background="@drawable/getmarried_bg_join_contboxbg02_190902"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/input_box_00"
                     android:orientation="vertical"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="6dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="8dp">
+                    android:paddingLeft="13.7dp"
+                    android:paddingTop="13dp"
+                    android:paddingRight="13.7dp"
+                    android:paddingBottom="13dp">
 
                     <EditText
                         android:id="@+id/et_introduce"
@@ -2028,7 +1984,7 @@
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:gravity="top"
-                        android:hint="SNS 및 연락처 입력시 자동차단 됩니다."
+                        android:hint="자기소개글을 입력해주세요"
                         android:textSize="15dp" />
                 </LinearLayout>
 
@@ -2060,8 +2016,8 @@
 
                             <ImageView
                                 android:id="@+id/iv_checkbox"
-                                android:layout_width="19dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
                                 android:layout_gravity="center"
                                 android:adjustViewBounds="true"
                                 android:src="@drawable/sel_check_btn" />
@@ -2084,19 +2040,21 @@
                         android:gravity="center"
                         android:paddingRight="10dp"
                         android:text=" [보기]"
-                        android:textColor="@color/color_8345f3"
+                        android:textColor="@color/color_f94545"
                         android:textSize="15dp" />
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/btn_join"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:background="@drawable/sel_searchenter_btn"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_ec4e4e"
                     android:gravity="center"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
                     android:text="가입하기"
                     android:textColor="@color/white_color"
-                    android:textSize="15dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>

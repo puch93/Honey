@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/getmarried_bg_login_background_190902"
+        android:background="@color/color_f6f6f6"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:gravity="center_horizontal"
@@ -15,111 +15,180 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="18.67"/>
+            android:layout_weight="17.04" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="40.3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:layout_marginLeft="39dp"
+            android:layout_marginRight="39dp"
             android:src="@drawable/login_logo" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="15.54"/>
-        <EditText
-            android:id="@+id/et_email"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@drawable/login_input"
-            android:hint="아이디를 입력하세요"
-            android:inputType="textEmailAddress"
-            android:paddingLeft="14dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp"
-            android:textColor="@color/color_34"
-            android:textColorHint="@color/color_b9babb"
-            android:textSize="14dp" />
+            android:layout_weight="9.74" />
 
-        <EditText
-            android:id="@+id/et_pw"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/login_input"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:paddingLeft="14dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp"
-            android:textColor="@color/color_34"
-            android:textColorHint="@color/color_b9babb"
-            android:textSize="14dp" />
+            android:layout_height="wrap_content">
 
-        <TextView
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/login_input" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="아이디를 입력하세요"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="14dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/color_34"
+                android:textColorHint="@color/color_b9babb"
+                android:textSize="14dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/login_input" />
+
+            <EditText
+                android:id="@+id/et_pw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:paddingLeft="14dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/color_34"
+                android:textColorHint="@color/color_b9babb"
+                android:textSize="14dp" />
+        </FrameLayout>
+
+        <FrameLayout
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
             android:layout_marginTop="11dp"
-            android:background="@drawable/btn_login_red"
-            android:gravity="center"
-            android:text="로그인"
-            android:textColor="@color/white_color"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/btn_login_red"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="로그인"
+                android:textColor="@color/white_color"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="9.04"/>
+            android:layout_weight="6.49" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
+            <FrameLayout
                 android:id="@+id/btn_join"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
                 android:layout_weight="1"
-                android:background="@drawable/btn_login_black"
-                android:gravity="center"
-                android:text="회원가입"
-                android:textColor="@color/white_color"
-                android:textSize="14dp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content">
 
-            <TextView
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/btn_login_black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="회원가입"
+                    android:textColor="@color/white_color"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/btn_findaccount"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/btn_login_white"
-                android:gravity="center"
-                android:text="ID/PW찾기"
-                android:textColor="@color/color_2f3942"
-                android:textSize="14dp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/btn_login_white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="ID/PW찾기"
+                    android:textColor="@color/color_2f3942"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
 
         </LinearLayout>
 
-        <TextView
+        <FrameLayout
             android:id="@+id/tv_nomember_qna"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/sel_login_btn2"
-            android:gravity="center"
-            android:text="비회원문의"
-            android:textColor="@color/col_login_press"
-            android:textSize="16dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/btn_nomember" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="비회원문의"
+                android:textColor="@color/col_login_press"
+                android:textSize="16dp" />
+        </FrameLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="17.05"/>
+            android:layout_weight="11.52" />
     </LinearLayout>
 </layout>
