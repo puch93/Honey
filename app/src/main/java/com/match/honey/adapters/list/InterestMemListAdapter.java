@@ -92,19 +92,19 @@ public class InterestMemListAdapter extends RecyclerView.Adapter<InterestMemList
             if (list.get(i).getDatas().getCouple_type().equalsIgnoreCase("marry")) {
                 itemHolder.tv_type.setText("결혼");
                 itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
-                itemHolder.tv_type.setBackgroundResource(R.drawable.getmarried_bg_categorybg02_190923);
+                itemHolder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
             } else if (list.get(i).getDatas().getCouple_type().equalsIgnoreCase("remarry")) {
                 itemHolder.tv_type.setText("재혼");
                 itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
-                itemHolder.tv_type.setBackgroundResource(R.drawable.getmarried_bg_categorybg01_190923);
+                itemHolder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
             } else if (list.get(i).getDatas().getCouple_type().equalsIgnoreCase("friend")) {
                 itemHolder.tv_type.setText("재혼");
                 itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_adapter_friend));
-                itemHolder.tv_type.setBackgroundResource(R.drawable.getmarried_bg_categorybg01_190923);
+                itemHolder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
             } else {
                 itemHolder.tv_type.setText("-");
                 itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
-                itemHolder.tv_type.setBackgroundResource(R.drawable.getmarried_bg_categorybg02_190923);
+                itemHolder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
             }
 
             if (list.get(i).getDatas().getGender().equalsIgnoreCase("male")) {

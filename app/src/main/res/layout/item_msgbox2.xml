@@ -92,7 +92,7 @@
                         android:paddingRight="5dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
-                        android:background="@drawable/getmarried_bg_categorybg01_190923"
+                        android:background="@drawable/remarriage_bg"
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:text="재혼"

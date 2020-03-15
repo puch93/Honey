@@ -166,7 +166,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="23dp"
                                 android:layout_marginLeft="6dp"
-                                android:background="@drawable/getmarried_bg_categorybg01_190923"
+                                android:background="@drawable/remarriage_bg"
                                 android:gravity="center"
                                 android:paddingLeft="5dp"
                                 android:paddingRight="5dp"

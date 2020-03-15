@@ -50,19 +50,19 @@ public class BlocklistAdapter extends RecyclerView.Adapter<BlocklistAdapter.View
         if (list.get(i).getMembertype().equalsIgnoreCase("marry")) {
             holder.tv_type.setText("결혼");
             holder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
-            holder.tv_type.setBackgroundResource(R.drawable.getmarried_bg_categorybg02_190923);
+            holder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
         } else if (list.get(i).getMembertype().equalsIgnoreCase("remarry")) {
             holder.tv_type.setText("재혼");
             holder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
-            holder.tv_type.setBackgroundResource(R.drawable.getmarried_bg_categorybg01_190923);
+            holder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
         } else if (list.get(i).getMembertype().equalsIgnoreCase("friend")) {
             holder.tv_type.setText("재혼");
             holder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_adapter_friend));
-            holder.tv_type.setBackgroundResource(R.drawable.getmarried_bg_categorybg01_190923);
+            holder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
         }  else {
             holder.tv_type.setText("-");
             holder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
-            holder.tv_type.setBackgroundResource(R.drawable.getmarried_bg_categorybg02_190923);
+            holder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
         }
 
         //시간

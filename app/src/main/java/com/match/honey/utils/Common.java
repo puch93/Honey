@@ -62,7 +62,7 @@ public class Common {
         if (gender.equalsIgnoreCase("male")) {
             switch (c) {
                 case M1:
-                    return R.drawable.getmarried_img_pcharacter06_190902;
+                    return R.drawable.img_noimg_man;
                 case M2:
                     return R.drawable.getmarried_img_pcharacter07_190902;
                 case M3:
@@ -77,7 +77,7 @@ public class Common {
         } else {
             switch (c) {
                 case W1:
-                    return R.drawable.getmarried_img_pcharacter01_190902;
+                    return R.drawable.profile_noimg_woman;
                 case W2:
                     return R.drawable.getmarried_img_pcharacter02_190902;
                 case W3:

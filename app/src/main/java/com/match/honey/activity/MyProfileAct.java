@@ -394,19 +394,19 @@ public class MyProfileAct extends Activity implements View.OnClickListener {
                             if (data.getCouple_type().equalsIgnoreCase("marry")) {
                                 binding.tvMembertype.setText("결혼");
                                 binding.tvMembertype.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
-                                binding.tvMembertype.setBackgroundResource(R.drawable.getmarried_bg_categorybg02_190923);
+                                binding.tvMembertype.setBackgroundResource(R.drawable.marriage_bg);
                             } else if (data.getCouple_type().equalsIgnoreCase("remarry")) {
                                 binding.tvMembertype.setText("재혼");
                                 binding.tvMembertype.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
-                                binding.tvMembertype.setBackgroundResource(R.drawable.getmarried_bg_categorybg01_190923);
+                                binding.tvMembertype.setBackgroundResource(R.drawable.remarriage_bg);
                             } else if (data.getCouple_type().equalsIgnoreCase("friend")) {
                                 binding.tvMembertype.setText("재혼");
                                 binding.tvMembertype.setTextColor(ContextCompat.getColor(act, R.color.color_adapter_friend));
-                                binding.tvMembertype.setBackgroundResource(R.drawable.getmarried_bg_categorybg01_190923);
+                                binding.tvMembertype.setBackgroundResource(R.drawable.remarriage_bg);
                             } else {
                                 binding.tvMembertype.setText("-");
                                 binding.tvMembertype.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
-                                binding.tvMembertype.setBackgroundResource(R.drawable.getmarried_bg_categorybg02_190923);
+                                binding.tvMembertype.setBackgroundResource(R.drawable.marriage_bg);
                             }
 
                             binding.tvName.setText(data.getFamilyname() + data.getName());
