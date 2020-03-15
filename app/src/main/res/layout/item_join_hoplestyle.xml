@@ -6,11 +6,11 @@
     <TextView
         android:id="@+id/tv_hopestyle"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:background="@drawable/getmarried_bg_join_categorybg_190902"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_stroke_bg_hope"
         android:gravity="center"
         android:text="뚜렷한 경제관념"
-        android:textColor="@color/color_222222"
-        android:textSize="14dp"
+        android:textColor="@color/color_529ce7"
+        android:textSize="13dp"
         android:textStyle="bold" />
 </LinearLayout>

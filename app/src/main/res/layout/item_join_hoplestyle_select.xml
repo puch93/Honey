@@ -6,11 +6,11 @@
     <TextView
         android:id="@+id/tv_select"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:background="@drawable/getmarried_btn_join_addcategory_190902"
+        android:layout_height="30dp"
+        android:background="@drawable/sel_round_background"
         android:gravity="center"
-        android:text="선택하기 +"
-        android:textColor="@color/color_8345f3"
-        android:textSize="14dp"
+        android:text="+ 선택하기"
+        android:textColor="@color/white_color"
+        android:textSize="13dp"
         android:textStyle="bold" />
 </LinearLayout>

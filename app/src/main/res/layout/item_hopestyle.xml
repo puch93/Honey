@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tv_hopestyle"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:background="@drawable/bg_myprofile_categorybg"
+        android:layout_height="30dp"
+        android:layout_margin="1dp"
+        android:background="@drawable/sel_hope_dlg"
         android:gravity="center"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:textColor="@color/col_hopestyleitem"
-        android:textSize="13dp" />
-
+        android:text="뚜렷한 경제관념"
+        android:textColor="@color/col_hope_dlg"
+        android:textSize="12dp"
+        android:textStyle="bold" />
 </LinearLayout>
