@@ -7,9 +7,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:gravity="center_vertical"
-        android:layout_marginTop="13dp"
         android:orientation="horizontal">
 
         <TextView
@@ -19,7 +18,7 @@
             android:layout_weight="0.3"
             android:gravity="center"
             android:text="거래날짜"
-            android:textColor="@color/color_4d"
+            android:textColor="@color/color_73777a"
             android:textSize="13dp" />
 
         <TextView
@@ -29,7 +28,7 @@
             android:layout_weight="0.3"
             android:gravity="center"
             android:text="거래내역"
-            android:textColor="@color/color_4d"
+            android:textColor="@color/color_73777a"
             android:textSize="13dp" />
 
         <TextView
@@ -37,13 +36,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
+            android:textStyle="bold"
             android:gravity="center"
             android:text="사용금액"
-            android:textColor="@color/color_4d"
+            android:textColor="@color/color_2f3942"
             android:textSize="13dp" />
 
     </LinearLayout>
 
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_e5e5e5"/>
 
 </LinearLayout>

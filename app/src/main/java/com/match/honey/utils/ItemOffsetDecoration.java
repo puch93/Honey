@@ -21,8 +21,8 @@ public class ItemOffsetDecoration extends RecyclerView.ItemDecoration {
 
         int position = parent.getChildAdapterPosition(view);
 
-        outRect.right = act.getResources().getDimensionPixelSize(R.dimen.dimen_8);
-        outRect.left = act.getResources().getDimensionPixelSize(R.dimen.dimen_8);
+//        outRect.right = act.getResources().getDimensionPixelSize(R.dimen.dimen_8);
+//        outRect.left = act.getResources().getDimensionPixelSize(R.dimen.dimen_8);
         outRect.bottom = act.getResources().getDimensionPixelSize(R.dimen.dimen_8);
 
         if (position == 0) {

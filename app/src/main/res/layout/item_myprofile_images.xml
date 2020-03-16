@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right|top"
             android:adjustViewBounds="true"
-            android:src="@drawable/getmarried_btn_join_photoclose_190902" />
+            android:src="@drawable/btn_img_delete" />
     </FrameLayout>
 
 </LinearLayout>

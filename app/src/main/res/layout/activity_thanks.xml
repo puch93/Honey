@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_eaeaea"
+        android:background="@color/color_f6f6f6"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:background="@color/color_fafafa"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/white_color"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -18,15 +18,18 @@
                 android:id="@+id/fl_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="23dp"
-                android:paddingRight="13dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="6.7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_back_190902" />
+                    android:src="@drawable/btn_back" />
             </FrameLayout>
 
 
@@ -35,40 +38,31 @@
                 android:layout_height="wrap_content"
                 android:text="이용후기"
                 android:textColor="@color/color_2"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/ll_home"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingLeft="15dp"
-                android:paddingRight="22dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="23dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
                     android:adjustViewBounds="true"
                     android:src="@drawable/getmarried_btn_home_190902" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="홈으로"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="13dp" />
-
             </LinearLayout>
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <ImageView
             android:layout_width="match_parent"
@@ -78,11 +72,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white_color"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:paddingTop="21dp"
-            android:paddingBottom="21dp">
+            android:paddingTop="20dp"
+            android:paddingBottom="12.3dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -92,17 +85,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="여보자기에서 "
-                    android:textColor="@color/color_222222"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="새로운 인연을 만난 이야기를 "
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="15dp"
+                    android:textColor="@color/color_ec4e4e"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -110,100 +95,146 @@
                     android:layout_height="wrap_content"
                     android:text="들려주세요!"
                     android:textColor="@color/color_222222"
-                    android:textSize="15dp"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@drawable/getmarried_img_1pxline_190902" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:orientation="horizontal"
-            android:padding="8dp">
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:id="@+id/btn_share"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/sel_onairmem"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="공유하기"
-                    android:textColor="@color/white_color"
-                    android:textSize="15dp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="15dp"
-                    android:layout_marginLeft="3dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_review_shareicon_190902" />
-            </LinearLayout>
-
-            <LinearLayout
+            <FrameLayout
                 android:id="@+id/btn_sendmail"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="9dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/sel_onairmem"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="메일전송"
-                    android:textColor="@color/white_color"
-                    android:textSize="15dp" />
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/btn_greyline"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="11.7dp"
+                    android:paddingRight="8dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="메일전송"
+                        android:textColor="@color/color_b32f3942"
+                        android:textStyle="bold"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_more_01" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btn_share"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="7.7dp"
+                android:layout_marginRight="7.7dp"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="17dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_review_mailicon_190902" />
-            </LinearLayout>
+                    android:src="@drawable/btn_greyline"/>
 
-            <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="11.7dp"
+                    android:paddingRight="8dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="공유하기"
+                        android:textColor="@color/color_b32f3942"
+                        android:textStyle="bold"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_more_01" />
+                </LinearLayout>
+            </FrameLayout>
+
+
+
+            <FrameLayout
                 android:id="@+id/btn_greviewreg"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="9dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/sel_onairmem"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="후기등록"
-                    android:textColor="@color/white_color"
-                    android:textSize="15dp" />
-
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="15dp"
-                    android:layout_marginLeft="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_review_reviewicon_190902" />
-            </LinearLayout>
+                    android:src="@drawable/btn_red_message"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="11.7dp"
+                    android:paddingRight="8dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="후기등록"
+                        android:textColor="@color/white_color"
+                        android:textStyle="bold"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_more_02" />
+                </LinearLayout>
+            </FrameLayout>
+
         </LinearLayout>
 
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rcv_reviews"
+            android:background="@color/white_color"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

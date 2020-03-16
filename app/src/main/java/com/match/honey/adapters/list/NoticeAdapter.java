@@ -40,7 +40,6 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
         holder.tv_title.setText(list.get(i).getTitle());
         holder.tv_regdate.setText(list.get(i).getRegdate());
         holder.tv_viewcount.setText(list.get(i).getHit());
-        holder.tv_order.setText("0" + (i + 1));
 
         holder.ll_item_area.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +69,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_title, tv_regdate, tv_viewcount, tv_order;
+        TextView tv_title, tv_regdate, tv_viewcount;
         LinearLayout ll_item_area;
 
         public ViewHolder(View v) {
@@ -78,7 +77,6 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
             tv_title = v.findViewById(R.id.tv_notice_title);
             tv_regdate = v.findViewById(R.id.tv_regdate);
             tv_viewcount = v.findViewById(R.id.tv_viewcount);
-            tv_order = v.findViewById(R.id.tv_order);
 
             ll_item_area = v.findViewById(R.id.ll_item_area);
         }

@@ -53,18 +53,6 @@ public class MyQnaListAdapter extends RecyclerView.Adapter<MyQnaListAdapter.View
         holder.tv_qnatype.setText(list.get(i).getQnatype());
         holder.tv_qnacontents.setText(list.get(i).getQtext());
 
-        holder.iv_attach.setImageBitmap(null);
-        if (StringUtil.isNull(list.get(i).getAttach())) {
-            holder.iv_noattach.setVisibility(View.VISIBLE);
-            holder.iv_attach.setVisibility(View.GONE);
-        } else {
-            holder.iv_noattach.setVisibility(View.GONE);
-            holder.iv_attach.setVisibility(View.VISIBLE);
-            Glide.with(act)
-                    .load(list.get(i).getAttach())
-                    .into(holder.iv_attach);
-        }
-
         holder.ll_all_area.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +81,6 @@ public class MyQnaListAdapter extends RecyclerView.Adapter<MyQnaListAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
         LinearLayout ll_all_area;
         TextView tv_qnastate, tv_regdate, tv_qnatype, tv_qnacontents;
-        ImageView iv_attach, iv_noattach;
 
         public ViewHolder(View v) {
             super(v);
@@ -103,9 +90,6 @@ public class MyQnaListAdapter extends RecyclerView.Adapter<MyQnaListAdapter.View
             tv_regdate = v.findViewById(R.id.tv_regdate);
             tv_qnatype = v.findViewById(R.id.tv_qnatype);
             tv_qnacontents = v.findViewById(R.id.tv_qnacontents);
-
-            iv_attach = v.findViewById(R.id.iv_attach);
-            iv_noattach = v.findViewById(R.id.iv_noattach);
 
         }
     }

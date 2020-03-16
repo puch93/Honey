@@ -7,7 +7,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_f0eef6"
+        android:background="@color/color_f6f6f6"
         android:fillViewport="true"
         android:orientation="vertical"
         android:scrollbars="none">
@@ -18,10 +18,10 @@
             android:descendantFocusability="blocksDescendants"
             android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="63dp"
-                android:background="@color/color_fafafa"
+                android:layout_height="@dimen/title_bar_height"
+                android:background="@color/white_color"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -29,15 +29,18 @@
                     android:id="@+id/fl_back"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:paddingLeft="23dp"
-                    android:paddingRight="13dp">
+                    android:paddingLeft="6.7dp"
+                    android:paddingRight="6.7dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:layout_width="10dp"
+                        android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_back_190902" />
+                        android:src="@drawable/btn_back" />
                 </FrameLayout>
 
 
@@ -45,42 +48,15 @@
                     android:id="@+id/tv_titlenick"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="행복하고싶다"
                     android:textColor="@color/color_2"
-                    android:textSize="17dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <!--                <LinearLayout-->
-                <!--                    android:id="@+id/ll_home"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="match_parent"-->
-                <!--                    android:gravity="center"-->
-                <!--                    android:orientation="vertical"-->
-                <!--                    android:paddingLeft="15dp"-->
-                <!--                    android:paddingRight="22dp">-->
-
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="23dp"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        android:layout_marginTop="4dp"-->
-                <!--                        android:adjustViewBounds="true"-->
-                <!--                        android:src="@drawable/getmarried_btn_home_190902" />-->
-
-                <!--                    <TextView-->
-                <!--                        android:layout_width="wrap_content"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        android:layout_marginTop="4dp"-->
-                <!--                        android:text="홈으로"-->
-                <!--                        android:textColor="@color/color_8345f3"-->
-                <!--                        android:textSize="13dp" />-->
-
-                <!--                </LinearLayout>-->
-            </LinearLayout>
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
 
             <ImageView
                 android:layout_width="match_parent"
@@ -95,9 +71,9 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="@color/color_fafafa"
-                    android:gravity="center_vertical"
+                    android:layout_height="43dp"
+                    android:background="@color/white_color"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingLeft="19dp">
 
@@ -107,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textColor="@color/color_222222"
-                        android:textSize="16dp"
+                        android:textSize="13.2dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -115,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:text=" 님은 "
                         android:textColor="@color/color_222222"
-                        android:textSize="16dp" />
+                        android:textSize="13.2dp" />
 
                     <TextView
                         android:id="@+id/tv_membertype"
@@ -123,7 +99,7 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textColor="@color/color_f34075"
-                        android:textSize="16dp" />
+                        android:textSize="13.2dp" />
                     <!--color_407ff3-->
 
                     <TextView
@@ -133,15 +109,8 @@
                         android:singleLine="true"
                         android:text="상대를 찾고 있습니다"
                         android:textColor="@color/color_222222"
-                        android:textSize="16dp" />
+                        android:textSize="13.2dp" />
 
-
-                    <ImageView
-                        android:layout_width="13dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_img_profile_hearticon_190902" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -166,7 +135,7 @@
                             android:layout_width="78dp"
                             android:layout_height="match_parent"
                             android:adjustViewBounds="true"
-                            android:background="@drawable/getmarried_bg_plistimgarea_190902"
+
                             android:scaleType="centerCrop" />
 
                         <ImageView
@@ -174,7 +143,7 @@
                             android:layout_width="78dp"
                             android:layout_height="match_parent"
                             android:adjustViewBounds="true"
-                            android:background="@drawable/getmarried_bg_plistimgarea_190902"
+
                             android:scaleType="centerInside" />
                     </FrameLayout>
 
@@ -372,7 +341,7 @@
                                 android:ellipsize="end"
                                 android:singleLine="true"
                                 android:text=""
-                                android:textColor="@color/color_f04242"
+                                android:textColor="@color/women_color"
                                 android:textSize="15dp"
                                 android:textStyle="bold" />
 

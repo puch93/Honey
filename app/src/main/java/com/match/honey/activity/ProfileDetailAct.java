@@ -561,9 +561,9 @@ public class ProfileDetailAct extends Activity implements View.OnClickListener {
                             if (data.getCouple_type().equalsIgnoreCase("marry")) {
                                 binding.tvMembertype.setText("결혼");
                                 binding.tvTopmemtype.setText("결혼");
-                                binding.tvMembertype.setTextColor(ContextCompat.getColor(ProfileDetailAct.this, R.color.color_407ff3));
+                                binding.tvMembertype.setTextColor(ContextCompat.getColor(ProfileDetailAct.this, R.color.man_color));
                             } else if (data.getCouple_type().equalsIgnoreCase("remarry")) {
-                                binding.tvMembertype.setTextColor(ContextCompat.getColor(ProfileDetailAct.this, R.color.color_f34075));
+                                binding.tvMembertype.setTextColor(ContextCompat.getColor(ProfileDetailAct.this, R.color.women_color));
                                 binding.tvMembertype.setText("재혼");
                                 binding.tvTopmemtype.setText("재혼");
                             } else if (data.getCouple_type().equalsIgnoreCase("friend")) {
@@ -578,10 +578,10 @@ public class ProfileDetailAct extends Activity implements View.OnClickListener {
 
                             if (data.getGender().equalsIgnoreCase("male")) {
                                 binding.tvGender.setText("(남성)");
-                                binding.tvGender.setTextColor(getResources().getColor(R.color.color_407ff3));
+                                binding.tvGender.setTextColor(getResources().getColor(R.color.man_color));
                             } else {
                                 binding.tvGender.setText("(여성)");
-                                binding.tvGender.setTextColor(getResources().getColor(R.color.color_f34075));
+                                binding.tvGender.setTextColor(getResources().getColor(R.color.women_color));
                             }
 
                             if (!StringUtil.isNull(data.getFamilyname())) {
@@ -1061,9 +1061,9 @@ public class ProfileDetailAct extends Activity implements View.OnClickListener {
                             if (data.getCouple_type().equalsIgnoreCase("marry")) {
                                 binding.tvMembertype.setText("결혼");
                                 binding.tvTopmemtype.setText("결혼");
-                                binding.tvMembertype.setTextColor(ContextCompat.getColor(ProfileDetailAct.this, R.color.color_407ff3));
+                                binding.tvMembertype.setTextColor(ContextCompat.getColor(ProfileDetailAct.this, R.color.man_color));
                             } else if (data.getCouple_type().equalsIgnoreCase("remarry")) {
-                                binding.tvMembertype.setTextColor(ContextCompat.getColor(ProfileDetailAct.this, R.color.color_f34075));
+                                binding.tvMembertype.setTextColor(ContextCompat.getColor(ProfileDetailAct.this, R.color.women_color));
                                 binding.tvMembertype.setText("재혼");
                                 binding.tvTopmemtype.setText("재혼");
                             } else if (data.getCouple_type().equalsIgnoreCase("friend")) {
@@ -1078,10 +1078,10 @@ public class ProfileDetailAct extends Activity implements View.OnClickListener {
 
                             if (data.getGender().equalsIgnoreCase("male")) {
                                 binding.tvGender.setText("(남성)");
-                                binding.tvGender.setTextColor(getResources().getColor(R.color.color_407ff3));
+                                binding.tvGender.setTextColor(getResources().getColor(R.color.man_color));
                             } else {
                                 binding.tvGender.setText("(여성)");
-                                binding.tvGender.setTextColor(getResources().getColor(R.color.color_f34075));
+                                binding.tvGender.setTextColor(getResources().getColor(R.color.women_color));
                             }
 
                             if (!StringUtil.isNull(data.getFamilyname())) {

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_eaeaea"
+        android:background="@color/color_f6f6f6"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:background="@color/color_fafafa"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/white_color"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -18,31 +19,33 @@
                 android:id="@+id/fl_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="23dp"
-                android:paddingRight="13dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="6.7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_back_190902" />
+                    android:src="@drawable/btn_back" />
             </FrameLayout>
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이용후기"
+                android:text="이용후기 보기"
                 android:textColor="@color/color_2"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <ImageView
             android:layout_width="match_parent"
@@ -53,19 +56,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
+            android:orientation="vertical">
 
 
             <LinearLayout
+                android:id="@+id/clayout_area"
                 android:layout_width="match_parent"
                 android:layout_height="92dp"
-                android:layout_marginTop="8dp"
                 android:background="@color/white_color"
                 android:orientation="horizontal"
-                android:paddingLeft="7dp"
-                android:paddingTop="8dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="7dp"
                 android:paddingBottom="7dp">
 
                 <FrameLayout
@@ -77,11 +78,12 @@
                         android:layout_width="80dp"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/getmarried_bg_plistimgarea_190902" />
+                        android:background="@drawable/profile_noimg_woman" />
 
                     <ImageView
                         android:id="@+id/iv_noprofimg"
                         android:layout_width="80dp"
+                        android:background="@drawable/profile_noimg_woman"
                         android:layout_height="match_parent"/>
                 </FrameLayout>
 
@@ -193,6 +195,7 @@
                         <LinearLayout
                             android:layout_width="43dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
                             android:orientation="horizontal">
 
                             <TextView
@@ -241,7 +244,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="3dp"
                             android:text="여성"
-                            android:textColor="@color/color_f04242"
+                            android:textColor="@color/women_color"
                             android:textSize="15dp"
                             android:textStyle="bold" />
 
@@ -250,50 +253,32 @@
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="17dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:includeFontPadding="false"
+                android:text="이용후기글"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/color_2f3942"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_img_profileicon08_190902" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:includeFontPadding="false"
-                    android:text="이용후기글"
-                    android:textColor="@color/color_222222"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:includeFontPadding="false"
-                    android:textColor="@color/color_aaaaaa"
-                    android:textSize="15dp" />
-            </LinearLayout>
 
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="163dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:fillViewport="true">
 
                 <TextView
                     android:id="@+id/tv_contents"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/getmarried_bg_reviewmore_textinputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_review"
                     android:paddingLeft="9dp"
                     android:paddingTop="6dp"
                     android:scrollbars="vertical"
@@ -303,50 +288,32 @@
             </ScrollView>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_img_profileicon06_190902" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:includeFontPadding="false"
-                    android:text="자기소개글"
-                    android:textColor="@color/color_222222"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:includeFontPadding="false"
-                    android:textColor="@color/color_aaaaaa"
-                    android:textSize="15dp" />
-            </LinearLayout>
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:includeFontPadding="false"
+                android:text="자기소개글"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/color_2f3942"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="163dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:fillViewport="true">
 
                 <TextView
                     android:id="@+id/tv_introduce"
                     android:layout_width="match_parent"
+
                     android:layout_height="match_parent"
-                    android:background="@drawable/getmarried_bg_reviewmore_textinputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_review"
                     android:paddingLeft="9dp"
                     android:paddingTop="6dp"
                     android:scrollbars="vertical"

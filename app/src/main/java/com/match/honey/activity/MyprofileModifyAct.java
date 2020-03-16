@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
@@ -20,6 +21,9 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.match.honey.R;
 import com.match.honey.adapters.list.HopestyleJoinAdapter;
 import com.match.honey.adapters.list.ImagelistAdapter;
@@ -94,10 +98,10 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
         }
 
         //배우자 희망지역 세팅
-        binding.rcvHoplestyle.setLayoutManager(new GridLayoutManager(this, 3));
+        binding.rcvJoinHoplestyle.setLayoutManager(new GridLayoutManager(this, 3));
         adapter = new HopestyleJoinAdapter(this, list);
-        binding.rcvHoplestyle.setAdapter(adapter);
-        binding.rcvHoplestyle.addItemDecoration(new ItemOffsetDecorationJoin(this,
+        binding.rcvJoinHoplestyle.setAdapter(adapter);
+        binding.rcvJoinHoplestyle.addItemDecoration(new ItemOffsetDecorationJoin(this,
                 getResources().getDimensionPixelSize(R.dimen.dimen_hope01),
                 getResources().getDimensionPixelSize(R.dimen.dimen_hope02),
                 getResources().getDimensionPixelSize(R.dimen.dimen_10)));
@@ -110,55 +114,32 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
 
         binding.flBack.setOnClickListener(this);
         binding.btnRegprofile.setOnClickListener(this);
-
-        binding.llFamilymaleArea.setOnClickListener(this);
         if(UserPref.getGender(act).equalsIgnoreCase("male")) {
             binding.btnCharge.setOnClickListener(this);
         }
 
-        binding.llFamilyfemaleArea.setOnClickListener(this);
+        binding.tvFamilyFemale.setOnClickListener(this);
+        binding.tvFamilyMale.setOnClickListener(this);
+        binding.tvFamilyOrder.setOnClickListener(this);
+
         binding.tvJob.setOnClickListener(this);
         binding.flJobClose.setOnClickListener(this);
-        binding.llFamilyorderArea.setOnClickListener(this);
-        binding.llSalaryArea.setOnClickListener(this);
-        binding.llEduArea.setOnClickListener(this);
-        binding.llStyleArea.setOnClickListener(this);
-        binding.llHeightArea.setOnClickListener(this);
-        binding.llSmokeArea.setOnClickListener(this);
-        binding.llMaindrinkingArea.setOnClickListener(this);
-        binding.llBloodtypeArea.setOnClickListener(this);
-        binding.llReligionArea.setOnClickListener(this);
-        binding.llPersonalArea.setOnClickListener(this);
-        binding.llHobbyArea.setOnClickListener(this);
         binding.llBasicinfoModify.setOnClickListener(this);
 
-        binding.llBoyArea.setOnClickListener(this);
-        binding.llGirlArea.setOnClickListener(this);
-        binding.llPropertyArea.setOnClickListener(this);
-
-
-        //캐릭터
-        binding.llW01.setOnClickListener(this);
-        binding.llW02.setOnClickListener(this);
-        binding.llW03.setOnClickListener(this);
-        binding.llW04.setOnClickListener(this);
-        binding.llW05.setOnClickListener(this);
-        binding.llW01.setTag("chW01");
-        binding.llW02.setTag("chW02");
-        binding.llW03.setTag("chW03");
-        binding.llW04.setTag("chW04");
-        binding.llW05.setTag("chW05");
-
-        binding.llM01.setOnClickListener(this);
-        binding.llM02.setOnClickListener(this);
-        binding.llM03.setOnClickListener(this);
-        binding.llM04.setOnClickListener(this);
-        binding.llM05.setOnClickListener(this);
-        binding.llM01.setTag("chM01");
-        binding.llM02.setTag("chM02");
-        binding.llM03.setTag("chM03");
-        binding.llM04.setTag("chM04");
-        binding.llM05.setTag("chM05");
+        binding.tvAge.setOnClickListener(this);
+        binding.tvBloodtype.setOnClickListener(this);
+        binding.tvBoy.setOnClickListener(this);
+        binding.tvGirl.setOnClickListener(this);
+        binding.tvEdu.setOnClickListener(this);
+        binding.tvHeight.setOnClickListener(this);
+        binding.tvHobby.setOnClickListener(this);
+        binding.tvPersonal.setOnClickListener(this);
+        binding.tvMaindrinking.setOnClickListener(this);
+        binding.tvProperty.setOnClickListener(this);
+        binding.tvReligion.setOnClickListener(this);
+        binding.tvSalary.setOnClickListener(this);
+        binding.tvSmoke.setOnClickListener(this);
+        binding.tvStyle.setOnClickListener(this);
     }
 
 
@@ -344,13 +325,17 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                             if (!StringUtil.isNull(pdata.getCouple_type())) {
                                 if (pdata.getCouple_type().equalsIgnoreCase("marry")) {
                                     binding.tvTopmemtype.setText("결혼");
+                                    binding.tvTopmemtype.setBackgroundResource(R.drawable.marriage_bg);
                                 } else if (pdata.getCouple_type().equalsIgnoreCase("remarry")) {
                                     binding.tvTopmemtype.setText("재혼");
+                                    binding.tvTopmemtype.setBackgroundResource(R.drawable.remarriage_bg);
                                 } else if(pdata.getCouple_type().equalsIgnoreCase("friend")) {
                                     binding.tvTopmemtype.setText("재혼");
+                                    binding.tvTopmemtype.setBackgroundResource(R.drawable.remarriage_bg);
                                 }
                             }
 
+                            binding.tvIntroduce.setText(pdata.getP_introduce());
 
                             list = new ArrayList<>();
 
@@ -459,12 +444,16 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                                 binding.ivNoprofimg.setVisibility(View.GONE);
                                 Glide.with(act)
                                         .load(pdata.getPimg())
+                                        .centerCrop()
+                                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                         .into(binding.ivProfimg);
                             } else {
                                 binding.ivProfimg.setVisibility(View.GONE);
                                 binding.ivNoprofimg.setVisibility(View.VISIBLE);
                                 Glide.with(act)
                                         .load(pdata.getCharacter_int())
+                                        .centerCrop()
+                                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                         .into(binding.ivNoprofimg);
                             }
 
@@ -506,6 +495,8 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                                 binding.tvToploc.setText(pdata.getAddr1());
                             }
 
+                            binding.tvAge.setText(StringUtil.calcAge(pdata.getByear()) + "세");
+
                             //자녀 누가키우노
                             if (!StringUtil.isNull(pdata.getChildwho())) {
                                 if (pdata.getChildwho().equalsIgnoreCase("나")) {
@@ -520,27 +511,14 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                             //성별
                             if (!StringUtil.isNull(pdata.getGender())) {
                                 if (pdata.getGender().equalsIgnoreCase("male")) {
-                                    binding.tvGender.setText("(남성)");
-                                    binding.tvGender.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
-                                    binding.llChMarea.setVisibility(View.VISIBLE);
-                                    binding.llChWarea.setVisibility(View.GONE);
-                                    init(0);
+                                    binding.tvGender.setText("남성");
+                                    binding.tvGender.setTextColor(ContextCompat.getColor(act, R.color.man_color));
+                                    chGender = Common.M1;
                                 } else {
-                                    binding.tvGender.setText("(여성)");
-                                    binding.tvGender.setTextColor(ContextCompat.getColor(act, R.color.color_f04242));
-                                    binding.llChMarea.setVisibility(View.GONE);
-                                    binding.llChWarea.setVisibility(View.VISIBLE);
-                                    init(1);
+                                    binding.tvGender.setText("여성");
+                                    binding.tvGender.setTextColor(ContextCompat.getColor(act, R.color.women_color));
+                                    chGender = Common.W1;
                                 }
-                            }
-
-                            //캐릭터
-                            if (!StringUtil.isNull(pdata.getCharacter())) {
-                                ViewGroup rootView = (ViewGroup) findViewById(R.id.ll_all_area);
-                                LinearLayout ll_selected = null;
-                                ll_selected = (LinearLayout) rootView.findViewWithTag(pdata.getCharacter());
-                                ll_selected.setSelected(true);
-                                chGender = pdata.getCharacter();
                             }
 
                             if (!StringUtil.isNull(pdata.getBrotherhood1())) {
@@ -1037,48 +1015,11 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
         finish();
     }
 
-    private void init(int type) {
-        if (type == 0) {
-            binding.llM01.setSelected(false);
-            binding.llM02.setSelected(false);
-            binding.llM03.setSelected(false);
-            binding.llM04.setSelected(false);
-            binding.llM05.setSelected(false);
-        } else {
-            binding.llW01.setSelected(false);
-            binding.llW02.setSelected(false);
-            binding.llW03.setSelected(false);
-            binding.llW04.setSelected(false);
-            binding.llW05.setSelected(false);
-        }
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_charge:
                 startActivityForResult(new Intent(act, ItemmanageAct.class), PURCHASE);
-                break;
-
-            case R.id.ll_m01:
-            case R.id.ll_m02:
-            case R.id.ll_m03:
-            case R.id.ll_m04:
-            case R.id.ll_m05:
-                chGender = (findViewById(v.getId())).getTag().toString();
-                init(0);
-                (findViewById(v.getId())).setSelected(true);
-                break;
-
-            case R.id.ll_w01:
-            case R.id.ll_w02:
-            case R.id.ll_w03:
-            case R.id.ll_w04:
-            case R.id.ll_w05:
-                chGender = (findViewById(v.getId())).getTag().toString();
-                init(1);
-                (findViewById(v.getId())).setSelected(true);
-                Log.e(TAG, "selected: " + chGender);
                 break;
 
             case R.id.ll_basicinfo_modify:
@@ -1226,7 +1167,7 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 registProfile();
                 break;
 
-            case R.id.ll_familymale_area:
+            case R.id.tv_family_male:
                 // n남
                 Intent bhood1 = new Intent(this, ListDlgAct.class);
                 bhood1.putExtra("subject", "bhood1");
@@ -1234,7 +1175,7 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 bhood1.putExtra("select", binding.tvFamilyMale.getText());
                 startActivityForResult(bhood1, DefaultValue.BHOOD1);
                 break;
-            case R.id.ll_familyfemale_area:
+            case R.id.tv_family_female:
                 // n녀
                 Intent bhood2 = new Intent(this, ListDlgAct.class);
                 bhood2.putExtra("subject", "bhood2");
@@ -1242,7 +1183,7 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 bhood2.putExtra("select", binding.tvFamilyFemale.getText());
                 startActivityForResult(bhood2, DefaultValue.BHOOD2);
                 break;
-            case R.id.ll_familyorder_area:
+            case R.id.tv_family_order:
                 // n째
                 int men = Integer.valueOf(binding.tvFamilyMale.getText().toString().replace("남", ""));
                 int women = Integer.valueOf(binding.tvFamilyFemale.getText().toString().replace("녀", ""));
@@ -1265,28 +1206,28 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 break;
 
 
-            case R.id.ll_property_area:
+            case R.id.tv_property:
                 // 재산
                 Intent propertyIntent = new Intent(this, ListDlgAct.class);
                 propertyIntent.putExtra("subject", "property");
                 propertyIntent.putExtra("select", binding.tvProperty.getText());
                 startActivityForResult(propertyIntent, DefaultValue.PROPERTY);
                 break;
-            case R.id.ll_salary_area:
+            case R.id.tv_salary:
                 // 연봉
                 Intent annualIntent = new Intent(this, ListDlgAct.class);
                 annualIntent.putExtra("subject", "annual");
                 annualIntent.putExtra("select", binding.tvSalary.getText());
                 startActivityForResult(annualIntent, DefaultValue.SALARY);
                 break;
-            case R.id.ll_edu_area:
+            case R.id.tv_edu:
                 // 학력
                 Intent eduIntent = new Intent(this, ListDlgAct.class);
                 eduIntent.putExtra("subject", "edu");
                 eduIntent.putExtra("select", binding.tvEdu.getText());
                 startActivityForResult(eduIntent, DefaultValue.EDU);
                 break;
-            case R.id.ll_style_area:
+            case R.id.tv_style:
                 // 스타일
                 Intent stylentent = new Intent(this, ListDlgAct.class);
                 stylentent.putExtra("subject", "style");
@@ -1295,7 +1236,7 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 break;
 
 
-            case R.id.ll_height_area:
+            case R.id.tv_height:
                 // 키
                 Intent heightIntent = new Intent(this, ListDlgAct.class);
                 heightIntent.putExtra("subject", "height");
@@ -1303,7 +1244,7 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 startActivityForResult(heightIntent, DefaultValue.PHEIGHT);
                 break;
 
-            case R.id.ll_smoke_area:
+            case R.id.tv_smoke:
                 // 흡연
                 Intent smoke = new Intent(this, ListDlgAct.class);
                 smoke.putExtra("subject", "smoke");
@@ -1312,7 +1253,7 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 break;
 
 
-            case R.id.ll_maindrinking_area:
+            case R.id.tv_maindrinking:
                 // 음주 횟수
                 Intent drink = new Intent(this, ListDlgAct.class);
                 drink.putExtra("subject", "drink");
@@ -1321,14 +1262,14 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 break;
 
 
-            case R.id.ll_bloodtype_area:
+            case R.id.tv_bloodtype:
                 // 혈액형
                 Intent blood = new Intent(this, ListDlgAct.class);
                 blood.putExtra("subject", "blood");
                 blood.putExtra("select", binding.tvBloodtype.getText());
                 startActivityForResult(blood, DefaultValue.BLOOD);
                 break;
-            case R.id.ll_religion_area:
+            case R.id.tv_religion:
                 // 종교
                 Intent religion = new Intent(this, ListDlgAct.class);
                 religion.putExtra("subject", "religion");
@@ -1337,14 +1278,14 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 break;
 
 
-            case R.id.ll_personal_area:
+            case R.id.tv_personal:
                 // 성격
                 Intent personal = new Intent(this, MultipleListDlgAct.class);
                 personal.putExtra("subject", "personal");
                 personal.putExtra("select", binding.tvPersonal.getText().toString().replaceAll(",", "\\|"));
                 startActivityForResult(personal, DefaultValue.PERSONAL);
                 break;
-            case R.id.ll_hobby_area:
+            case R.id.tv_hobby:
                 // 취미
                 Intent hobby = new Intent(this, MultipleListDlgAct.class);
                 hobby.putExtra("subject", "hobby");
@@ -1353,7 +1294,7 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 break;
 
 
-            case R.id.ll_boy_area:
+            case R.id.tv_boy:
                 // 남
                 Toast.makeText(this, "아들의 숫자를 지정하세요", Toast.LENGTH_SHORT).show();
                 Intent boy = new Intent(this, ListDlgAct.class);
@@ -1361,7 +1302,7 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                 boy.putExtra("select", binding.tvBoy.getText());
                 startActivityForResult(boy, DefaultValue.BOY);
                 break;
-            case R.id.ll_girl_area:
+            case R.id.tv_girl:
                 // 여
                 Toast.makeText(this, "딸의 숫자를 지정하세요", Toast.LENGTH_SHORT).show();
                 Intent girl = new Intent(this, ListDlgAct.class);

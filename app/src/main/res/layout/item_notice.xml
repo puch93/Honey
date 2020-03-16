@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -7,30 +8,20 @@
     <LinearLayout
         android:id="@+id/ll_item_area"
         android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:background="@drawable/sel_noticelist_back"
+        android:layout_height="66dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp">
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tv_order"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:includeFontPadding="false"
-                android:text="01"
-                android:textColor="@color/color_6a51b3"
-                android:textSize="18dp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -38,49 +29,64 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
+                    android:includeFontPadding="false"
                     android:singleLine="true"
-                    android:text="[공지] 2019년 8월 20일 서비스 점검 안내드립니다"
                     android:textColor="@color/color_222222"
                     android:textSize="14dp"
-                    android:textStyle="bold" />
+                    tools:text="[공지] 2019년 8월 20일 서비스 점검 안내드립니다" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="관리자"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_cc3c4449"
+                        android:textSize="12dp" />
+                    
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="12.7dp"
+                        android:src="@drawable/icon_view"/>
 
+                    <TextView
+                        android:id="@+id/tv_viewcount"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:layout_marginLeft="6.7dp"
+                        android:textStyle="bold"
+                        tools:text="15.306"
+                        android:textColor="@color/color_848d91"
+                        android:textSize="12dp" />
 
                     <TextView
                         android:id="@+id/tv_regdate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
+                        android:includeFontPadding="false"
                         android:text="2019.08.17 08:13"
-                        android:textColor="@color/color_aaaaaa"
-                        android:textSize="13dp" />
+                        android:textColor="@color/color_cc3c4449"
+                        android:textSize="12dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:text="조회수 : "
-                        android:textColor="@color/color_aaaaaa"
-                        android:textSize="13dp" />
-
-                    <TextView
-                        android:id="@+id/tv_viewcount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:text=""
-                        android:textColor="@color/color_aaaaaa"
-                        android:textSize="13dp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
-
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/color_e5e5e5"/>
 
 </LinearLayout>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white_color"
+        android:background="@color/color_f6f6f6"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:background="@color/color_fafafa"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/white_color"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -18,124 +18,106 @@
                 android:id="@+id/fl_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="23dp"
-                android:paddingRight="13dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="6.7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_back_190902" />
+                    android:src="@drawable/btn_back" />
             </FrameLayout>
 
 
             <TextView
-                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="고객센터"
                 android:textColor="@color/color_2"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/ll_home"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingLeft="15dp"
-                android:paddingRight="22dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="23dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
                     android:adjustViewBounds="true"
                     android:src="@drawable/getmarried_btn_home_190902" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="홈으로"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="13dp" />
-
             </LinearLayout>
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@drawable/getmarried_img_1pxline_190902" />
+            android:layout_height="1dp"
+            android:background="@color/color_e5e5e5" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/color_eff1f8"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:paddingTop="21dp"
-            android:paddingBottom="18dp">
+            android:paddingTop="40dp">
 
             <ImageView
-                android:layout_width="145dp"
+                android:layout_width="97.7dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="6dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/getmarried_img_customer_customerimg_190902" />
+                android:src="@drawable/icon_cs" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="27dp"
                 android:gravity="center"
                 android:lineSpacingExtra="4dp"
-                android:text="궁금한 사항 문의주시면 확인 후\n빠른 답변 드립니다."
+                android:text="장애 및 문의사항은 아래 연락처로 문의주시면\n최대한 빠르게 처리 도와드립니다."
                 android:textColor="@color/color_222222"
-                android:textSize="14dp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:textSize="12.8dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingLeft="16dp"
-            android:paddingTop="18dp"
-            android:paddingRight="14dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@drawable/getmarried_bg_customer_contboxbg_190902"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/input_box_00"
                 android:orientation="vertical"
-                android:paddingLeft="1dp"
-                android:paddingTop="1dp"
-                android:paddingBottom="3dp">
+                android:padding="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="100dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="119dp"
+                        android:layout_width="102.3dp"
                         android:layout_height="match_parent"
-                        android:background="@color/color_fafafa"
+                        android:background="@color/color_f6f6f6"
                         android:gravity="center_vertical"
                         android:paddingLeft="18dp"
                         android:text="고객센터"
                         android:textColor="@color/color_222222"
-                        android:textSize="16dp" />
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="2px"
@@ -146,63 +128,66 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
-                        android:paddingTop="15dp"
-                        android:paddingBottom="15dp"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
-                            android:paddingLeft="17dp"
-                            android:text="1600-8062"
-                            android:textColor="@color/color_8345f3"
+                            android:paddingLeft="14dp"
+                            android:text="000-000-0000"
+                            android:textColor="@color/color_4d4d4d"
                             android:textSize="15dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="17dp"
                             android:layout_marginTop="3dp"
+                            android:gravity="center_vertical"
                             android:lineSpacingExtra="3dp"
+                            android:paddingLeft="14dp"
                             android:text="평일 : 10:00 - 18:00 (토,일,공휴일제외)"
                             android:textColor="@color/color_4d4d4d"
                             android:textSize="14dp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/btn_qna"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/sel_customerenter02"
-                android:gravity="center"
-                android:text="1:1문의"
-                android:textColor="@color/white_color"
-                android:textSize="15dp"
-                android:textStyle="bold" />
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
 
-            <TextView
-                android:id="@+id/btn_nomember"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:visibility="gone"
-                android:layout_weight="1"
-                android:background="@drawable/sel_customerenter02"
-                android:gravity="center"
-                android:text="문의하기"
-                android:textColor="@color/white_color"
-                android:textSize="15dp"
-                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_qna"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/color_2f3942"
+                    android:gravity="center"
+                    android:text="1:1문의"
+                    android:textColor="@color/white_color"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btn_nomember"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/color_2f3942"
+                    android:gravity="center"
+                    android:text="문의하기"
+                    android:textColor="@color/white_color"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </layout>

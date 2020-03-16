@@ -2,6 +2,7 @@ package com.match.honey.activity;
 
 import android.app.Activity;
 import android.databinding.DataBindingUtil;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityThanksregBinding;
 import com.match.honey.network.ReqBasic;
@@ -112,10 +116,10 @@ public class ReviewRegAct extends AppCompatActivity {
                             }
 
                             if (job.getString("gender").equalsIgnoreCase("male")) {
-                                binding.tvGender.setTextColor(getResources().getColor(R.color.color_407ff3));
+                                binding.tvGender.setTextColor(getResources().getColor(R.color.man_color));
                                 binding.tvGender.setText("(남성)");
                             } else {
-                                binding.tvGender.setTextColor(getResources().getColor(R.color.color_f04242));
+                                binding.tvGender.setTextColor(getResources().getColor(R.color.women_color));
                                 binding.tvGender.setText("(여성)");
                             }
 
@@ -125,6 +129,8 @@ public class ReviewRegAct extends AppCompatActivity {
                                     binding.ivNoprofimg.setVisibility(View.GONE);
                                     Glide.with(act)
                                             .load(job.getString("pimg"))
+                                            .centerCrop()
+                                            .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                             .into(binding.ivProfimg);
 
                             } else {
@@ -133,6 +139,8 @@ public class ReviewRegAct extends AppCompatActivity {
 
                                 Glide.with(act)
                                         .load(Common.getCharacterDrawable(job.getString("character"), job.getString("gender")))
+                                        .centerCrop()
+                                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                         .into(binding.ivNoprofimg);
 
                             }

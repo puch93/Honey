@@ -2,6 +2,7 @@ package com.match.honey.adapters.list;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -16,6 +17,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.match.honey.R;
 import com.match.honey.activity.ProfileDetailAct;
 import com.match.honey.listDatas.BlockmemData;
@@ -49,19 +53,15 @@ public class BlocklistAdapter extends RecyclerView.Adapter<BlocklistAdapter.View
         //성혼유형
         if (list.get(i).getMembertype().equalsIgnoreCase("marry")) {
             holder.tv_type.setText("결혼");
-            holder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
             holder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
         } else if (list.get(i).getMembertype().equalsIgnoreCase("remarry")) {
             holder.tv_type.setText("재혼");
-            holder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
             holder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
         } else if (list.get(i).getMembertype().equalsIgnoreCase("friend")) {
             holder.tv_type.setText("재혼");
-            holder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_adapter_friend));
             holder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
         }  else {
             holder.tv_type.setText("-");
-            holder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
             holder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
         }
 
@@ -70,12 +70,10 @@ public class BlocklistAdapter extends RecyclerView.Adapter<BlocklistAdapter.View
 
         if (list.get(i).getGender().equalsIgnoreCase("male")) {
             holder.tv_gender.setText("남성");
-            holder.tv_nick.setTextColor(ContextCompat.getColor(act, R.color.color_mcolor));
-            holder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
+            holder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.man_color));
         } else {
             holder.tv_gender.setText("여성");
-            holder.tv_nick.setTextColor(ContextCompat.getColor(act, R.color.color_wcolor));
-            holder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
+            holder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.women_color));
         }
 
         //소개글
@@ -107,12 +105,16 @@ public class BlocklistAdapter extends RecyclerView.Adapter<BlocklistAdapter.View
                 holder.iv_noprofimg.setVisibility(View.GONE);
                 Glide.with(act)
                         .load(list.get(i).getProfimg())
+                        .centerCrop()
+                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                         .into(holder.iv_profimg);
             } else {
                 holder.iv_profimg.setVisibility(View.GONE);
                 holder.iv_noprofimg.setVisibility(View.VISIBLE);
                 Glide.with(act)
                         .load(list.get(i).getCharacter())
+                        .centerCrop()
+                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                         .into(holder.iv_noprofimg);
             }
         } else {
@@ -121,6 +123,8 @@ public class BlocklistAdapter extends RecyclerView.Adapter<BlocklistAdapter.View
 
             Glide.with(act)
                     .load(list.get(i).getCharacter())
+                    .centerCrop()
+                    .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                     .into(holder.iv_noprofimg);
 
         }

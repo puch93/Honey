@@ -2,7 +2,7 @@ package com.match.honey.network.netUtil;
 
 public class ChatValues {
 
-    public static final String SOCKET_URL = NetUrls.DOMAIN + ":1443";
+    public static final String SOCKET_URL = NetUrls.DOMAIN + ":1445";
 //    public static final String SOCKET_URL = "http://marryme.alrigo.co.kr:1441";
 
     public static final String EVENT_ENTERED = "getChats";

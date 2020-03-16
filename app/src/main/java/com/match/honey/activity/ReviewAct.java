@@ -58,7 +58,7 @@ public class ReviewAct extends Activity implements View.OnClickListener {
         binding.rcvReviews.setLayoutManager(mManager);
         adapter = new ThanksListAdapter(this, list);
         binding.rcvReviews.setAdapter(adapter);
-        binding.rcvReviews.addItemDecoration(new ItemOffsetDecorationCustom(this, getResources().getDimensionPixelSize(R.dimen.dimen_7)));
+//        binding.rcvReviews.addItemDecoration(new ItemOffsetDecorationCustom(this, getResources().getDimensionPixelSize(R.dimen.dimen_7)));
 
         binding.rcvReviews.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white_color"
+        android:background="@color/color_f6f6f6"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:background="@color/color_fafafa"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/white_color"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -18,57 +19,51 @@
                 android:id="@+id/fl_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="23dp"
-                android:paddingRight="13dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="6.7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_back_190902" />
+                    android:src="@drawable/btn_back" />
             </FrameLayout>
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="탈퇴하기"
+                android:text="회원탈퇴"
                 android:textColor="@color/color_2"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/ll_home"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingLeft="15dp"
-                android:paddingRight="22dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="23dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
                     android:adjustViewBounds="true"
                     android:src="@drawable/getmarried_btn_home_190902" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="홈으로"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="13dp" />
-
             </LinearLayout>
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <ImageView
             android:layout_width="match_parent"
@@ -76,44 +71,23 @@
             android:background="@drawable/getmarried_img_1pxline_190902" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:background="@color/color_fafafa"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingLeft="15dp">
-
-
-            <ImageView
-                android:layout_width="12dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/getmarried_img_qnamore_icon01_190902" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="여보자기에서 평생 인연을 만나셨나요?"
-                android:textColor="@color/color_222222"
-                android:textSize="14dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@drawable/getmarried_img_1pxline_190902" />
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="20.3dp"
+            android:layout_marginBottom="19.3dp"
+            android:textColor="#222222"
+            android:text="탈퇴사유를 선택해주세요"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="18dp"
-            android:paddingRight="15dp">
+            android:background="@drawable/input_box_00"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -127,10 +101,12 @@
                     android:layout_height="48dp"
                     android:adjustViewBounds="true"
                     android:button="@drawable/sel_radio_btn2"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"
                     android:paddingLeft="9dp"
                     android:text="여보자기에서 인연을 만나 탈퇴합니다"
                     android:textColor="@color/color_4d4d4d"
-                    android:textSize="15dp" />
+                    android:textSize="13dp" />
 
 
                 <ImageView
@@ -143,12 +119,14 @@
                     android:id="@+id/rdo_answer2"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"
                     android:adjustViewBounds="true"
                     android:button="@drawable/sel_radio_btn2"
                     android:paddingLeft="9dp"
                     android:text="개인적인 프로필 정보를 공개하고 싶지 않습니다"
                     android:textColor="@color/color_4d4d4d"
-                    android:textSize="15dp" />
+                    android:textSize="13dp" />
 
 
                 <ImageView
@@ -161,12 +139,14 @@
                     android:id="@+id/rdo_answer3"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"
                     android:adjustViewBounds="true"
                     android:button="@drawable/sel_radio_btn2"
                     android:paddingLeft="9dp"
                     android:text="재가입을 하고 싶어서"
                     android:textColor="@color/color_4d4d4d"
-                    android:textSize="15dp" />
+                    android:textSize="13dp" />
 
 
                 <ImageView
@@ -180,11 +160,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:adjustViewBounds="true"
+                    android:layout_marginLeft="20dp"
                     android:button="@drawable/sel_radio_btn2"
+                    android:textStyle="bold"
                     android:paddingLeft="9dp"
                     android:text="어플 접속오류"
                     android:textColor="@color/color_4d4d4d"
-                    android:textSize="15dp" />
+                    android:textSize="13dp" />
 
 
                 <ImageView
@@ -198,11 +180,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:adjustViewBounds="true"
+                    android:layout_marginLeft="20dp"
                     android:button="@drawable/sel_radio_btn2"
+                    android:textStyle="bold"
                     android:paddingLeft="9dp"
                     android:text="기타"
                     android:textColor="@color/color_4d4d4d"
-                    android:textSize="15dp" />
+                    android:textSize="13dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -213,14 +197,18 @@
         </LinearLayout>
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <TextView
             android:id="@+id/btn_outmember"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="@drawable/sel_searchenter_btn"
+            android:background="@color/color_ec4e4e"
             android:gravity="center"
             android:text="탈퇴하기"
             android:textColor="@color/white_color"
-            android:textSize="15dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
     </LinearLayout>
 </layout>

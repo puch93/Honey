@@ -19,6 +19,7 @@ import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.Common;
 import com.match.honey.utils.ItemOffsetDecoration;
+import com.match.honey.utils.ItemOffsetDecorationBlock;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONArray;
@@ -50,7 +51,7 @@ public class BlockmemberAct extends Activity implements View.OnClickListener{
         binding.rcvBlockmem.setLayoutManager(new LinearLayoutManager(this));
         adapter = new BlocklistAdapter(this,list);
         binding.rcvBlockmem.setAdapter(adapter);
-        binding.rcvBlockmem.addItemDecoration(new ItemOffsetDecoration(this));
+        binding.rcvBlockmem.addItemDecoration(new ItemOffsetDecorationBlock(this));
 
         blockMembers();
 

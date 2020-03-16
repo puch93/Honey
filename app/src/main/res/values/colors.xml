@@ -48,12 +48,28 @@
 
     <!-- 여보자기 -->
     <color name="color_ec4e4e">#ec4e4e</color>
+    <color name="color_cccccc">#cccccc</color>
     <color name="color_2f3942">#2f3942</color>
     <color name="color_b9babb">#b9babb</color>
     <color name="color_f6f6f6">#f6f6f6</color>
     <color name="color_f94545">#f94545</color>
     <color name="color_529ce7">#529ce7</color>
     <color name="color_babbbc">#babbbc</color>
+    <color name="color_992f3942">#992f3942</color>
+    <color name="color_f4f4f4">#f4f4f4</color>
+    <color name="women_color">#de627f</color>
+    <color name="man_color">#469be9</color>
+    <color name="color_acadad">#acadad</color>
+    <color name="color_cc3c4449">#cc3c4449</color>
+    <color name="color_848d91">#848d91</color>
+    <color name="color_e5e5e5">#e5e5e5</color>
+    <color name="color_b32f3942">#b32f3942</color>
+    <color name="color_a1a7aa">#a1a7aa</color>
+    <color name="color_989c9f">#989c9f</color>
+    <color name="color_e4e4e4">#e4e4e4</color>
+    <color name="color_73777a">#73777a</color>
+    <color name="color_b7b7b7">#b7b7b7</color>
+    <color name="color_434343">#434343</color>
 
 
 </resources>

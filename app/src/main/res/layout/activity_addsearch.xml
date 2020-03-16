@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white_color"
+        android:background="@color/color_f6f6f6"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:background="@color/color_fafafa"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/white_color"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -18,15 +19,18 @@
                 android:id="@+id/fl_btn_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="23dp"
-                android:paddingRight="13dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="6.7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_back_190902" />
+                    android:src="@drawable/btn_back" />
             </FrameLayout>
 
 
@@ -35,40 +39,18 @@
                 android:layout_height="wrap_content"
                 android:text="추가검색"
                 android:textColor="@color/color_2"
-                android:textSize="17dp"
-                android:textStyle="bold" />
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
-
-            <LinearLayout
-                android:id="@+id/ll_home"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingLeft="15dp"
-                android:paddingRight="22dp">
-
-                <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_home_190902" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="홈으로"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="13dp" />
-
-            </LinearLayout>
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <ImageView
             android:layout_width="match_parent"
@@ -82,7 +64,7 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:paddingLeft="16dp"
-            android:paddingTop="15dp"
+            android:paddingTop="12.8dp"
             android:paddingRight="16dp">
 
             <LinearLayout
@@ -92,19 +74,19 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
-                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_search01"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="15dp">
+                    android:paddingLeft="12dp">
 
                     <TextView
                         android:layout_width="53dp"
                         android:layout_height="wrap_content"
                         android:text="분류"
                         android:textColor="@color/color_4d4d4d"
-                        android:textSize="15dp" />
+                        android:textSize="12.8dp" />
 
 
                     <LinearLayout
@@ -121,8 +103,9 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:hint="전체"
+                            android:textStyle="bold"
                             android:textColor="@color/color_222222"
-                            android:textSize="14dp" />
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -135,20 +118,20 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="45dp"
                     android:layout_marginLeft="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_search01"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="15dp">
+                    android:paddingLeft="12dp">
 
                     <TextView
                         android:layout_width="53dp"
                         android:layout_height="wrap_content"
                         android:text="연봉"
                         android:textColor="@color/color_4d4d4d"
-                        android:textSize="15dp" />
+                        android:textSize="12.8dp" />
 
 
                     <LinearLayout
@@ -163,10 +146,11 @@
                             android:id="@+id/tv_salary"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:textStyle="bold"
                             android:layout_weight="1"
                             android:hint="전체"
                             android:textColor="@color/color_222222"
-                            android:textSize="14dp" />
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -181,24 +165,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
-                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_search01"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="15dp">
+                    android:paddingLeft="12dp">
 
                     <TextView
                         android:layout_width="53dp"
                         android:layout_height="wrap_content"
                         android:text="종교"
                         android:textColor="@color/color_4d4d4d"
-                        android:textSize="15dp" />
+                        android:textSize="12.8dp" />
 
 
                     <LinearLayout
@@ -214,9 +198,10 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:textStyle="bold"
                             android:hint="전체"
                             android:textColor="@color/color_222222"
-                            android:textSize="14dp" />
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -229,20 +214,20 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="45dp"
                     android:layout_marginLeft="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_search01"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="15dp">
+                    android:paddingLeft="12dp">
 
                     <TextView
                         android:layout_width="53dp"
                         android:layout_height="wrap_content"
                         android:text="학력"
                         android:textColor="@color/color_4d4d4d"
-                        android:textSize="15dp" />
+                        android:textSize="12.8dp" />
 
 
                     <LinearLayout
@@ -257,10 +242,11 @@
                             android:id="@+id/tv_edu"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:textStyle="bold"
                             android:layout_weight="1"
                             android:hint="전체"
                             android:textColor="@color/color_222222"
-                            android:textSize="14dp" />
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -275,24 +261,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
-                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_search01"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="15dp">
+                    android:paddingLeft="12dp">
 
                     <TextView
                         android:layout_width="53dp"
                         android:layout_height="wrap_content"
                         android:text="재산"
                         android:textColor="@color/color_4d4d4d"
-                        android:textSize="15dp" />
+                        android:textSize="12.8dp" />
 
 
                     <LinearLayout
@@ -307,10 +293,11 @@
                             android:id="@+id/tv_property"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:textStyle="bold"
                             android:layout_weight="1"
                             android:hint="전체"
                             android:textColor="@color/color_222222"
-                            android:textSize="14dp" />
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -323,20 +310,20 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="45dp"
                     android:layout_marginLeft="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_search01"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="15dp">
+                    android:paddingLeft="12dp">
 
                     <TextView
                         android:layout_width="53dp"
                         android:layout_height="wrap_content"
                         android:text="흡연"
                         android:textColor="@color/color_4d4d4d"
-                        android:textSize="15dp" />
+                        android:textSize="12.8dp" />
 
 
                     <LinearLayout
@@ -351,10 +338,11 @@
                             android:id="@+id/tv_smoke"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:textStyle="bold"
                             android:layout_weight="1"
                             android:hint="전체"
                             android:textColor="@color/color_222222"
-                            android:textSize="14dp" />
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -369,24 +357,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
-                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_search01"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="15dp">
+                    android:paddingLeft="12dp">
 
                     <TextView
                         android:layout_width="53dp"
                         android:layout_height="wrap_content"
                         android:text="혈액형"
                         android:textColor="@color/color_4d4d4d"
-                        android:textSize="15dp" />
+                        android:textSize="12.8dp" />
 
 
                     <LinearLayout
@@ -401,10 +389,11 @@
                             android:id="@+id/tv_bloodtype"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:textStyle="bold"
                             android:layout_weight="1"
                             android:hint="전체"
                             android:textColor="@color/color_222222"
-                            android:textSize="14dp" />
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -417,20 +406,20 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="45dp"
                     android:layout_marginLeft="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_search01"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="15dp">
+                    android:paddingLeft="12dp">
 
                     <TextView
                         android:layout_width="53dp"
                         android:layout_height="wrap_content"
                         android:text="자녀"
                         android:textColor="@color/color_4d4d4d"
-                        android:textSize="15dp" />
+                        android:textSize="12.8dp" />
 
 
                     <LinearLayout
@@ -445,10 +434,11 @@
                             android:id="@+id/tv_children"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:textStyle="bold"
                             android:layout_weight="1"
                             android:hint="전체"
                             android:textColor="@color/color_222222"
-                            android:textSize="14dp" />
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -462,24 +452,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
-                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_search01"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="15dp">
+                    android:paddingLeft="12dp">
 
                     <TextView
                         android:layout_width="53dp"
                         android:layout_height="wrap_content"
                         android:text="음주량"
                         android:textColor="@color/color_4d4d4d"
-                        android:textSize="15dp" />
+                        android:textSize="12.8dp" />
 
 
                     <LinearLayout
@@ -494,10 +484,11 @@
                             android:id="@+id/tv_drinking"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:textStyle="bold"
                             android:layout_weight="1"
                             android:hint="전체"
                             android:textColor="@color/color_222222"
-                            android:textSize="14dp" />
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -510,21 +501,21 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_height="45dp"
                     android:layout_marginLeft="7dp"
                     android:visibility="invisible"
                     android:layout_weight="1"
-                    android:background="@drawable/getmarried_bg_search_selectoptioninputbg_190902"
+                    android:background="@drawable/shape_stroke_bg_search01"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="15dp">
+                    android:paddingLeft="12dp">
 
                     <TextView
                         android:layout_width="53dp"
                         android:layout_height="wrap_content"
                         android:text="자녀"
                         android:textColor="@color/color_4d4d4d"
-                        android:textSize="15dp" />
+                        android:textSize="12.8dp" />
 
 
                     <LinearLayout
@@ -540,7 +531,7 @@
                             android:layout_weight="1"
                             android:hint="전체"
                             android:textColor="@color/color_222222"
-                            android:textSize="14dp" />
+                            android:textSize="12.8dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -553,20 +544,22 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="16dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="12.8dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tv_reg_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/sel_addsearch_btn"
-                    android:text="사진등록회원"
+                    android:background="@drawable/sel_search_btn"
                     android:gravity="center"
-                    android:paddingBottom="3dp"
                     android:paddingRight="3dp"
-                    android:textColor="@color/col_addsearch_press"/>
+                    android:paddingBottom="3dp"
+                    android:text="사진등록회원"
+                    android:textColor="@color/col_addsearch_press"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
@@ -575,11 +568,11 @@
             android:id="@+id/btn_search"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="@drawable/sel_searchenter_btn"
+            android:background="@color/color_ec4e4e"
             android:gravity="center"
             android:text="검색하기"
             android:textColor="@color/white_color"
-            android:textSize="15dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
     </LinearLayout>

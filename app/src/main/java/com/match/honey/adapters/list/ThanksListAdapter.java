@@ -2,6 +2,7 @@ package com.match.honey.adapters.list;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.match.honey.R;
 import com.match.honey.activity.ReviewDetailAct;
 import com.match.honey.listDatas.ThanksData;
@@ -62,12 +66,16 @@ public class ThanksListAdapter extends RecyclerView.Adapter<ThanksListAdapter.Vi
                 holder.iv_noprofimg.setVisibility(View.GONE);
                 Glide.with(act)
                         .load(list.get(i).getProfimg())
+                        .centerCrop()
+                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                         .into(holder.iv_profimg);
             } else {
                 holder.iv_profimg.setVisibility(View.GONE);
                 holder.iv_noprofimg.setVisibility(View.VISIBLE);
                 Glide.with(act)
                         .load(list.get(i).getCharacter())
+                        .centerCrop()
+                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                         .into(holder.iv_noprofimg);
             }
         } else {
@@ -76,6 +84,8 @@ public class ThanksListAdapter extends RecyclerView.Adapter<ThanksListAdapter.Vi
 
             Glide.with(act)
                     .load(list.get(i).getCharacter())
+                    .centerCrop()
+                    .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                     .into(holder.iv_noprofimg);
         }
 

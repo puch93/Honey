@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/getmarried_btn_main_moresearch_190902" android:state_pressed="false"/>
-    <item android:drawable="@drawable/getmarried_btn_main_moresearch_on_190902" android:state_pressed="true"/>
+    <item android:drawable="@drawable/shape_stroke_bg_search02" android:state_selected="false"/>
+    <item android:drawable="@drawable/shape_round_bg_search" android:state_selected="true"/>
 </selector>

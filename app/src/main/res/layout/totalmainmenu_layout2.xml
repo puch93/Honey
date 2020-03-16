@@ -11,7 +11,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white_color"
+            android:background="@color/color_f6f6f6"
             android:orientation="vertical"
             android:padding="15dp">
 
@@ -25,25 +25,27 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon01_190902" />
+                        android:src="@drawable/more_menu_01" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="공지사항"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -52,25 +54,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon02_190902" />
+                        android:src="@drawable/more_menu_02" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="지인차단"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -79,25 +83,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon03_190902" />
+                        android:src="@drawable/more_menu_03" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="이용후기"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -113,25 +119,27 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon04_190902" />
+                        android:src="@drawable/more_menu_04" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="정보수정"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -140,25 +148,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon05_190902" />
+                        android:src="@drawable/more_menu_05" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="차단회원"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -167,27 +177,29 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon06_190902" />
+                        android:src="@drawable/more_menu_06" />
 
                     <!--아이템-->
-                    <!--color_35353b-->
+                 @color/color_4d4d4d-->
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="충전/관리"
-                        android:textColor="@color/color_b267b3"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -202,25 +214,27 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon07_190902" />
+                        android:src="@drawable/more_menu_07" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="1:1문의하기"
-                        android:textColor="@color/color_00a2e8"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -229,25 +243,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/getmarried_btn_slidemenu_icon016_191007" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="신고답변"
-                        android:textColor="@color/color_ed1c24"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -256,25 +272,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon08_190902" />
+                        android:src="@drawable/more_menu_08" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="제휴제안"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -289,25 +307,27 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon010_190902" />
+                        android:src="@drawable/more_menu_10" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="방문기록"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -316,25 +336,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon011_190902" />
+                        android:src="@drawable/more_menu_11" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="알람설정"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -343,25 +365,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon012_190902" />
+                        android:src="@drawable/more_menu_12" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="문자초대"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -376,25 +400,27 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon013_190902" />
+                        android:src="@drawable/more_menu_13" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="친구초대"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -403,25 +429,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon014_190902" />
+                        android:src="@drawable/more_menu_14" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="휴면설정"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -430,25 +458,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon015_190902" />
+                        android:src="@drawable/more_menu_15" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="탈퇴하기"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -464,25 +494,27 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/getmarried_btn_slidemenu_icon09_190902" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="톡게시판"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -490,26 +522,28 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:visibility="invisible"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/getmarried_btn_slidemenu_icon014_190902" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="휴면설정"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -518,25 +552,27 @@
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:visibility="invisible"
-                    android:background="@drawable/sel_slidemenu_btn"
+                    android:background="@drawable/sel_menu_bg"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="10dp">
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="18dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/getmarried_btn_slidemenu_icon015_190902" />
 
                     <TextView
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="8.3dp"
                         android:text="탈퇴하기"
-                        android:textColor="@color/color_35353b"
-                        android:textSize="14dp" />
+                        android:textColor="@color/color_4d4d4d"
+                        android:textSize="11dp" />
                 </LinearLayout>
             </LinearLayout>
 

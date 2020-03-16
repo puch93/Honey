@@ -62,7 +62,7 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
     String token;
 
     ChangeProfVal cpv;
-    String chGender, cellNum = "";
+    String chGender = Common.M1, cellNum = "";
 
     HopestyleJoinAdapter adapter;
     ArrayList<HopestyleData> list = new ArrayList<>();

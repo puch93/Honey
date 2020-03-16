@@ -2,6 +2,7 @@ package com.match.honey.adapters.list;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -17,6 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.match.honey.R;
 import com.match.honey.activity.ChatAct;
 import com.match.honey.listDatas.MsgboxData;
@@ -74,30 +78,24 @@ public class MsgboxListAdapter extends RecyclerView.Adapter<MsgboxListAdapter.Vi
 
             if (list.get(i).getFriend().getCoupleType().equalsIgnoreCase("marry")) {
                 itemHolder.tv_type.setText("결혼");
-                itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
                 itemHolder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
             } else if (list.get(i).getFriend().getCoupleType().equalsIgnoreCase("remarry")) {
                 itemHolder.tv_type.setText("재혼");
-                itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
                 itemHolder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
             } else if (list.get(i).getFriend().getCoupleType().equalsIgnoreCase("friend")) {
                 itemHolder.tv_type.setText("재혼");
-                itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_adapter_friend));
                 itemHolder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
             } else {
                 itemHolder.tv_type.setText("-");
-                itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
                 itemHolder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
             }
 
             if (list.get(i).getFriend().getGender().equalsIgnoreCase("male")) {
                 itemHolder.tv_gender.setText("남성");
-                itemHolder.tv_nick.setTextColor(ContextCompat.getColor(act, R.color.color_mcolor));
-                itemHolder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
+                itemHolder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.man_color));
             } else {
                 itemHolder.tv_gender.setText("여성");
-                itemHolder.tv_nick.setTextColor(ContextCompat.getColor(act, R.color.color_wcolor));
-                itemHolder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
+                itemHolder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.women_color));
             }
 
             if (!StringUtil.isNull(list.get(i).getFriend().getNick())) {
@@ -122,12 +120,16 @@ public class MsgboxListAdapter extends RecyclerView.Adapter<MsgboxListAdapter.Vi
                     itemHolder.iv_noprofimg.setVisibility(View.GONE);
                     Glide.with(act)
                             .load(list.get(i).getFriend().getPimg())
+                            .centerCrop()
+                            .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                             .into(itemHolder.iv_profimg);
                 } else {
                     itemHolder.iv_profimg.setVisibility(View.GONE);
                     itemHolder.iv_noprofimg.setVisibility(View.VISIBLE);
                     Glide.with(act)
                             .load(list.get(i).getFriend().getCharacter())
+                            .centerCrop()
+                            .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                             .into(itemHolder.iv_noprofimg);
                 }
             } else {
@@ -136,6 +138,8 @@ public class MsgboxListAdapter extends RecyclerView.Adapter<MsgboxListAdapter.Vi
 
                 Glide.with(act)
                         .load(list.get(i).getFriend().getCharacter())
+                        .centerCrop()
+                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                         .into(itemHolder.iv_noprofimg);
 
             }

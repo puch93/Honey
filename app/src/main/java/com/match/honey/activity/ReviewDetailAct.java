@@ -2,6 +2,7 @@ package com.match.honey.activity;
 
 import android.app.Activity;
 import android.databinding.DataBindingUtil;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +10,9 @@ import android.util.Log;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityThanksdetailBinding;
 import com.match.honey.listDatas.ThanksData;
@@ -57,10 +61,10 @@ public class ReviewDetailAct extends Activity implements View.OnClickListener {
         }
 
         if (data.getGender().equalsIgnoreCase("male")) {
-            binding.tvGender.setTextColor(getResources().getColor(R.color.color_407ff3));
+            binding.tvGender.setTextColor(getResources().getColor(R.color.man_color));
             binding.tvGender.setText("(남성)");
         } else {
-            binding.tvGender.setTextColor(getResources().getColor(R.color.color_f04242));
+            binding.tvGender.setTextColor(getResources().getColor(R.color.women_color));
             binding.tvGender.setText("(여성)");
         }
 
@@ -70,12 +74,16 @@ public class ReviewDetailAct extends Activity implements View.OnClickListener {
                 binding.ivNoprofimg.setVisibility(View.GONE);
                 Glide.with(act)
                         .load(data.getProfimg())
+                        .centerCrop()
+                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                         .into(binding.ivProfimg);
             } else {
                 binding.ivProfimg.setVisibility(View.GONE);
                 binding.ivNoprofimg.setVisibility(View.VISIBLE);
                 Glide.with(act)
                         .load(data.getCharacter())
+                        .centerCrop()
+                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                         .into(binding.ivNoprofimg);
             }
         } else {
@@ -84,6 +92,8 @@ public class ReviewDetailAct extends Activity implements View.OnClickListener {
 
             Glide.with(act)
                     .load(data.getCharacter())
+                    .centerCrop()
+                    .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                     .into(binding.ivNoprofimg);
 
         }

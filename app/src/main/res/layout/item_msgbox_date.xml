@@ -15,9 +15,9 @@
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="1dp"
             android:layout_weight="1"
-            android:src="@drawable/img_dateline" />
+            android:src="#e5e5e5" />
 
         <TextView
             android:id="@+id/tv_itemdate"
@@ -25,15 +25,16 @@
             android:layout_height="wrap_content"
             android:text="2016년 06월 10일"
             android:layout_marginLeft="5dp"
+            android:textStyle="bold"
             android:layout_marginRight="5dp"
-            android:textColor="@color/color_2"
-            android:textSize="14dp" />
+            android:textColor="@color/color_4d4d4d"
+            android:textSize="13.2dp" />
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="1dp"
             android:layout_weight="1"
-            android:src="@drawable/img_dateline" />
+            android:src="#e5e5e5" />
     </LinearLayout>
 
 </LinearLayout>

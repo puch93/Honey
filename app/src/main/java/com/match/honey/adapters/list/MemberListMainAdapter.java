@@ -2,6 +2,7 @@ package com.match.honey.adapters.list;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -16,6 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.match.honey.R;
 import com.match.honey.activity.ChatAct;
 import com.match.honey.activity.MyProfileAct;
@@ -63,30 +67,24 @@ public class MemberListMainAdapter extends RecyclerView.Adapter<MemberListMainAd
 
         if (list.get(i).getMembertype().equalsIgnoreCase("marry")) {
             itemHolder.tv_type.setText("결혼");
-            itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
             itemHolder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
         } else if (list.get(i).getMembertype().equalsIgnoreCase("remarry")) {
             itemHolder.tv_type.setText("재혼");
-            itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
             itemHolder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
         } else if (list.get(i).getMembertype().equalsIgnoreCase("friend")) {
             itemHolder.tv_type.setText("재혼");
-            itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_adapter_friend));
             itemHolder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
         } else {
             itemHolder.tv_type.setText("-");
-            itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
             itemHolder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
         }
 
         if (list.get(i).getGender().equalsIgnoreCase("male")) {
             itemHolder.tv_gender.setText("남성");
-            itemHolder.tv_nick.setTextColor(ContextCompat.getColor(act, R.color.color_mcolor));
-            itemHolder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
+            itemHolder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.man_color));
         } else {
             itemHolder.tv_gender.setText("여성");
-            itemHolder.tv_nick.setTextColor(ContextCompat.getColor(act, R.color.color_wcolor));
-            itemHolder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
+            itemHolder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.women_color));
         }
 
         itemHolder.tv_nick.setText(list.get(i).getNickname());
@@ -110,12 +108,15 @@ public class MemberListMainAdapter extends RecyclerView.Adapter<MemberListMainAd
                 itemHolder.iv_noprofimg.setVisibility(View.GONE);
                 Glide.with(act)
                         .load(list.get(i).getProfimg())
+                        .centerCrop()
+                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                         .into(itemHolder.iv_profimg);
             } else {
                 itemHolder.iv_profimg.setVisibility(View.GONE);
                 itemHolder.iv_noprofimg.setVisibility(View.VISIBLE);
                 Glide.with(act)
                         .load(list.get(i).getCharacter())
+                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                         .into(itemHolder.iv_noprofimg);
             }
         } else {
@@ -124,6 +125,7 @@ public class MemberListMainAdapter extends RecyclerView.Adapter<MemberListMainAd
 
             Glide.with(act)
                     .load(list.get(i).getCharacter())
+                    .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                     .into(itemHolder.iv_noprofimg);
 
         }
@@ -137,11 +139,6 @@ public class MemberListMainAdapter extends RecyclerView.Adapter<MemberListMainAd
             itemHolder.tv_content.setText("");
         } else {
             itemHolder.tv_content.setText(list.get(i).getContent());
-//                if(list.get(i).getPint_ck().equalsIgnoreCase("Y")) {
-//                    itemHolder.tv_content.setText(list.get(i).getContent());
-//                } else {
-//                    itemHolder.tv_content.setText(R.string.check_introduce);
-//                }
         }
         itemHolder.tv_login_time.setText(list.get(i).getRegDate());
 
@@ -150,7 +147,7 @@ public class MemberListMainAdapter extends RecyclerView.Adapter<MemberListMainAd
             itemHolder.tv_chat.setText("수정");
             itemHolder.iv_chat.setVisibility(View.GONE);
         } else {
-            itemHolder.tv_chat.setText("연락");
+            itemHolder.tv_chat.setText("연락하기");
             itemHolder.iv_chat.setVisibility(View.VISIBLE);
         }
 
@@ -288,6 +285,7 @@ public class MemberListMainAdapter extends RecyclerView.Adapter<MemberListMainAd
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 iv_profimg.setClipToOutline(true);
+                iv_noprofimg.setClipToOutline(true);
             }
         }
 

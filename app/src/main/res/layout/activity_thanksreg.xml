@@ -78,7 +78,7 @@
                         android:layout_width="78dp"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
-                        android:background="@drawable/getmarried_bg_plistimgarea_190902"
+
                         android:scaleType="centerCrop"
                         android:visibility="gone" />
 
@@ -247,7 +247,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="3dp"
                             android:text="여성"
-                            android:textColor="@color/color_f04242"
+                            android:textColor="@color/women_color"
                             android:textSize="15dp"
                             android:textStyle="bold" />
 

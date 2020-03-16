@@ -336,15 +336,15 @@ public class FindAccountAct extends Activity implements View.OnClickListener {
                     return;
                 }
 
-                if (binding.etFindpwCellnum.length() == 0) {
-                    Toast.makeText(this, "휴대폰번호를 입력하세요.", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if (!checkCellnum(binding.etFindpwCellnum.getText().toString())) {
-                    Toast.makeText(this, "휴대폰번호를 확인하세요.", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+//                if (binding.etFindpwCellnum.length() == 0) {
+//                    Toast.makeText(this, "휴대폰번호를 입력하세요.", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//
+//                if (!checkCellnum(binding.etFindpwCellnum.getText().toString())) {
+//                    Toast.makeText(this, "휴대폰번호를 확인하세요.", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
 
                 findPw();
 

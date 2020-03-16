@@ -30,6 +30,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.match.honey.R;
 import com.match.honey.adapters.list.ImagelistAdapter;
 import com.match.honey.databinding.ActivityMyprofileBinding;
@@ -373,6 +376,8 @@ public class MyProfileAct extends Activity implements View.OnClickListener {
                                 binding.ivNoprofimg.setVisibility(View.GONE);
                                 Glide.with(act)
                                         .load(data.getPimg())
+                                        .centerCrop()
+                                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                         .into(binding.ivProfimg);
 
                                 ++pic_all_count;
@@ -382,6 +387,8 @@ public class MyProfileAct extends Activity implements View.OnClickListener {
                                 binding.ivNoprofimg.setVisibility(View.VISIBLE);
                                 Glide.with(act)
                                         .load(data.getCharacter_int())
+                                        .centerCrop()
+                                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                         .into(binding.ivNoprofimg);
                             }
 
@@ -393,19 +400,15 @@ public class MyProfileAct extends Activity implements View.OnClickListener {
 
                             if (data.getCouple_type().equalsIgnoreCase("marry")) {
                                 binding.tvMembertype.setText("결혼");
-                                binding.tvMembertype.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
                                 binding.tvMembertype.setBackgroundResource(R.drawable.marriage_bg);
                             } else if (data.getCouple_type().equalsIgnoreCase("remarry")) {
                                 binding.tvMembertype.setText("재혼");
-                                binding.tvMembertype.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
                                 binding.tvMembertype.setBackgroundResource(R.drawable.remarriage_bg);
                             } else if (data.getCouple_type().equalsIgnoreCase("friend")) {
                                 binding.tvMembertype.setText("재혼");
-                                binding.tvMembertype.setTextColor(ContextCompat.getColor(act, R.color.color_adapter_friend));
                                 binding.tvMembertype.setBackgroundResource(R.drawable.remarriage_bg);
                             } else {
                                 binding.tvMembertype.setText("-");
-                                binding.tvMembertype.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
                                 binding.tvMembertype.setBackgroundResource(R.drawable.marriage_bg);
                             }
 
@@ -413,16 +416,17 @@ public class MyProfileAct extends Activity implements View.OnClickListener {
 
                             if (data.getGender().equalsIgnoreCase("male")) {
                                 binding.tvGender.setText("남성");
-                                binding.tvGender.setTextColor(ContextCompat.getColor(act, R.color.color_407ff3));
+                                binding.tvGender.setTextColor(ContextCompat.getColor(act, R.color.man_color));
                             } else {
                                 binding.tvGender.setText("여성");
-                                binding.tvGender.setTextColor(ContextCompat.getColor(act, R.color.color_f34075));
+                                binding.tvGender.setTextColor(ContextCompat.getColor(act, R.color.women_color));
                             }
 
                             binding.tvNick.setText(data.getNick());
 
                             binding.tvAge.setText(StringUtil.calcAge(data.getByear()) + "세");
 
+                            binding.tvName.setText(data.getName());
 
                             binding.tvLocation.setText(data.getAddr1() + " " + data.getAddr2());
 

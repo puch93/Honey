@@ -26,7 +26,6 @@ public class AddsearchAct extends Activity implements View.OnClickListener {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_addsearch);
 
         binding.flBtnBack.setOnClickListener(this);
-        binding.llHome.setOnClickListener(this);
 
         binding.llReligion.setOnClickListener(this);
         binding.llMarriage.setOnClickListener(this);
@@ -192,11 +191,6 @@ public class AddsearchAct extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fl_btn_back:
-                finish();
-                break;
-            case R.id.ll_home:
-//                startActivity(new Intent(this, MainActivity.class));
-//                finishAffinity();
                 finish();
                 break;
             case R.id.ll_religion:

@@ -18,7 +18,7 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/title_bar_height"
-                android:background="@color/color_fafafa"
+                android:background="@color/white_color"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -1240,7 +1240,7 @@
                     android:layout_marginTop="17.3dp"
                     android:layout_marginRight="15dp"
                     android:includeFontPadding="false"
-                    android:text="추가 정보"
+                    android:text="외모·취미·기타"
                     android:textColor="@color/color_2f3942"
                     android:textSize="15dp"
                     android:textStyle="bold" />
@@ -2041,11 +2041,9 @@
                 <TextView
                     android:id="@+id/btn_join"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="56dp"
                     android:background="@color/color_ec4e4e"
                     android:gravity="center"
-                    android:paddingTop="17dp"
-                    android:paddingBottom="17dp"
                     android:text="가입하기"
                     android:textColor="@color/white_color"
                     android:textSize="18dp"

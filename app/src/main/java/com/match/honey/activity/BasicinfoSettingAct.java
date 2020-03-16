@@ -129,7 +129,6 @@ public class BasicinfoSettingAct extends Activity implements View.OnClickListene
         binding.tvMiddleLoc.setOnClickListener(this);
         binding.tvModify.setOnClickListener(this);
 
-        binding.tvAddressOk.setOnClickListener(this);
     }
 
     private void getMyProfileBasic() {
@@ -214,13 +213,6 @@ public class BasicinfoSettingAct extends Activity implements View.OnClickListene
 
                             binding.tvMainLoc.setText(obj.getString("addr1"));
                             binding.tvMiddleLoc.setText(obj.getString("addr2"));
-
-                            if (obj.getString("u_cell_num").equalsIgnoreCase("000-0000-0000")) {
-                                binding.etAddress.setText(null);
-                            } else {
-                                binding.etAddress.setText(obj.getString("u_cell_num"));
-                            }
-
                         } else {
                             Toast.makeText(BasicinfoSettingAct.this, jo.getString("value"), Toast.LENGTH_SHORT).show();
                         }
@@ -239,36 +231,6 @@ public class BasicinfoSettingAct extends Activity implements View.OnClickListene
         myprofile.execute(true, true);
     }
 
-
-    private void changeCellnum() {
-        ReqBasic cellnum = new ReqBasic(this, NetUrls.CHANGECELLNUM) {
-            @Override
-            public void onAfter(int resultCode, HttpResult resultData) {
-
-                if (resultData.getResult() != null) {
-
-                    try {
-                        JSONObject jo = new JSONObject(resultData.getResult());
-
-                        if (jo.getString("result").equalsIgnoreCase(StringUtil.RSUCCESS)) {
-                            Toast.makeText(BasicinfoSettingAct.this, jo.getString("value"), Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(BasicinfoSettingAct.this, jo.getString("value"), Toast.LENGTH_SHORT).show();
-                        }
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(BasicinfoSettingAct.this, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(BasicinfoSettingAct.this, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
-        cellnum.addParams("uidx", UserPref.getUidx(this));
-        cellnum.addParams("ucellnum", binding.etAddress.getText().toString());
-        cellnum.execute(true, true);
-    }
 
     private void getLocation(String locStr) {
         List<Address> list = null;
@@ -415,10 +377,6 @@ public class BasicinfoSettingAct extends Activity implements View.OnClickListene
                 getLocation(binding.tvMainLoc.getText() + result);
                 binding.tvMiddleLoc.setText(result);
                 break;
-            case DefaultValue.CELLNUM:
-                getMyProfile();
-                binding.etAddress.setText(result);
-                break;
 
             case DefaultValue.BIRTHYEAR:
                 if(result.equalsIgnoreCase("태어난 년도")) {
@@ -530,117 +488,6 @@ public class BasicinfoSettingAct extends Activity implements View.OnClickListene
         }
     }
 
-    //TODO 수정 -> u_idx 삭제버전으로
-    private void RegCellnum(String authNum, Dialog dlg) {
-        final Dialog menuDlg = dlg;
-
-        ReqBasic regCellnum = new ReqBasic(this, NetUrls.REGCELLNUM) {
-            @Override
-            public void onAfter(int resultCode, HttpResult resultData) {
-                if (resultData.getResult() != null) {
-                    try {
-                        JSONObject jo = new JSONObject(resultData.getResult());
-
-                        if (jo.getString("result").equalsIgnoreCase(StringUtil.RSUCCESS)) {
-                            Toast.makeText(act, "휴대폰번호가 업데이트 되었습니다.", Toast.LENGTH_SHORT).show();
-                            if (menuDlg.isShowing()) {
-                                menuDlg.dismiss();
-                            }
-                        } else {
-//                            Toast.makeText(act, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
-                            Toast.makeText(act, jo.getString("value"), Toast.LENGTH_SHORT).show();
-                        }
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(act, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(act, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
-
-        regCellnum.addParams("u_idx", UserPref.getUidx(this));
-        regCellnum.addParams("cell_number", binding.etAddress.getText().toString());
-        regCellnum.addParams("auth_number", authNum);
-        regCellnum.execute(true, true);
-    }
-
-    private void ReqAuthnum() {
-        ReqBasic reqAuth = new ReqBasic(this, NetUrls.REQAUTHNUM) {
-            @Override
-            public void onAfter(int resultCode, HttpResult resultData) {
-                if (resultData.getResult() != null) {
-                    try {
-                        JSONObject jo = new JSONObject(resultData.getResult());
-                        Log.e("TEST_HOME", "Reg AuthNum Get Info: " + jo);
-                        if (jo.getString("result").equalsIgnoreCase(StringUtil.RSUCCESS)) {
-                            Toast.makeText(act, "인증문자를 요청했습니다.", Toast.LENGTH_SHORT).show();
-                            showAddressAuth();
-                            isAvailable = false;
-
-                            new Handler().postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    isAvailable = true;
-                                }
-                            }, 60 * 1000);
-                        } else {
-                            isAvailable = true;
-                            Common.showToast(act, jo.getString("value"));
-                        }
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(act, act.getString(R.string.err_network), Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(act, act.getString(R.string.err_network), Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
-
-        reqAuth.addParams("cell_number", binding.etAddress.getText().toString());
-        reqAuth.execute(true, true);
-    }
-
-    private void showAddressAuth() {
-        LayoutInflater dialog = LayoutInflater.from(this);
-        View dialogLayout = dialog.inflate(R.layout.dlg_address, null);
-        final Dialog menuDlg = new Dialog(this);
-
-        menuDlg.setContentView(dialogLayout);
-
-        menuDlg.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        menuDlg.show();
-
-        TextView btn_cancel = (TextView) dialogLayout.findViewById(R.id.btn_cancel);
-        final TextView tv_cellnum = (TextView) dialogLayout.findViewById(R.id.tv_cellnum);
-        TextView btn_ok = (TextView) dialogLayout.findViewById(R.id.btn_ok);
-
-        btn_ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!StringUtil.isNull(tv_cellnum.getText().toString())) {
-                    RegCellnum(tv_cellnum.getText().toString(), menuDlg);
-                } else {
-                    Common.showToast(act, "인증번호를 입력해주세요");
-                }
-            }
-        });
-
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (menuDlg.isShowing()) {
-                    menuDlg.dismiss();
-                }
-            }
-        });
-    }
-
     private boolean checkNick(String nick){
         String regex = "^[ㄱ-ㅣ가-힣]*$";
         Pattern p = Pattern.compile(regex);
@@ -660,24 +507,6 @@ public class BasicinfoSettingAct extends Activity implements View.OnClickListene
                 hopelocIntent.putExtra("subject", "hope_loc2");
                 hopelocIntent.putExtra("select", binding.tvHopeLoc.getText().toString().replaceAll(",", "|"));
                 startActivityForResult(hopelocIntent, DefaultValue.HOPELOC);
-                break;
-
-            case R.id.tv_address_ok:
-                if(isAvailable) {
-                    if (binding.etAddress.length() == 0) {
-                        Toast.makeText(act, "휴대폰번호를 입력해주세요", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    if (!checkCellnum(binding.etAddress.getText().toString())) {
-                        Toast.makeText(act, "휴대폰번호를 확인해주세요", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    ReqAuthnum();
-                } else {
-                    Common.showToast(act, "*이미 발송하였으니, 1분후에 다시 시도해주세요*");
-                    showAddressAuth();
-                }
                 break;
 
             case R.id.tv_main_loc:
@@ -798,7 +627,7 @@ public class BasicinfoSettingAct extends Activity implements View.OnClickListene
                     }
                 }
 
-                if (binding.etCheckpw.length() != 0){
+                if (binding.etCheckpw.length() != 0) {
                     if(binding.etNewpw.length() == 0) {
                         Toast.makeText(BasicinfoSettingAct.this, "신규 비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
                         return;

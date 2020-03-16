@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_eaeaea"
+        android:background="@color/color_f6f6f6"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:background="@color/color_fafafa"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/white_color"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -18,15 +19,18 @@
                 android:id="@+id/fl_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="23dp"
-                android:paddingRight="13dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="6.7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_back_190902" />
+                    android:src="@drawable/btn_back" />
             </FrameLayout>
 
 
@@ -35,40 +39,31 @@
                 android:layout_height="wrap_content"
                 android:text="공지사항"
                 android:textColor="@color/color_2"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/ll_home"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingLeft="15dp"
-                android:paddingRight="22dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="23dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
                     android:adjustViewBounds="true"
                     android:src="@drawable/getmarried_btn_home_190902" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="홈으로"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="13dp" />
-
             </LinearLayout>
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <ImageView
             android:layout_width="match_parent"
@@ -78,13 +73,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="7dp"
-            android:background="@drawable/getmarried_bg_noticelist_searchinputbg_190902"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="11.7dp"
+            android:layout_marginBottom="11.7dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/input_search"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingBottom="2dp">
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/et_search"
@@ -93,8 +88,8 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:hint="공지사항 검색"
-                android:paddingLeft="16dp"
-                android:textColor="@color/color_aaaaaa"
+                android:paddingLeft="15dp"
+                android:textColor="@color/color_b9babb"
                 android:textSize="14dp" />
 
             <FrameLayout
@@ -105,11 +100,11 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="0.2dp"
-                    android:layout_marginRight="2dp"
-                    android:layout_marginBottom="0.8dp"
+                    android:layout_marginTop="0.7dp"
+                    android:layout_marginRight="0.5dp"
+                    android:layout_marginBottom="0.7dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/sel_noticelist_search_btn" />
+                    android:src="@drawable/btn_search" />
 
                 <ImageView
                     android:layout_width="19dp"
@@ -123,6 +118,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rcv_notice"
             android:layout_width="match_parent"
+            android:background="@color/white_color"
             android:layout_height="match_parent" />
     </LinearLayout>
 </layout>

@@ -25,9 +25,11 @@ import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -70,6 +72,11 @@ public class SplashAct extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         act = this;
+
+        Glide.with(act)
+                .load(R.raw.splash_1440x2560_gif)
+                .into((ImageView) findViewById(R.id.splash));
+
         tv_bottom = (TextView) findViewById(R.id.tv_bottom);
 
         geocoder = new Geocoder(this);

@@ -51,17 +51,17 @@ public class PauseAct extends AppCompatActivity {
             }
         });
 
-        binding.ivPause.setOnClickListener(new View.OnClickListener() {
+        binding.cbPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.ivPause.setSelected(!binding.ivPause.isSelected());
+                binding.cbPause.setChecked(!binding.cbPause.isChecked());
             }
         });
 
         binding.tvPauseOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (binding.ivPause.isSelected()) {
+                if (binding.cbPause.isChecked()) {
                     if(isPossible) {
                         showDlgPause();
                     } else {
