@@ -63,28 +63,27 @@
                 android:id="@+id/clayout_area"
                 android:layout_width="match_parent"
                 android:layout_height="92dp"
+                android:gravity="center_vertical"
                 android:background="@color/white_color"
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingTop="7dp"
-                android:paddingBottom="7dp">
+                android:paddingLeft="15dp">
 
                 <FrameLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <ImageView
                         android:id="@+id/iv_profimg"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:background="@drawable/profile_noimg_woman" />
+                        android:layout_height="80dp"
+                        android:background="@drawable/profile_noimg_woman"
+                        android:scaleType="centerCrop" />
 
                     <ImageView
                         android:id="@+id/iv_noprofimg"
                         android:layout_width="80dp"
-                        android:background="@drawable/profile_noimg_woman"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="80dp"
+                        android:background="@drawable/profile_noimg_woman" />
                 </FrameLayout>
 
 
@@ -99,6 +98,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -190,6 +190,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="7dp"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -257,10 +258,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
                 android:includeFontPadding="false"
                 android:text="이용후기글"
-                android:layout_marginTop="20dp"
                 android:textColor="@color/color_2f3942"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -269,8 +270,8 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="163dp"
-                android:layout_marginTop="9dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="9dp"
                 android:layout_marginRight="15dp"
                 android:fillViewport="true">
 
@@ -292,10 +293,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
                 android:includeFontPadding="false"
                 android:text="자기소개글"
-                android:layout_marginTop="20dp"
                 android:textColor="@color/color_2f3942"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -303,8 +304,8 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="163dp"
-                android:layout_marginTop="9dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="9dp"
                 android:layout_marginRight="15dp"
                 android:fillViewport="true">
 

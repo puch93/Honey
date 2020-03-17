@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -7,10 +8,10 @@
         android:background="@color/white_color"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:background="@color/color_fafafa"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/white_color"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -18,31 +19,33 @@
                 android:id="@+id/fl_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="23dp"
-                android:paddingRight="13dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="6.7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_back_190902" />
+                    android:src="@drawable/btn_back" />
             </FrameLayout>
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ID/PW찾기"
+                android:text="비밀번호 찾기"
                 android:textColor="@color/color_2"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <ImageView
             android:layout_width="match_parent"
@@ -55,20 +58,23 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:paddingLeft="15dp"
-            android:paddingTop="14dp"
-            android:paddingRight="12dp">
+            android:paddingTop="20dp"
+            android:paddingRight="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="아이디찾기"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:textColor="@color/color_2f3942"
+                    android:textStyle="bold"
+                    android:text="아이디 찾기"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -88,6 +94,7 @@
             <EditText
                 android:id="@+id/et_findid_cellnum"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="50dp"
                 android:layout_marginTop="13dp"
                 android:background="@drawable/getmarried_bg_idpw_inputbg_190902"
@@ -107,6 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="6dp"
+                android:visibility="gone"
                 android:layout_marginRight="2dp"
                 android:background="@drawable/sel_idpw_btn"
                 android:gravity="center"
@@ -119,29 +127,31 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="비밀번호찾기"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_2f3942"
+                    android:text="비밀번호 찾기"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" - "
-                    android:textColor="@color/color_222222"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="회원가입시 등록한 이메일,연락처를 입력해주세요"
-                    android:textColor="@color/color_222222"
-                    android:textSize="14dp" />
+                    android:textSize="11dp"
+                    android:textColor="@color/color_4d4d4d"
+                    android:gravity="end"
+                    android:text="*  회원가입 시 등록한 이메일을 입력해주세요"
+                    />
             </LinearLayout>
 
             <EditText
@@ -149,7 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="13dp"
-                android:background="@drawable/getmarried_bg_idpw_inputbg_190902"
+                android:background="@drawable/input_box_00"
                 android:gravity="center_vertical"
                 android:hint="이메일을 입력해주세요"
                 android:inputType="textEmailAddress"
@@ -166,6 +176,7 @@
                 android:id="@+id/et_findpw_cellnum"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:visibility="gone"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/getmarried_bg_idpw_inputbg_190902"
                 android:gravity="center_vertical"
@@ -183,14 +194,14 @@
             <TextView
                 android:id="@+id/btn_findpw"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginRight="2dp"
-                android:background="@drawable/sel_idpw_btn"
+                android:background="@drawable/shape_round_bg_blue_all"
                 android:gravity="center"
                 android:text="비밀번호 조회"
                 android:textColor="@color/white_color"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -198,11 +209,11 @@
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="@drawable/sel_searchenter_btn"
+            android:background="@color/color_ec4e4e"
             android:gravity="center"
-            android:text="로그인하기"
+            android:text="로그인 하기"
             android:textColor="@color/white_color"
-            android:textSize="15dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
     </LinearLayout>
 </layout>

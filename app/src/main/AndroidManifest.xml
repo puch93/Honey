@@ -78,7 +78,8 @@
         <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
         <!-- <data android:scheme="@string/fb_login_protocol_scheme" /> </intent-filter> -->
         <!-- </activity> -->
-        <activity android:name=".activity.SplashAct">
+        <activity android:name=".activity.SplashAct"
+            android:theme="@style/status_matarial_02">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -100,7 +101,7 @@
             android:theme="@style/status_matarial" />
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/status_matarial" />
+            android:theme="@style/status_matarial_02" />
         <activity
             android:name=".activity.MsgboxAct"
             android:theme="@style/status_matarial" />

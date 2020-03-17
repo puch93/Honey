@@ -14,6 +14,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="status_matarial_02" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="myDialog" parent="Theme.AppCompat.Dialog">
         <item name="windowNoTitle">true</item>
     </style>
@@ -23,6 +29,10 @@
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="progress_bar_color">
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
 </resources>

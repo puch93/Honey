@@ -16,9 +16,9 @@
   -->
 <resources>
     <!--<color name="zhihu_primary">#1E8AE8</color>-->
-    <color name="zhihu_primary">#8345f3</color>
+    <color name="zhihu_primary">#ec4e4e</color>
     <!--<color name="zhihu_primary_dark">#176EB9</color>-->
-    <color name="zhihu_primary_dark">#8345f3</color>
+    <color name="zhihu_primary_dark">#ec4e4e</color>
 
     <color name="zhihu_album_popup_bg">#FFFFFF</color>
     <color name="zhihu_album_dropdown_title_text">#DE000000</color>

@@ -253,7 +253,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="18dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/getmarried_btn_slidemenu_icon016_191007" />
+                        android:src="@drawable/more_menu_08_2" />
 
                     <TextView
                         android:textStyle="bold"

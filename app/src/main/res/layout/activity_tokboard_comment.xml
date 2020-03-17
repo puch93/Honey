@@ -57,14 +57,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_home_190902" />
+                    android:src="@drawable/btn_home" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="홈으로"
-                    android:textColor="@color/color_8345f3"
+                    android:textColor="@color/color_ec4e4e"
                     android:textSize="13dp" />
 
             </LinearLayout>
@@ -94,7 +94,7 @@
                     android:id="@+id/rdo_male"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:button="@drawable/sel_radio_btn2"
+                    android:button="@drawable/btn_radio"
                     android:gravity="left|center_vertical"
                     android:paddingLeft="8dp"
                     android:paddingRight="30dp"
@@ -108,7 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:button="@drawable/sel_radio_btn2"
+                    android:button="@drawable/btn_radio"
                     android:paddingLeft="8dp"
                     android:paddingRight="30dp"
                     android:text="여성"
@@ -120,7 +120,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:button="@drawable/sel_radio_btn2"
+                    android:button="@drawable/btn_radio"
                     android:paddingLeft="8dp"
                     android:paddingRight="30dp"
                     android:text="전체"

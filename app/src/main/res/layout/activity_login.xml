@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="ID/PW찾기"
+                    android:text="PW찾기"
                     android:textColor="@color/color_2f3942"
                     android:textSize="14dp"
                     android:textStyle="bold" />

@@ -33,11 +33,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/sel_popup_btn01"
+                android:background="@color/color_babbbc"
                 android:gravity="center"
                 android:text="초기화"
                 android:textSize="14dp"
-                android:textColor="@color/color_222222"
+                android:textColor="@color/white_color"
                 android:textStyle="bold" />
 
             <TextView
@@ -45,7 +45,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/sel_popup_btn02"
+                android:background="@color/color_ec4e4e"
                 android:gravity="center"
                 android:text="확인"
                 android:textSize="14dp"

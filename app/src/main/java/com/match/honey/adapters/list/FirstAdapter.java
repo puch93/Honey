@@ -80,29 +80,23 @@ public class FirstAdapter extends RecyclerView.Adapter<FirstAdapter.ViewHolder> 
             ItemHolder itemHolder = (ItemHolder) holder;
             if (list.get(i).getMembertype().equalsIgnoreCase("marry")) {
                 itemHolder.tv_type.setText("결혼");
-                itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.man_color));
                 itemHolder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
             } else if (list.get(i).getMembertype().equalsIgnoreCase("remarry")) {
                 itemHolder.tv_type.setText("재혼");
-                itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.women_color));
                 itemHolder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
             } else if (list.get(i).getMembertype().equalsIgnoreCase("friend")) {
                 itemHolder.tv_type.setText("재혼");
-                itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.color_adapter_friend));
                 itemHolder.tv_type.setBackgroundResource(R.drawable.remarriage_bg);
             } else {
                 itemHolder.tv_type.setText("-");
-                itemHolder.tv_type.setTextColor(ContextCompat.getColor(act, R.color.man_color));
                 itemHolder.tv_type.setBackgroundResource(R.drawable.marriage_bg);
             }
 
             if (list.get(i).getGender().equalsIgnoreCase("male")) {
                 itemHolder.tv_gender.setText("남성");
-                itemHolder.tv_nick.setTextColor(ContextCompat.getColor(act, R.color.color_mcolor));
                 itemHolder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.man_color));
             } else {
                 itemHolder.tv_gender.setText("여성");
-                itemHolder.tv_nick.setTextColor(ContextCompat.getColor(act, R.color.color_wcolor));
                 itemHolder.tv_gender.setTextColor(ContextCompat.getColor(act, R.color.women_color));
             }
 

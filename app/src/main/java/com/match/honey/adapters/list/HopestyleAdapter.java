@@ -36,7 +36,7 @@ public class HopestyleAdapter extends RecyclerView.Adapter<HopestyleAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
 
         if (list.get(i).isSelectState()) {
-//            holder.tv_hopestyle.setTextColor(act.getResources().getColor(R.color.color_8345f3));
+//            holder.tv_hopestyle.setTextColor(act.getResources().getColor(R.color.color_ec4e4e));
             holder.tv_hopestyle.setSelected(true);
         } else {
 //            holder.tv_hopestyle.setTextColor(act.getResources().getColor(R.color.color_222222));

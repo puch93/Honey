@@ -44,7 +44,7 @@ public class FindAccountAct extends Activity implements View.OnClickListener {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_findaccount);
         act = this;
 
-        binding.btnFindid.setOnClickListener(this);
+//        binding.btnFindid.setOnClickListener(this);
         binding.btnFindpw.setOnClickListener(this);
         binding.btnLogin.setOnClickListener(this);
         binding.flBack.setOnClickListener(this);
@@ -230,7 +230,7 @@ public class FindAccountAct extends Activity implements View.OnClickListener {
             }
         };
 
-        findPw.addParams("cell", binding.etFindpwCellnum.getText().toString());
+//        findPw.addParams("cell", binding.etFindpwCellnum.getText().toString());
         findPw.addParams("id", binding.etFindpwEmail.getText().toString());
         findPw.execute(true, true);
     }
@@ -264,7 +264,7 @@ public class FindAccountAct extends Activity implements View.OnClickListener {
             }
         };
 
-        findPw.addParams("cell", binding.etFindpwCellnum.getText().toString());
+//        findPw.addParams("cell", binding.etFindpwCellnum.getText().toString());
         findPw.addParams("id", binding.etFindpwEmail.getText().toString());
         findPw.addParams("pw", newPw);
         findPw.execute(true, true);

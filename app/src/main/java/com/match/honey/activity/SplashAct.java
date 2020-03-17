@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,6 +71,7 @@ public class SplashAct extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
         act = this;
 
@@ -97,7 +99,7 @@ public class SplashAct extends BaseActivity {
         }
 
         // 디바이스 높이 계산
-        if(SystemPref.getDeviceWidth(act) == 0) {
+        if (SystemPref.getDeviceWidth(act) == 0) {
             DisplayMetrics displayMetrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
             int width = displayMetrics.widthPixels - 130;
@@ -148,7 +150,7 @@ public class SplashAct extends BaseActivity {
                                     int tmp1 = Integer.parseInt(version[i]);
                                     int tmp2 = Integer.parseInt(version_me[i]);
 
-                                    if(tmp2 < tmp1) {
+                                    if (tmp2 < tmp1) {
                                         android.app.AlertDialog.Builder alertDialogBuilder =
                                                 new android.app.AlertDialog.Builder(new ContextThemeWrapper(act, android.R.style.Theme_DeviceDefault_Light_Dialog_Alert));
                                         alertDialogBuilder.setTitle("업데이트");
@@ -190,7 +192,7 @@ public class SplashAct extends BaseActivity {
             startActivity(new Intent(SplashAct.this, PermissionActivity.class));
             finish();
         } else {
-            handler.post(mrun);
+//            handler.post(mrun);
 
             startLocationService();
             gpsStatusCheck();
@@ -217,87 +219,70 @@ public class SplashAct extends BaseActivity {
 
     }
 
-    Runnable mrun = new Runnable() {
-        @Override
-        public void run() {
-            TimerTask tokenTask = new TimerTask() {
-                @Override
-                public void run() {
-                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            tv_bottom.setText("위치정보 받는중");
-                            if (isOk && !StringUtil.isNull(token)) {
-                                isOk = false;
-                                tokenTimer.cancel();
-                                handler.removeCallbacks(mrun);
-                            }
-                        }
-                    }, 0);
-
-
-                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            tv_bottom.setText("위치정보 받는중.");
-                            if (isOk && !StringUtil.isNull(token)) {
-                                isOk = false;
-                                tokenTimer.cancel();
-                                handler.removeCallbacks(mrun);
-                            }
-                        }
-                    }, 250);
-
-                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            tv_bottom.setText("위치정보 받는중..");
-                            if (isOk && !StringUtil.isNull(token)) {
-                                isOk = false;
-                                tokenTimer.cancel();
-                                handler.removeCallbacks(mrun);
-                            }
-                        }
-                    }, 500);
-
-                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            tv_bottom.setText("위치정보 받는중...");
-                            if (isOk && !StringUtil.isNull(token)) {
-                                isOk = false;
-                                tokenTimer.cancel();
-                                handler.removeCallbacks(mrun);
-                            }
-                        }
-                    }, 750);
-                }
-            };
-            tokenTimer.schedule(tokenTask, 1000, 1000);
-        }
-    };
+//    Runnable mrun = new Runnable() {
+//        @Override
+//        public void run() {
+//            TimerTask tokenTask = new TimerTask() {
+//                @Override
+//                public void run() {
+//                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            tv_bottom.setText("위치정보 받는중");
+//                            if (isOk && !StringUtil.isNull(token)) {
+//                                isOk = false;
+//                                tokenTimer.cancel();
+//                                handler.removeCallbacks(mrun);
+//                            }
+//                        }
+//                    }, 0);
+//
+//
+//                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            tv_bottom.setText("위치정보 받는중.");
+//                            if (isOk && !StringUtil.isNull(token)) {
+//                                isOk = false;
+//                                tokenTimer.cancel();
+//                                handler.removeCallbacks(mrun);
+//                            }
+//                        }
+//                    }, 250);
+//
+//                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            tv_bottom.setText("위치정보 받는중..");
+//                            if (isOk && !StringUtil.isNull(token)) {
+//                                isOk = false;
+//                                tokenTimer.cancel();
+//                                handler.removeCallbacks(mrun);
+//                            }
+//                        }
+//                    }, 500);
+//
+//                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            tv_bottom.setText("위치정보 받는중...");
+//                            if (isOk && !StringUtil.isNull(token)) {
+//                                isOk = false;
+//                                tokenTimer.cancel();
+//                                handler.removeCallbacks(mrun);
+//                            }
+//                        }
+//                    }, 750);
+//                }
+//            };
+//            tokenTimer.schedule(tokenTask, 1000, 1000);
+//        }
+//    };
 
     private void checkAutoLogin() {
         //원래위치 (onResume)
         if (UserPref.isLogin(act)) {
             reqAutoLogin();
-
-//            if (StringUtil.isNull(enter)) {
-//                startActivity(new Intent(SplashAct.this, LoginAct.class));
-//                finish();
-//            } else {
-//                if (enter.equalsIgnoreCase("push")) {
-//                    Intent login = new Intent(SplashAct.this, LoginAct.class);
-//                    login.putExtra("enter", enter);
-//                    login.putExtra("msg_from", msg_from);
-//                    login.putExtra("room_idx", room_idx);
-//                    startActivity(login);
-//                    finish();
-//                } else {
-//                    startActivity(new Intent(SplashAct.this, LoginAct.class));
-//                    finish();
-//                }
-//            }
         } else {
             Log.e(TAG, "checkAutoLogin");
             if (StringUtil.isNull(enter)) {

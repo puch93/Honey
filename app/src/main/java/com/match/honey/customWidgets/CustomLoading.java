@@ -35,9 +35,8 @@ public class CustomLoading {
             progressDialog.show();
         }
 
-        ImageView aniImg = (ImageView) progressDialog.findViewById(R.id.iv_loading);
-//        AnimationUtils.loadAnimation(act,R.anim.loading);
-        aniImg.setAnimation(AnimationUtils.loadAnimation(act,R.anim.blink_anim));
+//        ImageView aniImg = (ImageView) progressDialog.findViewById(R.id.iv_loading);
+//        aniImg.setAnimation(AnimationUtils.loadAnimation(act,R.anim.blink_anim));
 
         // 애니메이션? gif?
 

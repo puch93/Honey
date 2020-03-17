@@ -244,7 +244,7 @@
                 android:id="@+id/tv_chatcount"
                 android:layout_width="31dp"
                 android:layout_height="23dp"
-                android:background="@drawable/getmarried_bg_chatlist_countbg_190902"
+                android:background="@drawable/message_bg_01"
                 android:gravity="center"
                 android:paddingBottom="3dp"
                 android:text="7"

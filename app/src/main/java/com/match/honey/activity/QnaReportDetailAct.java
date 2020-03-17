@@ -23,14 +23,6 @@ public class QnaReportDetailAct extends AppCompatActivity {
         Intent from = getIntent();
 
         binding.tvQnaType.setText(from.getStringExtra("type"));
-        binding.tvQnaType2.setText(from.getStringExtra("type"));
-        binding.tvQnaType3.setText(from.getStringExtra("type"));
-
-        if (from.getBooleanExtra("state", false)) {
-            binding.tvAnswerState.setText("답변완료");
-        } else {
-            binding.tvAnswerState.setText("답변대기");
-        }
 
         binding.tvRegdate.setText(from.getStringExtra("regdate"));
         binding.tvQuestion.setText(from.getStringExtra("question"));

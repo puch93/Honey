@@ -157,7 +157,7 @@ public class ChatAct extends Activity implements View.OnClickListener {
 
         binding.flBack.setOnClickListener(this);
         binding.llFavorite.setOnClickListener(this);
-        binding.tvProfile.setOnClickListener(this);
+//        binding.tvProfile.setOnClickListener(this);
 
         binding.btnMsgbox.setOnClickListener(this);
         binding.btnBlock.setOnClickListener(this);
@@ -1266,13 +1266,13 @@ public class ChatAct extends Activity implements View.OnClickListener {
             case R.id.fl_back:
                 finish();
                 break;
-            case R.id.tv_profile:
-                Log.e(StringUtil.TAG, "gender: " + gender + ", midx: " + midx);
-                Intent profIntent = new Intent(act, ProfileDetailAct.class);
-                profIntent.putExtra("gender", gender);
-                profIntent.putExtra("midx", midx);
-                startActivity(profIntent);
-                break;
+//            case R.id.tv_profile:
+//                Log.e(StringUtil.TAG, "gender: " + gender + ", midx: " + midx);
+//                Intent profIntent = new Intent(act, ProfileDetailAct.class);
+//                profIntent.putExtra("gender", gender);
+//                profIntent.putExtra("midx", midx);
+//                startActivity(profIntent);
+//                break;
             case R.id.ll_favorite:
                 setBookmark();
                 break;

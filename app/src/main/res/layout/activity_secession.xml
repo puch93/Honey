@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_home_190902" />
+                    android:src="@drawable/btn_home" />
             </LinearLayout>
         </android.support.constraint.ConstraintLayout>
 
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:adjustViewBounds="true"
-                    android:button="@drawable/sel_radio_btn2"
+                    android:button="@drawable/btn_radio"
                     android:layout_marginLeft="20dp"
                     android:textStyle="bold"
                     android:paddingLeft="9dp"
@@ -122,7 +122,7 @@
                     android:layout_marginLeft="20dp"
                     android:textStyle="bold"
                     android:adjustViewBounds="true"
-                    android:button="@drawable/sel_radio_btn2"
+                    android:button="@drawable/btn_radio"
                     android:paddingLeft="9dp"
                     android:text="개인적인 프로필 정보를 공개하고 싶지 않습니다"
                     android:textColor="@color/color_4d4d4d"
@@ -142,7 +142,7 @@
                     android:layout_marginLeft="20dp"
                     android:textStyle="bold"
                     android:adjustViewBounds="true"
-                    android:button="@drawable/sel_radio_btn2"
+                    android:button="@drawable/btn_radio"
                     android:paddingLeft="9dp"
                     android:text="재가입을 하고 싶어서"
                     android:textColor="@color/color_4d4d4d"
@@ -161,7 +161,7 @@
                     android:layout_height="48dp"
                     android:adjustViewBounds="true"
                     android:layout_marginLeft="20dp"
-                    android:button="@drawable/sel_radio_btn2"
+                    android:button="@drawable/btn_radio"
                     android:textStyle="bold"
                     android:paddingLeft="9dp"
                     android:text="어플 접속오류"
@@ -181,7 +181,7 @@
                     android:layout_height="48dp"
                     android:adjustViewBounds="true"
                     android:layout_marginLeft="20dp"
-                    android:button="@drawable/sel_radio_btn2"
+                    android:button="@drawable/btn_radio"
                     android:textStyle="bold"
                     android:paddingLeft="9dp"
                     android:text="기타"

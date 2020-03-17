@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import com.match.honey.databinding.ActivityPauseBinding;
 import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
+import com.match.honey.sharedPref.SettingAlarmPref;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.*;
 
@@ -51,12 +53,13 @@ public class PauseAct extends AppCompatActivity {
             }
         });
 
-        binding.cbPause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.cbPause.setChecked(!binding.cbPause.isChecked());
-            }
-        });
+        binding.cbPause.setChecked(false);
+//        binding.cbPause.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                binding.cbPause.setChecked(!binding.cbPause.isChecked());
+//            }
+//        });
 
         binding.tvPauseOk.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -80,7 +80,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
-                        android:button="@drawable/sel_radio_btn2" />
+                        android:button="@drawable/btn_radio" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1,000"
-                        android:textColor="@color/color_8345f3"
+                        android:textColor="@color/color_ec4e4e"
                         android:textSize="14dp" />
 
                     <TextView
@@ -127,7 +127,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
-                        android:button="@drawable/sel_radio_btn2" />
+                        android:button="@drawable/btn_radio" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -146,7 +146,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="4,900"
-                        android:textColor="@color/color_8345f3"
+                        android:textColor="@color/color_ec4e4e"
                         android:textSize="14dp" />
 
                     <TextView
@@ -174,7 +174,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
-                        android:button="@drawable/sel_radio_btn2" />
+                        android:button="@drawable/btn_radio" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -193,7 +193,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="9,000"
-                        android:textColor="@color/color_8345f3"
+                        android:textColor="@color/color_ec4e4e"
                         android:textSize="14dp" />
 
                     <TextView
@@ -221,7 +221,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
-                        android:button="@drawable/sel_radio_btn2" />
+                        android:button="@drawable/btn_radio" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -240,7 +240,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="24,900"
-                        android:textColor="@color/color_8345f3"
+                        android:textColor="@color/color_ec4e4e"
                         android:textSize="14dp" />
 
                     <TextView
@@ -268,10 +268,10 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_popup_btn01"
+                    android:background="@color/color_babbbc"
                     android:gravity="center"
                     android:text="취소"
-                    android:textColor="@color/color_222222"
+                    android:textColor="@color/white_color"
                     android:textSize="14dp"
                     android:textStyle="bold" />
 
@@ -280,7 +280,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/sel_popup_btn02"
+                    android:background="@color/color_ec4e4e"
                     android:gravity="center"
                     android:text="확인"
                     android:textColor="@color/white_color"

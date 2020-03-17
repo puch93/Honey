@@ -7,6 +7,12 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <style name="status_matarial_02" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <!-- dialog activity set -->
     <style name="ActivityDialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="windowNoTitle">true</item>

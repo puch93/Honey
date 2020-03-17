@@ -9,13 +9,20 @@
         android:layout_centerInParent="true"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/iv_loading"
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:adjustViewBounds="true"
-            android:padding="8dp"
-            android:src="@drawable/getmarried_img_load_190919"/>
+            android:theme="@style/progress_bar_color"
+            android:layout_height="wrap_content" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_loading"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:padding="8dp"-->
+<!--            android:src="@drawable/getmarried_img_load_190919"/>-->
 
 <!--        <TextView-->
 <!--            android:id="@+id/tv_loading"-->

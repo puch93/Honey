@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_home_190902" />
+                    android:src="@drawable/btn_home" />
             </LinearLayout>
         </android.support.constraint.ConstraintLayout>
 

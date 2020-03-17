@@ -335,8 +335,6 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                                 }
                             }
 
-                            binding.tvIntroduce.setText(pdata.getP_introduce());
-
                             list = new ArrayList<>();
 
                             //배우자 희망지역 세팅
@@ -437,6 +435,10 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
                             pdata.setWeight(obj.getString("weight"));
                             pdata.setWhen_marry(obj.getString("when_marry"));
                             pdata.setChildwho(obj.getString("childwho"));
+
+                            Log.e(StringUtil.TAG, "pdata.getP_introduce(): " + pdata.getP_introduce());
+
+                            binding.tvIntroduce.setText(pdata.getP_introduce());
 
                             //프로필이미지
                             if (!StringUtil.isNull(pdata.getPimg())) {

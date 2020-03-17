@@ -57,14 +57,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_home_190902" />
+                    android:src="@drawable/btn_home" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="홈으로"
-                    android:textColor="@color/color_8345f3"
+                    android:textColor="@color/color_ec4e4e"
                     android:textSize="13dp" />
 
             </LinearLayout>
@@ -148,7 +148,7 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
                     android:text="댓글보기"
-                    android:textColor="@color/color_8345f3"
+                    android:textColor="@color/color_ec4e4e"
                     android:textSize="16dp" />
             </LinearLayout>
 

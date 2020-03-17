@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_eaeaea"
+        android:background="@color/color_f6f6f6"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:background="@color/color_fafafa"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/white_color"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -18,15 +19,18 @@
                 android:id="@+id/fl_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="23dp"
-                android:paddingRight="13dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="6.7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_back_190902" />
+                    android:src="@drawable/btn_back" />
             </FrameLayout>
 
 
@@ -35,40 +39,31 @@
                 android:layout_height="wrap_content"
                 android:text="신고내역"
                 android:textColor="@color/color_2"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/ll_home"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingLeft="15dp"
-                android:paddingRight="22dp">
+                android:paddingLeft="6.7dp"
+                android:paddingRight="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="23dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/getmarried_btn_home_190902" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="홈으로"
-                    android:textColor="@color/color_8345f3"
-                    android:textSize="13dp" />
-
+                    android:src="@drawable/btn_home" />
             </LinearLayout>
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <ImageView
             android:layout_width="match_parent"

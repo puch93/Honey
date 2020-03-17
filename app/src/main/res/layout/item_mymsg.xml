@@ -20,7 +20,7 @@
             android:text="1"
             android:visibility="gone"
             android:textStyle="bold"
-            android:textColor="@color/color_8345f3"
+            android:textColor="@color/color_ec4e4e"
             android:layout_marginRight="5dp"
             android:layout_gravity="bottom"
             android:includeFontPadding="false"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:text="오후 3:16"
             android:textColor="@color/color_aaaaaa"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="10dp"
             android:layout_gravity="bottom"
             android:includeFontPadding="false"
             android:textSize="11dp" />
@@ -58,6 +58,6 @@
             android:paddingRight="20dp"
             android:textSize="13dp"
             android:textColor="@color/white_color"
-            android:background="@drawable/getmarried_bg_chat_chat02_190902"/>
+            android:background="@drawable/chatbox_me"/>
     </LinearLayout>
 </LinearLayout>
