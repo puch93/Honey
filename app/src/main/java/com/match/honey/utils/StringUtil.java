@@ -30,6 +30,7 @@ public class StringUtil {
     public static final String RSUCCESS = "success";
     public static final String RFAIL = "fail";
     public static final String TAG = "TEST_HOME";
+    public static final String TAG_BAIDU = "LOG_BAIDU";
     public static final String TAG_ERROR = "TEST_ERROR";
     public static final String TAG_SOCKET = "TEST_SOCKET";
 

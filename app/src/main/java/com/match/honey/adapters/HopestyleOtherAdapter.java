@@ -1,19 +1,17 @@
 package com.match.honey.adapters;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.match.honey.R;
-import com.match.honey.dialog.DlgHopestyle;
 import com.match.honey.listDatas.HopestyleData;
-import com.match.honey.utils.DefaultValue;
 
 import java.util.ArrayList;
 

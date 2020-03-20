@@ -1,13 +1,12 @@
 package com.match.honey.activity;
 
 import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.pm.ResolveInfo;
-import android.databinding.DataBindingUtil;
+
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
+import androidx.annotation.Nullable;
+
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.View;
@@ -25,7 +24,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

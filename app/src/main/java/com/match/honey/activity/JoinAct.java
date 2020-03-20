@@ -1,29 +1,25 @@
 package com.match.honey.activity;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import androidx.databinding.DataBindingUtil;
+
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.GridLayoutManager;
+
+import androidx.annotation.Nullable;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import android.telephony.PhoneNumberUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -645,7 +641,8 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
                 break;
 
             case R.id.btn_termview:
-                startActivity(new Intent(this, TermsActivity.class));
+                Common.showToastDevelop(act);
+//                startActivity(new Intent(this, TermsActivity.class));
                 break;
 
             case R.id.btn_join:
@@ -778,14 +775,14 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
 
 
                 //푸시토큰
-                if (StringUtil.isNull(token)) {
-                    token = FirebaseInstanceId.getInstance().getToken();
-                    UserPref.setFcmToken(this, token);
-                    Toast.makeText(this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    UserPref.setFcmToken(this, token);
-                }
+//                if (StringUtil.isNull(token)) {
+//                    token = FirebaseInstanceId.getInstance().getToken();
+//                    UserPref.setFcmToken(this, token);
+//                    Toast.makeText(this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+//                    return;
+//                } else {
+//                    UserPref.setFcmToken(this, token);
+//                }
 
                 //형제관계
                 if (binding.tvFamilyFemale.length() == 0 || binding.tvFamilyOrder.length() == 0 || binding.tvFamilyMale.length() == 0) {

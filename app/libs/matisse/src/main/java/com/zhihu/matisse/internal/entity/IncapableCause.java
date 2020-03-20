@@ -16,7 +16,7 @@
 package com.zhihu.matisse.internal.entity;
 
 import android.content.Context;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 

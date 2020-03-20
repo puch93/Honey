@@ -31,7 +31,7 @@
                     android:layout_height="68dp"
                     android:layout_marginTop="8dp"
                     android:adjustViewBounds="true"
-
+                    android:layout_marginRight="5dp"
                     android:scaleType="centerCrop" />
 
                 <ImageView
@@ -40,7 +40,7 @@
                     android:layout_height="68dp"
                     android:layout_marginTop="8dp"
                     android:adjustViewBounds="true"
-
+                    android:layout_marginRight="5dp"
                     android:scaleType="centerCrop" />
 
 
@@ -67,7 +67,7 @@
                 android:paddingTop="11dp"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingLeft="15dp"
+                android:paddingLeft="10dp"
                 android:paddingBottom="5dp">
 
                 <LinearLayout

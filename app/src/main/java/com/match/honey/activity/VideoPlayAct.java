@@ -1,10 +1,10 @@
 package com.match.honey.activity;
 
 import android.app.Activity;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.MediaController;
 
 import com.match.honey.R;

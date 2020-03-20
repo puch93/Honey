@@ -3,9 +3,7 @@ package com.match.honey.fragment;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.Fragment;
-
-import com.match.honey.utils.StringUtil;
+import androidx.fragment.app.Fragment;
 
 import java.lang.ref.WeakReference;
 

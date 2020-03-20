@@ -1,7 +1,7 @@
 package com.match.honey.utils;
 
 import android.app.Activity;
-import android.support.design.widget.Snackbar;
+import com.google.android.material.snackbar.Snackbar;
 import android.widget.Toast;
 
 import com.match.honey.R;

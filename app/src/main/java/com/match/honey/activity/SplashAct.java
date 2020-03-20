@@ -15,11 +15,10 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
@@ -49,7 +48,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.List;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class SplashAct extends BaseActivity {
     final static int GPS_CHECK = 20;
@@ -305,13 +303,13 @@ public class SplashAct extends BaseActivity {
     }
 
     private void reqAutoLogin() {
-        if (StringUtil.isNull(token)) {
-            token = FirebaseInstanceId.getInstance().getToken();
-            Toast.makeText(act, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
-            return;
-        } else {
-            UserPref.setFcmToken(this, token);
-        }
+//        if (StringUtil.isNull(token)) {
+//            token = FirebaseInstanceId.getInstance().getToken();
+//            Toast.makeText(act, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+//            return;
+//        } else {
+//            UserPref.setFcmToken(this, token);
+//        }
 
         ReqBasic autologin = new ReqBasic(this, NetUrls.LOGIN) {
             @Override

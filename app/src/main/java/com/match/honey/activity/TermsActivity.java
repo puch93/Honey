@@ -1,19 +1,18 @@
 package com.match.honey.activity;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.databinding.DataBindingUtil;
-import android.graphics.Color;
+
+import androidx.databinding.DataBindingUtil;
+
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 
 import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
 
 import com.match.honey.R;
-import com.match.honey.adapters.TermsPageAdapter;
 import com.match.honey.databinding.ActivityTermBinding;
 import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;

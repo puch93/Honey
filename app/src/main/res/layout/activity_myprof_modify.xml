@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/title_bar_height"
                 android:background="@color/white_color"
@@ -53,7 +53,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
                 android:layout_width="match_parent"
@@ -1485,7 +1485,7 @@
                                 android:orientation="horizontal"
                                 android:paddingLeft="15dp">
 
-                                <android.support.v7.widget.AppCompatRadioButton
+                                <androidx.appcompat.widget.AppCompatRadioButton
                                     android:id="@+id/rdo_child_me"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -1498,7 +1498,7 @@
                                     android:textSize="15dp" />
 
 
-                                <android.support.v7.widget.AppCompatRadioButton
+                                <androidx.appcompat.widget.AppCompatRadioButton
                                     android:id="@+id/rdo_child_wife"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -1510,7 +1510,7 @@
                                     android:textColor="@color/color_222222"
                                     android:textSize="15dp" />
 
-                                <android.support.v7.widget.AppCompatRadioButton
+                                <androidx.appcompat.widget.AppCompatRadioButton
                                     android:id="@+id/rdo_child_other"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -1550,7 +1550,7 @@
                     android:layout_marginRight="15dp"
                     android:orientation="vertical">
 
-                    <android.support.v7.widget.RecyclerView
+                    <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rcv_join_hoplestyle"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />

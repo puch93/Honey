@@ -1,20 +1,21 @@
 package com.match.honey.activity;
 
 import android.app.Activity;
+import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,23 +23,17 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.facebook.AccessToken;
+import com.amazonaws.mobile.auth.core.IdentityManager;
+import com.amazonaws.mobile.config.AWSConfiguration;
+import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoPinpointSharedContext;
+import com.amazonaws.mobileconnectors.pinpoint.PinpointConfiguration;
+import com.amazonaws.mobileconnectors.pinpoint.PinpointManager;
+import com.amazonaws.services.pinpoint.model.ChannelType;
+import com.baidu.android.pushservice.PushConstants;
+import com.baidu.android.pushservice.PushManager;
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.kakao.auth.AuthType;
-import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
-import com.kakao.network.ErrorResult;
-import com.kakao.usermgmt.UserManagement;
-import com.kakao.usermgmt.callback.MeV2ResponseCallback;
-import com.kakao.usermgmt.response.MeV2Response;
-import com.kakao.util.exception.KakaoException;
 import com.match.honey.R;
 import com.match.honey.callback.FacebookLoginCallback;
 import com.match.honey.databinding.ActivityLoginBinding;
@@ -49,20 +44,13 @@ import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.DefaultValue;
 import com.match.honey.utils.StringUtil;
 import com.nhn.android.naverlogin.OAuthLogin;
-import com.nhn.android.naverlogin.OAuthLoginHandler;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class LoginAct extends BaseActivity implements View.OnClickListener {
@@ -116,6 +104,21 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
                 binding.etPw.setText(UserPref.getPw(this));
             }
         }
+
+
+        /* 바이두 */
+        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
+
+        final PinpointConfiguration config =
+                new PinpointConfiguration(getApplicationContext(),
+                        IdentityManager.getDefaultIdentityManager().getCredentialsProvider(),
+                        new AWSConfiguration(getApplicationContext()))
+                        .withChannelType(ChannelType.BAIDU);
+        PinpointManager pinpointManager = new PinpointManager(config);
+
+
+        Log.e(StringUtil.TAG_BAIDU, "getDeviceToken: " + pinpointManager.getNotificationClient().getDeviceToken());
+
     }
 
     @Override
@@ -146,13 +149,13 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
     }
 
     private void reqLogin() {
-        if (StringUtil.isNull(token)) {
-            token = FirebaseInstanceId.getInstance().getToken();
-            Toast.makeText(LoginAct.this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
-            return;
-        } else {
-            UserPref.setFcmToken(this, token);
-        }
+//        if (StringUtil.isNull(token)) {
+//            token = FirebaseInstanceId.getInstance().getToken();
+//            Toast.makeText(LoginAct.this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+//            return;
+//        } else {
+//            UserPref.setFcmToken(this, token);
+//        }
 
         ReqBasic login = new ReqBasic(this, NetUrls.LOGIN) {
             @Override
@@ -215,13 +218,13 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
     }
 
     private void reqAutoLogin() {
-        if (StringUtil.isNull(token)) {
-            token = FirebaseInstanceId.getInstance().getToken();
-            Toast.makeText(LoginAct.this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
-            return;
-        } else {
-            UserPref.setFcmToken(this, token);
-        }
+//        if (StringUtil.isNull(token)) {
+//            token = FirebaseInstanceId.getInstance().getToken();
+//            Toast.makeText(LoginAct.this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+//            return;
+//        } else {
+//            UserPref.setFcmToken(this, token);
+//        }
 
         ReqBasic autologin = new ReqBasic(this, NetUrls.LOGIN) {
             @Override

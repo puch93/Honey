@@ -90,7 +90,7 @@
                 android:orientation="horizontal"
                 android:paddingLeft="15dp">
 
-                <android.support.v7.widget.AppCompatRadioButton
+                <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/rdo_male"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -103,7 +103,7 @@
                     android:textSize="15dp" />
 
 
-                <android.support.v7.widget.AppCompatRadioButton
+                <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/rdo_female"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -115,7 +115,7 @@
                     android:textColor="@color/color_222222"
                     android:textSize="15dp" />
 
-                <android.support.v7.widget.AppCompatRadioButton
+                <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/rdo_all"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -131,7 +131,7 @@
         </LinearLayout>
 
         <!--recyclerview area-->
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_boarddetaillist"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

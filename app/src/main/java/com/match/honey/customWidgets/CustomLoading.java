@@ -4,9 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatDialog;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
+import androidx.appcompat.app.AppCompatDialog;
 
 import com.match.honey.R;
 

@@ -3,14 +3,15 @@ package com.match.honey.activity;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.GridLayoutManager;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.match.honey.R;
 import com.match.honey.adapters.HopestyleOtherAdapter;
 import com.match.honey.adapters.list.ImagelistOtherAdapter2;
@@ -534,12 +538,16 @@ public class ProfileDetailAct extends Activity implements View.OnClickListener {
                                     binding.ivNoprofimg.setVisibility(View.GONE);
                                     Glide.with(ProfileDetailAct.this)
                                             .load(data.getPimg())
+                                            .centerCrop()
+                                            .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                             .into(binding.ivProfimg);
                                 } else {
                                     binding.ivProfimg.setVisibility(View.GONE);
                                     binding.ivNoprofimg.setVisibility(View.VISIBLE);
                                     Glide.with(ProfileDetailAct.this)
                                             .load(data.getCharacter_int())
+                                            .centerCrop()
+                                            .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                             .into(binding.ivNoprofimg);
                                 }
 
@@ -550,6 +558,8 @@ public class ProfileDetailAct extends Activity implements View.OnClickListener {
                                 binding.ivNoprofimg.setVisibility(View.VISIBLE);
                                 Glide.with(ProfileDetailAct.this)
                                         .load(data.getCharacter_int())
+                                        .centerCrop()
+                                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                         .into(binding.ivNoprofimg);
                             }
 
@@ -1039,12 +1049,16 @@ public class ProfileDetailAct extends Activity implements View.OnClickListener {
                                     binding.ivNoprofimg.setVisibility(View.GONE);
                                     Glide.with(ProfileDetailAct.this)
                                             .load(data.getPimg())
+                                            .centerCrop()
+                                            .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                             .into(binding.ivProfimg);
                                 } else {
                                     binding.ivProfimg.setVisibility(View.GONE);
                                     binding.ivNoprofimg.setVisibility(View.VISIBLE);
                                     Glide.with(ProfileDetailAct.this)
                                             .load(data.getCharacter_int())
+                                            .centerCrop()
+                                            .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                             .into(binding.ivNoprofimg);
                                 }
 
@@ -1055,6 +1069,8 @@ public class ProfileDetailAct extends Activity implements View.OnClickListener {
                                 binding.ivNoprofimg.setVisibility(View.VISIBLE);
                                 Glide.with(ProfileDetailAct.this)
                                         .load(data.getCharacter_int())
+                                        .centerCrop()
+                                        .transform(new MultiTransformation<Bitmap>(new CenterCrop(), new RoundedCorners(15)))
                                         .into(binding.ivNoprofimg);
                             }
 

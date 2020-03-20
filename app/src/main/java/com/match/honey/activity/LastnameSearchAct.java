@@ -2,23 +2,18 @@ package com.match.honey.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.GridLayoutManager;
+
 import android.util.Log;
 import android.view.View;
 
 import com.match.honey.R;
-import com.match.honey.adapters.RecyclerViewItemClick;
 import com.match.honey.adapters.list.LastnameListAdapter;
 import com.match.honey.databinding.ActivityLastnamesearchBinding;
 import com.match.honey.listDatas.LastnameData;
-import com.match.honey.utils.CustomDividerItemDecoration;
-import com.match.honey.utils.DefaultValue;
 import com.match.honey.utils.StringUtil;
 
 import java.util.ArrayList;

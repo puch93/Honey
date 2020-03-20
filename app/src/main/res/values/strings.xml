@@ -33,6 +33,8 @@
     <string name="chat_notice02">·  조건만남을 가장한 선입금 사기주의.</string>
     <string name="chat_notice03">·  욕설, 성매매, 불법적인 내용 적발시 영구차단.</string>
 
+    <string name="baidu_api_key">Kc2SVZb6NS5dXGSUggnVKtlM</string>
+
     <string-array name="portals">
         <item>naver.com</item>
         <item>nate.com</item>

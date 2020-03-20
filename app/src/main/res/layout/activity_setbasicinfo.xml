@@ -14,7 +14,7 @@
             android:background="@color/color_f6f6f6"
             android:orientation="vertical">
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/title_bar_height"
                 android:background="@color/white_color"
@@ -51,7 +51,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
                 android:layout_width="match_parent"
@@ -263,7 +263,7 @@
                             android:orientation="horizontal"
                             android:paddingRight="15dp">
 
-                            <android.support.v7.widget.AppCompatRadioButton
+                            <androidx.appcompat.widget.AppCompatRadioButton
                                 android:id="@+id/rdo_familyname"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -276,7 +276,7 @@
                                 android:textSize="15dp" />
 
 
-                            <android.support.v7.widget.AppCompatRadioButton
+                            <androidx.appcompat.widget.AppCompatRadioButton
                                 android:id="@+id/rdo_name"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -366,7 +366,7 @@
                             android:orientation="horizontal"
                             android:paddingRight="15dp">
 
-                            <android.support.v7.widget.AppCompatRadioButton
+                            <androidx.appcompat.widget.AppCompatRadioButton
                                 android:id="@+id/rdo_marry"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -379,7 +379,7 @@
                                 android:textSize="15dp" />
 
 
-                            <android.support.v7.widget.AppCompatRadioButton
+                            <androidx.appcompat.widget.AppCompatRadioButton
                                 android:id="@+id/rdo_remarry"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"

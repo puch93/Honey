@@ -48,3 +48,8 @@
 -dontwarn okhttp3.**
 -dontwarn okio.**
 
+
+-libraryjars libs/pushservice-6.7.3.20.jar
+-dontwarn com.baidu.**
+-keep class com.baidu.**{*; }
+

@@ -2,10 +2,9 @@ package com.match.honey.adapters.list;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +14,6 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
 import com.match.honey.activity.ChatAct;
-import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.StringUtil;
 
 import java.io.File;

@@ -9,7 +9,7 @@
         android:orientation="vertical">
         <!--android:background="@drawable/p04"-->
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="@drawable/bg_titlebar"
@@ -39,7 +39,7 @@
                 app:layout_constraintLeft_toRightOf="@+id/ll_btn_back"
                 app:layout_constraintTop_toTopOf="parent" />
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

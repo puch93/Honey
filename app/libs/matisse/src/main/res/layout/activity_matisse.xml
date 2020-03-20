@@ -30,7 +30,7 @@
         android:textColor="?attr/bottomToolbar.preview.textColor"
         android:text="이미지는 20개까지 선택 가능합니다."/>
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_below="@+id/tv_guiidemsg"
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
             android:gravity="center"
             android:textColor="?attr/album.element.color"
             android:textSize="20sp" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
         android:id="@+id/bottom_toolbar"

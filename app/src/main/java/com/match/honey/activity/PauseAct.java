@@ -2,15 +2,14 @@ package com.match.honey.activity;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +18,6 @@ import com.match.honey.databinding.ActivityPauseBinding;
 import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
-import com.match.honey.sharedPref.SettingAlarmPref;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.*;
 

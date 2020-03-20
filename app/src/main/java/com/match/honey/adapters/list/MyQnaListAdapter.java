@@ -2,21 +2,18 @@ package com.match.honey.adapters.list;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.match.honey.R;
 import com.match.honey.activity.QnaDetailAct;
 import com.match.honey.activity.QnaReportDetailAct;
 import com.match.honey.listDatas.MyQnaData;
-import com.match.honey.utils.StringUtil;
 
 import java.util.ArrayList;
 

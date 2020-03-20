@@ -1,21 +1,17 @@
 package com.match.honey.activity;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import androidx.databinding.DataBindingUtil;
+
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.match.honey.R;

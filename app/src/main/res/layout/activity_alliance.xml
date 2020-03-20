@@ -14,7 +14,7 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/title_bar_height"
                 android:background="@color/white_color"
@@ -69,7 +69,7 @@
                         android:adjustViewBounds="true"
                         android:src="@drawable/btn_home" />
                 </LinearLayout>
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
                 android:layout_width="match_parent"
@@ -137,7 +137,7 @@
                         android:orientation="horizontal"
                         android:paddingLeft="15dp">
 
-                        <android.support.v7.widget.AppCompatRadioButton
+                        <androidx.appcompat.widget.AppCompatRadioButton
                             android:id="@+id/rdo_item1"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -151,7 +151,7 @@
                             android:textStyle="bold" />
 
 
-                        <android.support.v7.widget.AppCompatRadioButton
+                        <androidx.appcompat.widget.AppCompatRadioButton
                             android:id="@+id/rdo_item2"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -164,7 +164,7 @@
                             android:textSize="13dp"
                             android:textStyle="bold" />
 
-                        <android.support.v7.widget.AppCompatRadioButton
+                        <androidx.appcompat.widget.AppCompatRadioButton
                             android:id="@+id/rdo_item3"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"

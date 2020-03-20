@@ -1,10 +1,10 @@
 package com.match.honey.activity;
 
 import android.app.Activity;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -18,7 +18,6 @@ import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.Common;
-import com.match.honey.utils.ItemOffsetDecoration;
 import com.match.honey.utils.ItemOffsetDecorationBlock;
 import com.match.honey.utils.StringUtil;
 

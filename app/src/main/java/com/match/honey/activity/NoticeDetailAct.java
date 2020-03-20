@@ -2,29 +2,21 @@ package com.match.honey.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.match.honey.R;
-import com.match.honey.databinding.ActivityNoticeBinding;
 import com.match.honey.databinding.ActivityNoticeDetailBinding;
-import com.match.honey.listDatas.NoticeData;
 import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
-import com.match.honey.sharedPref.UserPref;
-import com.match.honey.utils.Common;
 import com.match.honey.utils.StringUtil;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 public class NoticeDetailAct extends AppCompatActivity {
     ActivityNoticeDetailBinding binding;

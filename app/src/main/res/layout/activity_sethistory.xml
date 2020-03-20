@@ -9,7 +9,7 @@
         android:background="@color/color_f6f6f6"
         android:orientation="vertical">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/title_bar_height"
             android:background="@color/white_color"
@@ -64,7 +64,7 @@
                     android:adjustViewBounds="true"
                     android:src="@drawable/btn_home" />
             </LinearLayout>
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:layout_width="match_parent"

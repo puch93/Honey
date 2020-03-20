@@ -2,21 +2,18 @@ package com.match.honey.adapters.list;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.match.honey.R;
 import com.match.honey.dialog.DlgHopestyle;
-import com.match.honey.listDatas.ChatMessage;
 import com.match.honey.listDatas.HopestyleData;
 import com.match.honey.utils.DefaultValue;
-import com.match.honey.utils.StringUtil;
 
 import java.util.ArrayList;
 
