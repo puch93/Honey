@@ -1,12 +1,12 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PushAct extends AppCompatActivity {
-    Activity act;
+    AppCompatActivity act;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

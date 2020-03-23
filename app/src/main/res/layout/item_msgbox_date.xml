@@ -34,7 +34,7 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_weight="1"
-            android:src="#e5e5e5" />
+            android:src="#e5e5e5"  />
     </LinearLayout>
 
 </LinearLayout>

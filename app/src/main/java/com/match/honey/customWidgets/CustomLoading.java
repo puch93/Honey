@@ -1,9 +1,10 @@
 package com.match.honey.customWidgets;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialog;
 
 import com.match.honey.R;
@@ -20,7 +21,7 @@ public class CustomLoading {
 
     public void progressON(String msg){
 
-        if (act == null || ((Activity)act).isFinishing()){
+        if (act == null || ((AppCompatActivity)act).isFinishing()){
             return;
         }
 

@@ -1,16 +1,17 @@
 package com.match.honey.utils;
 
-import android.app.Activity;
 import android.graphics.Rect;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class ItemOffsetDecorationMatisse extends RecyclerView.ItemDecoration {
-    Activity act;
+    AppCompatActivity act;
     int value1;
 
-    public ItemOffsetDecorationMatisse(Activity act, int value1) {
+    public ItemOffsetDecorationMatisse(AppCompatActivity act, int value1) {
         this.act = act;
         this.value1 = value1;
     }

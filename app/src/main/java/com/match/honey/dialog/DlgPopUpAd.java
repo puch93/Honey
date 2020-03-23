@@ -1,13 +1,13 @@
 package com.match.honey.dialog;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
@@ -16,7 +16,7 @@ import com.match.honey.utils.StringUtil;
 
 public class DlgPopUpAd extends AppCompatActivity {
     DialogPopupAdBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
 
     @Override

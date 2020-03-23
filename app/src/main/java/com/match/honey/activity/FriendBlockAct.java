@@ -1,14 +1,14 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.match.honey.R;
 import com.match.honey.adapters.list.FriendBlockAdapter;
@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
 
 public class FriendBlockAct extends AppCompatActivity {
     ActivityFriendBlockBinding binding;
-    Activity act;
+    AppCompatActivity act;
     ArrayList<FriendBlockData> list = new ArrayList<>();
     FriendBlockAdapter adapter;
 

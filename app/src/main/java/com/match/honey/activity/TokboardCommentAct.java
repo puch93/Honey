@@ -1,14 +1,14 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.match.honey.R;
 import com.match.honey.adapters.list.TokboardDetailAdapter;
@@ -29,7 +29,7 @@ import java.util.ArrayList;
 
 public class TokboardCommentAct extends AppCompatActivity implements View.OnClickListener {
     ActivityTokboardCommentBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
     ArrayList<TokboardDetailData> list = new ArrayList<>();
     ArrayList<TokboardDetailData> selectList = new ArrayList<>();

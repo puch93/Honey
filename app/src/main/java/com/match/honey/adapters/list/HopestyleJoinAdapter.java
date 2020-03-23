@@ -1,14 +1,15 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
 import com.match.honey.dialog.DlgHopestyle;
@@ -19,13 +20,13 @@ import java.util.ArrayList;
 
 public class HopestyleJoinAdapter extends RecyclerView.Adapter<HopestyleJoinAdapter.ViewHolder> {
 
-    Activity act;
+    AppCompatActivity act;
     ArrayList<HopestyleData> list;
 
     private static final int VIEW_ITEM = 0;
     private static final int VIEW_SELECT = 1;
 
-    public HopestyleJoinAdapter(Activity act, ArrayList<HopestyleData> list) {
+    public HopestyleJoinAdapter(AppCompatActivity act, ArrayList<HopestyleData> list) {
         this.act = act;
         this.list = list;
     }

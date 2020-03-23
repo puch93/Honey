@@ -1,16 +1,17 @@
 package com.match.honey.utils;
 
-import android.app.Activity;
 import android.graphics.Rect;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class ItemOffsetDecorationJoin extends RecyclerView.ItemDecoration {
-    Activity act;
+    AppCompatActivity act;
     int value1, value2, value3;
 
-    public ItemOffsetDecorationJoin(Activity act, int value1, int value2, int value3) {
+    public ItemOffsetDecorationJoin(AppCompatActivity act, int value1, int value2, int value3) {
         this.act = act;
         this.value1 = value1;
         this.value2 = value2;

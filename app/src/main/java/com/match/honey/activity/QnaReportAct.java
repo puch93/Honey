@@ -1,13 +1,14 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.match.honey.R;
 import com.match.honey.adapters.list.MyQnaListAdapter;
@@ -26,7 +27,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class QnaReportAct extends Activity implements View.OnClickListener {
+public class QnaReportAct extends AppCompatActivity implements View.OnClickListener {
     ActivityQnaReportBinding binding;
 
     ArrayList<MyQnaData> list = new ArrayList<>();

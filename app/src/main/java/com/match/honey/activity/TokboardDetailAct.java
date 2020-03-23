@@ -1,13 +1,14 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
@@ -21,10 +22,10 @@ import com.match.honey.utils.StringUtil;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class TokboardDetailAct extends Activity implements View.OnClickListener{
+public class TokboardDetailAct extends AppCompatActivity implements View.OnClickListener{
 
     ActivityBoarddetailBinding binding;
-    public static Activity act;
+    public static AppCompatActivity act;
     String idx,title,img,hit,hint, commentCount;
 
     @Override

@@ -1,13 +1,14 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
 import com.match.honey.listDatas.HopestyleData;
@@ -16,10 +17,10 @@ import java.util.ArrayList;
 
 public class HopestyleAdapter extends RecyclerView.Adapter<HopestyleAdapter.ViewHolder> {
 
-    Activity act;
+    AppCompatActivity act;
     ArrayList<HopestyleData> list;
 
-    public HopestyleAdapter(Activity act, ArrayList<HopestyleData> list) {
+    public HopestyleAdapter(AppCompatActivity act, ArrayList<HopestyleData> list) {
         this.act = act;
         this.list = list;
     }

@@ -1,3 +1,2 @@
-include ':app', ':videocompress', ':matisse'
+include ':app', ':videocompress'
 project(':videocompress').projectDir = new File('app/libs/videocompress')
-project(':matisse').projectDir = new File('app/libs/matisse')

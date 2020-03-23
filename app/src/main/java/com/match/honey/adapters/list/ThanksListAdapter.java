@@ -1,17 +1,18 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
@@ -26,10 +27,10 @@ import java.util.ArrayList;
 
 public class ThanksListAdapter extends RecyclerView.Adapter<ThanksListAdapter.ViewHolder> {
 
-    Activity act;
+    AppCompatActivity act;
     ArrayList<ThanksData> list;
 
-    public ThanksListAdapter(Activity act, ArrayList<ThanksData> list) {
+    public ThanksListAdapter(AppCompatActivity act, ArrayList<ThanksData> list) {
         this.act = act;
         this.list = list;
     }

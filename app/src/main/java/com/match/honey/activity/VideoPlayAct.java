@@ -1,17 +1,18 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.widget.MediaController;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityVideoviewBinding;
 import com.match.honey.utils.StringUtil;
 
-public class VideoPlayAct extends Activity {
+public class VideoPlayAct extends AppCompatActivity {
     ActivityVideoviewBinding binding;
 
     String link;

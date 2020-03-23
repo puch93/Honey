@@ -1,8 +1,9 @@
 package com.match.honey.billing;
 
-import android.app.Activity;
-import androidx.annotation.Nullable;
 import android.util.Log;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.billingclient.api.AcknowledgePurchaseResponseListener;
 import com.android.billingclient.api.BillingClient;
@@ -27,7 +28,7 @@ public class BIllingManager implements PurchasesUpdatedListener {
     final String TAG = "TEST_INAPP";
 
     private BillingClient mBillingClient;
-    private Activity act;
+    private AppCompatActivity act;
 
     public enum connectStatusTypes {wating, connected, fail, disconnected}
 
@@ -50,7 +51,7 @@ public class BIllingManager implements PurchasesUpdatedListener {
     }
 
 
-    public BIllingManager(final Activity act, AfterBilling after) {
+    public BIllingManager(final AppCompatActivity act, AfterBilling after) {
         this.act = act;
         this.afterListener = after;
 

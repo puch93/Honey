@@ -1,22 +1,23 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
@@ -51,7 +52,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class MyprofileModifyAct extends Activity implements View.OnClickListener {
+public class MyprofileModifyAct extends AppCompatActivity implements View.OnClickListener {
     ActivityMyprofModifyBinding binding;
 
     Geocoder geocoder;
@@ -63,7 +64,7 @@ public class MyprofileModifyAct extends Activity implements View.OnClickListener
     ArrayList<ImagesData> imgpath = new ArrayList<>();
     String chGender;
     ImagelistAdapter imgAdapter;
-    public static Activity act;
+    public static AppCompatActivity act;
 
     HopestyleJoinAdapter adapter;
     ArrayList<HopestyleData> list = new ArrayList<>();

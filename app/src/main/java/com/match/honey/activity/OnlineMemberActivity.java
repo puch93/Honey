@@ -1,13 +1,13 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.match.honey.R;
 import com.match.honey.adapters.list.MemberListAdapter;
@@ -32,7 +32,7 @@ import java.util.Date;
 
 public class OnlineMemberActivity extends AppCompatActivity {
     ActivityOnlineMemberBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
     ArrayList<MemberData> list = new ArrayList<>();
     MemberListAdapter adapter;

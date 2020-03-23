@@ -1,6 +1,5 @@
 package com.match.honey.dialog;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,13 +10,15 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
@@ -28,7 +29,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-public class DlgAdviewFullScreen extends Activity {
+public class DlgAdviewFullScreen extends AppCompatActivity {
 
     private final String _P_FRONT = "front";
 

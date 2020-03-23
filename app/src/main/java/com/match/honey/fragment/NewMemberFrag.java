@@ -1,18 +1,19 @@
 package com.match.honey.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.match.honey.R;
 import com.match.honey.activity.MainActivity;
@@ -42,7 +43,7 @@ import java.util.Date;
 
 public class NewMemberFrag extends BaseFrag implements View.OnClickListener, MainActivity.onKeyBackPressedListener {
     ActivityNewuserBinding binding;
-    Activity act;
+    AppCompatActivity act;
     View view;
 
     ArrayList<MemberData> list = new ArrayList<>();
@@ -59,7 +60,7 @@ public class NewMemberFrag extends BaseFrag implements View.OnClickListener, Mai
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.activity_newuser, container, false);
         view = binding.getRoot();
-        act = getActivity();
+        act = (AppCompatActivity) getActivity();
 
         setClickListener();
 

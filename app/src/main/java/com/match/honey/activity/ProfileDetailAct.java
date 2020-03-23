@@ -1,22 +1,23 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
@@ -45,7 +46,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class ProfileDetailAct extends Activity implements View.OnClickListener {
+public class ProfileDetailAct extends AppCompatActivity implements View.OnClickListener {
 
     ActivityProfiledetailBinding binding;
 
@@ -54,7 +55,7 @@ public class ProfileDetailAct extends Activity implements View.OnClickListener {
     ChangeProfVal cpv;
 
     public boolean isReadOk = false;
-    Activity act;
+    AppCompatActivity act;
 
 
     HopestyleOtherAdapter adapter;

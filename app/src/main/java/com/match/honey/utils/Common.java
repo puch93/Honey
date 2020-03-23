@@ -1,9 +1,10 @@
 package com.match.honey.utils;
 
-import android.app.Activity;
-import com.google.android.material.snackbar.Snackbar;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.match.honey.R;
 
 public class Common {
@@ -19,7 +20,7 @@ public class Common {
     public static final String W4 = "chW04";
     public static final String W5 = "chW05";
 
-    public static void showToast(final Activity act, final String msg) {
+    public static void showToast(final AppCompatActivity act, final String msg) {
 
         act.runOnUiThread(new Runnable() {
             @Override
@@ -29,7 +30,7 @@ public class Common {
         });
     }
 
-    public static void showToastLong(final Activity act, final String msg) {
+    public static void showToastLong(final AppCompatActivity act, final String msg) {
         act.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -40,7 +41,7 @@ public class Common {
 
 
 
-    public static void showToastNet(final Activity act) {
+    public static void showToastNet(final AppCompatActivity act) {
         act.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -49,7 +50,7 @@ public class Common {
         });
     }
 
-    public static void showToastDevelop(final Activity act) {
+    public static void showToastDevelop(final AppCompatActivity act) {
         act.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -92,7 +93,7 @@ public class Common {
         }
     }
 
-    public static void showSnack(final Activity act, final String msg) {
+    public static void showSnack(final AppCompatActivity act, final String msg) {
 
         act.runOnUiThread(new Runnable() {
             @Override
@@ -102,7 +103,7 @@ public class Common {
         });
     }
 
-    public static void showSnackLong(final Activity act, final String msg) {
+    public static void showSnackLong(final AppCompatActivity act, final String msg) {
         act.runOnUiThread(new Runnable() {
             @Override
             public void run() {

@@ -8,143 +8,89 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
-import android.renderscript.Allocation;
-import android.renderscript.Element;
-import android.renderscript.RenderScript;
-import android.renderscript.ScriptIntrinsicBlur;
-import androidx.core.app.NotificationCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import androidx.core.app.NotificationCompat;
+
 import com.match.honey.R;
-import com.match.honey.activity.PushAct;
-import com.match.honey.sharedPref.UserPref;
+import com.match.honey.activity.MainActivity;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+
+
+
+/**
+ * NotificationChannel
+ *
+ * If on Oreo then notification required a notification channel.
+ *
+ * IMPORTANCE_DEFAULT       shows everywhere, makes noise, but does not visually intrude
+ * IMPORTANCE_HIGH          shows everywhere, makes noise and peeks
+ */
+
+/**
+ * NotificationCompat.Builder
+ *
+ * setLargeIcon         큰그림
+ * setSmallIcon         큰그림 밑에 작은그림
+ * setTicker            알람 발생시 잠깐 나오는 텍스트 (테스트 해보니까 가상 머신에서는 안나오고 실제 디바이스에서는 나오네요)
+ * setContentTitle      제목
+ * setContentText       내용
+ * setWen               알람 시간 (miliSecond 단위로 넣어주면 내부적으로 자동으로 파싱합니다)
+ * setDefaults          알람발생시 진동, 사운드등을 설정 (사운드, 진동 둘다 설정할수도 있고 한개 또는 설정하지 않을 수도있음)
+ * setContentIntent     알람을 눌렀을 때 실행할작업 인텐트를 설정합니다.
+ * setAutoCancel        알람 터치시 자동으로 삭제할 것인지 설정합니다.
+ * setNumber            확인하지 않은 알림 갯수를 설정합니다. (999가 초과되면 999+로 나타냅니다.)
+ */
 
 public class NotificationHelper {
-    Context ctx;
-    NotificationManager manager;
+    private static final String TAG = "TEST_PUSH";
 
-    String _CHANNEL_ID = "0";
-    String _CHANNEL_NAME = "ybyb";
+    private Context context;
+    private NotificationManager manager;
 
-    int _NOTIFICATION_ID_NORMAL = 1;
-    int _NOTIFICATION_ID_PICTURE = 2;
+    private static final String CHANNEL_ID = "default";
+    private static final String CHANNEL_NAME = "Default";
 
-    Bitmap img = null;
-    Bitmap background = null;
 
-    public NotificationHelper(Context ctx) {
-        this.ctx = ctx;
-        manager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+    public NotificationHelper(Context context) {
+        this.context = context;
+        manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(_CHANNEL_ID, _CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
-            channel.setDescription("sayTranslate Notification Description");
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
             channel.enableVibration(true);
             channel.enableLights(true);
-            //중복된 channel ID로 생성하면 아무 일도 일어나지 않음.
             manager.createNotificationChannel(channel);
         }
     }
 
-    public void showNotification(String title, String message, String imgUrl, String link) {
-        Log.i("TEST", "title: " + title + " msg: " + message + " img: " + imgUrl);
-        if (StringUtil.isNull(title)) {
-            title = "결혼중개 전문어플" + " " + ctx.getResources().getString(R.string.app_name);
-        }
-        if (StringUtil.isNull(message)) {
-            message = "결혼 & 재혼을 위한 필수어플" + " " + ctx.getResources().getString(R.string.app_name);
-        }
 
-        //PendingIntent
-        final PendingIntent pIntent;
-        if (StringUtil.isNull(link)) {
-            Intent intent = new Intent(ctx, PushAct.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            pIntent = PendingIntent.getActivity(ctx, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-        } else {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
-            pIntent = PendingIntent.getActivity(ctx, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-        }
+    // notification (default)
+    public void showDefaultNotification(String title, String message, String url) {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setAutoCancel(true)
+                .setSmallIcon(R.drawable.app_icon);
 
-        if (UserPref.getTopNotiPref(ctx) == 301) {
-            UserPref.setTopNotiPref(ctx, 201);
-        }
-        UserPref.setTopNotiPref(ctx, UserPref.getTopNotiPref(ctx) + 1);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-        if (StringUtil.isNull(imgUrl)) {
-            showNormalNotification(title, message, pIntent, 1);
-        } else {
-            /*UserPref.getNotiIdPref(ctx)*/
-            showPictureNotification(title, message, imgUrl, pIntent, 1);
-        }
-    }
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        builder.setContentIntent(pendingIntent);
 
-    private void showNormalNotification(String title, String message, PendingIntent pIntent, int pushID) {
-        final Notification.Builder builder;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            builder = new Notification.Builder(ctx, _CHANNEL_ID);
-        } else {
-            builder = new Notification.Builder(ctx);
-            builder.setDefaults(Notification.DEFAULT_ALL);
-            builder.setPriority(Notification.PRIORITY_MAX);
-        }
-
-        builder.setContentTitle(title);
-        builder.setContentText(message);
-        builder.setTicker(title);
-        builder.setAutoCancel(true);
-        builder.setSmallIcon(R.drawable.app_icon);
-        builder.setLargeIcon(BitmapFactory.decodeResource(ctx.getResources(), R.drawable.app_icon));
-
-        if (pIntent != null) {
-            builder.setContentIntent(pIntent);
-        }
         Notification notification = builder.build();
-
-        manager.notify(pushID, builder.build());
+        notification.flags = notification.flags | notification.FLAG_AUTO_CANCEL;
+        manager.notify(1, notification);
     }
 
-
-    private void showPictureNotification(String title, String message, final String imgUrl, PendingIntent pIntent, final int pushID) {
-        final RemoteViews expendView = new RemoteViews(ctx.getPackageName(), R.layout.noti);
-
-        expendView.setImageViewBitmap(R.id.iv_noti_img_background, getBitmap(imgUrl));
-        expendView.setTextViewText(R.id.tv_title, title);
-        expendView.setTextViewText(R.id.tv_content, message);
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx, _CHANNEL_ID);
-        builder.setTicker(title);
-        builder.setAutoCancel(true);
-        builder.setContentTitle(title);
-        builder.setContentText(message);
-        builder.setSmallIcon(R.drawable.app_icon);
-        builder.setLargeIcon(BitmapFactory.decodeResource(ctx.getResources(), R.drawable.app_icon));
-        builder.setPriority(NotificationCompat.PRIORITY_MAX);
-        builder.setDefaults(NotificationCompat.DEFAULT_ALL);
-        builder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM), RingtoneManager.TYPE_NOTIFICATION);
-        if (pIntent != null) {
-            builder.setContentIntent(pIntent);
-        }
-
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            builder.setCustomBigContentView(expendView);
-        } else {
-            builder.setCustomContentView(expendView);
-        }
-
-        final Notification notification = builder.build();
-
-        manager.notify(pushID, notification);
-
-    }
 
     private Bitmap getBitmap(String url) {
         URL imgUrl = null;
@@ -163,6 +109,7 @@ public class NotificationHelper {
             retBitmap = Bitmap.createScaledBitmap(tmp, tmp.getWidth(), tmp.getHeight(), true);
 
         } catch (Exception e) {
+            Log.e(TAG, "ExceptionExceptionException: ");
             e.printStackTrace();
         } finally {
             if (connection != null) {
@@ -172,39 +119,11 @@ public class NotificationHelper {
         }
     }
 
-    public Bitmap blurBitmap(Context context, Bitmap bitmap, float blurRadius) {
-        if (bitmap.getConfig() == null) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                bitmap.setConfig(Bitmap.Config.ARGB_8888);
-            } else {
-                bitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
-            }
 
-        }
-
-        Bitmap outBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
-
-        RenderScript rs = RenderScript.create(context);
-
-        ScriptIntrinsicBlur blurScript = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
-
-        Allocation allIn = Allocation.createFromBitmap(rs, bitmap);
-
-        Allocation allOut = Allocation.createFromBitmap(rs, outBitmap);
-
-        blurScript.setRadius(blurRadius);
-
-        blurScript.setInput(allIn);
-
-        blurScript.forEach(allOut);
-
-        allOut.copyTo(outBitmap);
-
-        bitmap.recycle();
-
-        rs.destroy();
-
-        return outBitmap;
+    private String converTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("a hh:mm", java.util.Locale.getDefault());
+        String date = dateFormat.format(System.currentTimeMillis());
+        Log.e(TAG, "date: " + date);
+        return date;
     }
 }
-

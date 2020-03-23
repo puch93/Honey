@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "515096028101",
-    "firebase_url": "https://marryme-cf0b8.firebaseio.com",
-    "project_id": "marryme-cf0b8",
-    "storage_bucket": "marryme-cf0b8.appspot.com"
+    "project_number": "607490989101",
+    "firebase_url": "https://honey-5b710.firebaseio.com",
+    "project_id": "honey-5b710",
+    "storage_bucket": "honey-5b710.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:515096028101:android:cdabda1fcbf9c2f86521ac",
+        "mobilesdk_app_id": "1:607490989101:android:791a701bb752a6541feca4",
         "android_client_info": {
           "package_name": "com.match.honey"
         }
       },
       "oauth_client": [
         {
-          "client_id": "515096028101-icbbl76s5mjpt7ndl1b6oir1htgjntq4.apps.googleusercontent.com",
+          "client_id": "607490989101-3ofkh3h363h53qs5ci0aaht0l6opnlns.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
-    {
-      "current_key": "AIzaSyC7Sk8tOw8T9DRwpGmEDTqETkMYWIDZFmg"
-    }
-  ],
+        {
+          "current_key": "AIzaSyDp6Yz4W7myPC21GH-Uy33fGjZT2HQBSl0"
+        }
+      ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "515096028101-icbbl76s5mjpt7ndl1b6oir1htgjntq4.apps.googleusercontent.com",
+              "client_id": "607490989101-3ofkh3h363h53qs5ci0aaht0l6opnlns.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

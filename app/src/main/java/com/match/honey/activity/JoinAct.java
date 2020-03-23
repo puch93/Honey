@@ -1,18 +1,11 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
-
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.recyclerview.widget.GridLayoutManager;
 import android.telephony.PhoneNumberUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -22,7 +15,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceId;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.GridLayoutManager;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.match.honey.R;
 import com.match.honey.adapters.list.HopestyleJoinAdapter;
 import com.match.honey.databinding.ActivityJoinBinding;
@@ -50,7 +48,7 @@ import java.util.regex.Pattern;
 public class JoinAct extends BaseActivity implements View.OnClickListener {
 
     ActivityJoinBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
     boolean isAvailable = true;
 
@@ -73,7 +71,7 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
         act = this;
         cpv = new ChangeProfVal();
 
-        token = FirebaseInstanceId.getInstance().getToken();
+        token = null;
         Log.d(StringUtil.TAG, "jtoken: " + token);
 
         geocoder = new Geocoder(this);

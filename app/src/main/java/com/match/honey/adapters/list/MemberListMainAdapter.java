@@ -1,12 +1,8 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
-import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +11,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
@@ -41,10 +42,10 @@ import io.supercharge.shimmerlayout.ShimmerLayout;
 
 public class MemberListMainAdapter extends RecyclerView.Adapter<MemberListMainAdapter.ViewHolder> {
 
-    Activity act;
+    AppCompatActivity act;
     ArrayList<MemberData> list;
 
-    public MemberListMainAdapter(Activity act, ArrayList<MemberData> list) {
+    public MemberListMainAdapter(AppCompatActivity act, ArrayList<MemberData> list) {
         this.act = act;
         this.list = list;
     }

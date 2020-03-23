@@ -1,8 +1,5 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +8,10 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
 import com.match.honey.adapters.RecyclerViewItemClick;
@@ -23,13 +24,13 @@ public class DlgMultipleListAdapter extends RecyclerView.Adapter<DlgMultipleList
 
     private static RecyclerViewItemClick myClickListener;
     private int selectedPosition = -1;
-    Activity act;
+    AppCompatActivity act;
     ArrayList<PopData> list;
     int limitnum = 0;
     boolean isLimit = false;
     public int count = 0;
 
-    public DlgMultipleListAdapter(Activity act, ArrayList<PopData> list) {
+    public DlgMultipleListAdapter(AppCompatActivity act, ArrayList<PopData> list) {
         this.act = act;
         this.list = list;
     }

@@ -1,13 +1,14 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
@@ -18,10 +19,10 @@ import java.util.ArrayList;
 
 public class TokboardAdapter extends RecyclerView.Adapter<TokboardAdapter.ViewHolder>{
 
-    Activity act;
+    AppCompatActivity act;
     ArrayList<TokboardData> list;
 
-    public TokboardAdapter(Activity act,ArrayList<TokboardData> list){
+    public TokboardAdapter(AppCompatActivity act, ArrayList<TokboardData> list){
         this.act = act;
         this.list = list;
     }

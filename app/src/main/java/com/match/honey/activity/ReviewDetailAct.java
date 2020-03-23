@@ -1,13 +1,14 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
@@ -24,10 +25,10 @@ import com.match.honey.utils.StringUtil;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ReviewDetailAct extends Activity implements View.OnClickListener {
+public class ReviewDetailAct extends AppCompatActivity implements View.OnClickListener {
 
     ActivityThanksdetailBinding binding;
-    Activity act;
+    AppCompatActivity act;
     String bidx;
 
     @Override

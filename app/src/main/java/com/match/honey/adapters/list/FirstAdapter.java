@@ -1,17 +1,18 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Build;
-import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
@@ -30,13 +31,13 @@ import io.supercharge.shimmerlayout.ShimmerLayout;
 
 public class FirstAdapter extends RecyclerView.Adapter<FirstAdapter.ViewHolder> {
 
-    Activity act;
+    AppCompatActivity act;
     ArrayList<MemberData> list;
 
     private final int DATE_VIEW = 0;
     private final int NEWUSERLIST_VIEW = 1;
 
-    public FirstAdapter(Activity act, ArrayList<MemberData> list) {
+    public FirstAdapter(AppCompatActivity act, ArrayList<MemberData> list) {
         this.act = act;
         this.list = list;
     }

@@ -1,17 +1,17 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.app.Dialog;
-import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityPauseBinding;
@@ -19,14 +19,15 @@ import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
-import com.match.honey.utils.*;
+import com.match.honey.utils.Common;
+import com.match.honey.utils.StringUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class PauseAct extends AppCompatActivity {
     ActivityPauseBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
     boolean isPossible = true;
 

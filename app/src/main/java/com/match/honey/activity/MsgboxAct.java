@@ -1,19 +1,20 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.match.honey.R;
 import com.match.honey.adapters.list.MsgboxListAdapter;
@@ -38,7 +39,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class MsgboxAct extends Activity implements View.OnClickListener {
+public class MsgboxAct extends AppCompatActivity implements View.OnClickListener {
 
     ActivityMoremsgboxBinding binding;
 
@@ -46,7 +47,7 @@ public class MsgboxAct extends Activity implements View.OnClickListener {
     ArrayList<OnlinememData> loginList = new ArrayList<>();
     MsgboxListAdapter adapter;
 
-    public static Activity act;
+    public static AppCompatActivity act;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

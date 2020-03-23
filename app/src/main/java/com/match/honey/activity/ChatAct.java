@@ -1,11 +1,9 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
-import androidx.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -16,15 +14,18 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import androidx.annotation.Nullable;
-import androidx.core.content.FileProvider;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.match.honey.R;
 import com.match.honey.adapters.list.ChatMessageAdapter;
@@ -70,7 +71,7 @@ import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 import okhttp3.OkHttpClient;
 
-public class ChatAct extends Activity implements View.OnClickListener {
+public class ChatAct extends AppCompatActivity implements View.OnClickListener {
 
     static final int REQUEST_TAKE_PHOTO = 2001;
     static final int REQUEST_TAKE_ALBUM = 2002;
@@ -98,7 +99,7 @@ public class ChatAct extends Activity implements View.OnClickListener {
 
     private Uri photoUri;
     private String mImgFilePath;
-    public static Activity act;
+    public static AppCompatActivity act;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

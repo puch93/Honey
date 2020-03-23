@@ -1,17 +1,18 @@
 package com.match.honey.utils;
 
-import android.app.Activity;
 import android.graphics.Rect;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
 
 
 public class ItemOffsetDecoration extends RecyclerView.ItemDecoration {
-    Activity act;
+    AppCompatActivity act;
 
-    public ItemOffsetDecoration(Activity act) {
+    public ItemOffsetDecoration(AppCompatActivity act) {
         this.act = act;
     }
 

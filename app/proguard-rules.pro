@@ -34,7 +34,7 @@
   public *;
 }
 
--dontwarn com.google.firebase.messaging.**
+#-dontwarn com.google.firebase.messaging.**
 
 -keep public class com.android.vending.billing.**
 
@@ -49,7 +49,7 @@
 -dontwarn okio.**
 
 
--libraryjars libs/pushservice-6.7.3.20.jar
+-libraryjars libs/pushservice-6.5.0.75.jar
 -dontwarn com.baidu.**
 -keep class com.baidu.**{*; }
 

@@ -1,7 +1,6 @@
 package com.match.honey.activity;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,9 +15,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
@@ -29,11 +25,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
 import com.match.honey.R;
 import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;
@@ -61,7 +57,7 @@ public class SplashAct extends BaseActivity {
     TextView tv_bottom;
 
     boolean isOk = false;
-    Activity act;
+    AppCompatActivity act;
 
     Geocoder geocoder;
     String token;
@@ -87,7 +83,7 @@ public class SplashAct extends BaseActivity {
         room_idx = getIntent().getStringExtra("room_idx");
 
         //fcm 토큰 저장
-        getFcmToken();
+//        getFcmToken();
 
         try {
             device_version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
@@ -109,23 +105,23 @@ public class SplashAct extends BaseActivity {
         checkVersion();
     }
 
-    private void getFcmToken() {
-        FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (!task.isSuccessful()) {
-                            Log.i(StringUtil.TAG, "getInstanceId failed", task.getException());
-                            return;
-                        }
-                        // Get new Instance ID token
-                        token = task.getResult().getToken();
-                        Log.i(StringUtil.TAG, "myFcmToken: " + token);
-                        UserPref.setFcmToken(act, token);
-                        token = token.replace("%3", ":");
-                    }
-                });
-    }
+//    private void getFcmToken() {
+//        FirebaseInstanceId.getInstance().getInstanceId()
+//                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+//                        if (!task.isSuccessful()) {
+//                            Log.i(StringUtil.TAG, "getInstanceId failed", task.getException());
+//                            return;
+//                        }
+//                        // Get new Instance ID token
+//                        token = task.getResult().getToken();
+//                        Log.i(StringUtil.TAG, "myFcmToken: " + token);
+//                        UserPref.setFcmToken(act, token);
+//                        token = token.replace("%3", ":");
+//                    }
+//                });
+//    }
 
     private void checkVersion() {
         ReqBasic buyItem = new ReqBasic(this, NetUrls.TERMS) {
@@ -149,8 +145,8 @@ public class SplashAct extends BaseActivity {
                                     int tmp2 = Integer.parseInt(version_me[i]);
 
                                     if (tmp2 < tmp1) {
-                                        android.app.AlertDialog.Builder alertDialogBuilder =
-                                                new android.app.AlertDialog.Builder(new ContextThemeWrapper(act, android.R.style.Theme_DeviceDefault_Light_Dialog_Alert));
+                                        AlertDialog.Builder alertDialogBuilder =
+                                                new AlertDialog.Builder(new ContextThemeWrapper(act, android.R.style.Theme_DeviceDefault_Light_Dialog_Alert));
                                         alertDialogBuilder.setTitle("업데이트");
                                         alertDialogBuilder.setMessage("새로운 버전이 있습니다.")
                                                 .setPositiveButton("업데이트 바로가기", new DialogInterface.OnClickListener() {
@@ -162,7 +158,7 @@ public class SplashAct extends BaseActivity {
                                                         finish();
                                                     }
                                                 });
-                                        android.app.AlertDialog alertDialog = alertDialogBuilder.create();
+                                        AlertDialog alertDialog = alertDialogBuilder.create();
                                         alertDialog.setCanceledOnTouchOutside(false);
                                         alertDialog.show();
 

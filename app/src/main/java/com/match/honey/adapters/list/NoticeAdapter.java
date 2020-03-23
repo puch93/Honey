@@ -1,15 +1,16 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
 import com.match.honey.activity.NoticeDetailAct;
@@ -19,10 +20,10 @@ import java.util.ArrayList;
 
 public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder> {
 
-    Activity act;
+    AppCompatActivity act;
     ArrayList<NoticeData> list;
 
-    public NoticeAdapter(Activity act, ArrayList<NoticeData> list) {
+    public NoticeAdapter(AppCompatActivity act, ArrayList<NoticeData> list) {
         this.act = act;
         this.list = list;
     }

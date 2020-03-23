@@ -1,17 +1,18 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
 import com.match.honey.adapters.RecyclerViewItemClick;
@@ -23,7 +24,7 @@ import com.match.honey.utils.StringUtil;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class ListDlgAct extends Activity {
+public class ListDlgAct extends AppCompatActivity {
 
     RecyclerView rcv_list;
 

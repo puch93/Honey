@@ -1,24 +1,25 @@
 package com.match.honey.dialog;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
 import com.match.honey.databinding.DlgPopupAdsBinding;
 
-public class DlgPopupAds extends Activity {
+public class DlgPopupAds extends AppCompatActivity {
 
     DlgPopupAdsBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -1,17 +1,18 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.CompoundButton;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityAlarmsettingBinding;
 import com.match.honey.sharedPref.SettingAlarmPref;
 
-public class AlarmsetAct extends Activity implements View.OnClickListener{
+public class AlarmsetAct extends AppCompatActivity implements View.OnClickListener{
 
     ActivityAlarmsettingBinding binding;
 

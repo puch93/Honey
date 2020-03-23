@@ -1,12 +1,13 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
-import androidx.annotation.Nullable;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityRecordaudioBinding;
@@ -14,7 +15,7 @@ import com.match.honey.databinding.ActivityRecordaudioBinding;
 import java.io.File;
 import java.io.IOException;
 
-public class RecordAudioAct extends Activity implements View.OnClickListener{
+public class RecordAudioAct extends AppCompatActivity implements View.OnClickListener{
 
     ActivityRecordaudioBinding binding;
 

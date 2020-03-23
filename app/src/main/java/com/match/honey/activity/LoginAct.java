@@ -1,21 +1,19 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import android.app.Application;
 import android.app.Dialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,16 +21,15 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.amazonaws.mobile.auth.core.IdentityManager;
-import com.amazonaws.mobile.config.AWSConfiguration;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoPinpointSharedContext;
-import com.amazonaws.mobileconnectors.pinpoint.PinpointConfiguration;
-import com.amazonaws.mobileconnectors.pinpoint.PinpointManager;
-import com.amazonaws.services.pinpoint.model.ChannelType;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.baidu.android.pushservice.BasicPushNotificationBuilder;
 import com.baidu.android.pushservice.PushConstants;
 import com.baidu.android.pushservice.PushManager;
+import com.baidu.android.pushservice.PushSettings;
 import com.facebook.CallbackManager;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.kakao.auth.Session;
 import com.match.honey.R;
 import com.match.honey.callback.FacebookLoginCallback;
@@ -42,6 +39,7 @@ import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.DefaultValue;
+import com.match.honey.utils.NotificationHelper;
 import com.match.honey.utils.StringUtil;
 import com.nhn.android.naverlogin.OAuthLogin;
 
@@ -54,7 +52,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public class LoginAct extends BaseActivity implements View.OnClickListener {
-
     ActivityLoginBinding binding;
 
     Session session;
@@ -69,9 +66,10 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
 
     String token;
 
-    Activity act;
+    AppCompatActivity act;
     String enter, msg_from, room_idx;
 
+    private NotificationManager manager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,8 +79,8 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
         getHashKey();
 
         //fcm 토큰 저장
-        token = FirebaseInstanceId.getInstance().getToken();
-        Log.e("TEST_HOME", "fcm_token: " + token);
+//        token = FirebaseInstanceId.getInstance().getToken();
+//        Log.e("TEST_HOME", "fcm_token: " + token);
         UserPref.setFcmToken(this, token);
 
         mContext = this;
@@ -109,15 +107,25 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
         /* 바이두 */
         PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
 
-        final PinpointConfiguration config =
-                new PinpointConfiguration(getApplicationContext(),
-                        IdentityManager.getDefaultIdentityManager().getCredentialsProvider(),
-                        new AWSConfiguration(getApplicationContext()))
-                        .withChannelType(ChannelType.BAIDU);
-        PinpointManager pinpointManager = new PinpointManager(config);
+//        PushSettings.enableDebugMode(act, true);
+        NotificationHelper helper = new NotificationHelper(act);
 
 
-        Log.e(StringUtil.TAG_BAIDU, "getDeviceToken: " + pinpointManager.getNotificationClient().getDeviceToken());
+
+//        BasicPushNotificationBuilder bBuilder = new BasicPushNotificationBuilder();
+//        bBuilder.setChannelId("testDefaultChannelId");
+//        bBuilder.setChannelName("testDefaultChannelName");
+//        PushManager.setDefaultNotificationBuilder(this, bBuilder); //使自定义channel生效
+
+//        final PinpointConfiguration config =
+//                new PinpointConfiguration(getApplicationContext(),
+//                        IdentityManager.getDefaultIdentityManager().getCredentialsProvider(),
+//                        new AWSConfiguration(getApplicationContext()))
+//                        .withChannelType(ChannelType.BAIDU);
+//        PinpointManager pinpointManager = new PinpointManager(config);
+//
+//
+//        Log.e(StringUtil.TAG_BAIDU, "getDeviceToken: " + pinpointManager.getNotificationClient().getDeviceToken());
 
     }
 

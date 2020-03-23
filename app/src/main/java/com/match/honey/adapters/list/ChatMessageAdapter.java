@@ -1,16 +1,17 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
@@ -31,9 +32,9 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageAdapter.
     private static final int OTHERS_VIEW = 2;
 
     private ArrayList<ChatMessage> chatMessages;
-    private Activity act;
+    private AppCompatActivity act;
 
-    public ChatMessageAdapter(Activity act, ArrayList<ChatMessage> chatMessages) {
+    public ChatMessageAdapter(AppCompatActivity act, ArrayList<ChatMessage> chatMessages) {
         this.act = act;
         this.chatMessages = chatMessages;
     }

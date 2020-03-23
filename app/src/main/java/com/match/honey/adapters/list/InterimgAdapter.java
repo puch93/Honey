@@ -1,15 +1,16 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Environment;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
@@ -24,11 +25,11 @@ import java.util.ArrayList;
 
 public class InterimgAdapter extends RecyclerView.Adapter<InterimgAdapter.ViewHolder>{
 
-    Activity act;
+    AppCompatActivity act;
 
     ArrayList<Integer> list;
 
-    public InterimgAdapter(Activity act,ArrayList<Integer> list){
+    public InterimgAdapter(AppCompatActivity act, ArrayList<Integer> list){
 
         this.act = act;
         this.list = list;

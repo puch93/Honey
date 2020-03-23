@@ -1,11 +1,9 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
-import androidx.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -15,14 +13,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import androidx.annotation.Nullable;
-import androidx.core.content.FileProvider;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
+import androidx.databinding.DataBindingUtil;
 
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
@@ -50,14 +51,14 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class QnaNomemberAct extends Activity implements View.OnClickListener {
+public class QnaNomemberAct extends AppCompatActivity implements View.OnClickListener {
 
     static final int REQUEST_TAKE_PHOTO = 2001;
     static final int REQUEST_TAKE_ALBUM = 2002;
     static final int REQUEST_IMAGE_CROP = 2003;
 
     ActivityQnaNomemberBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
     ArrayList<MyQnaData> list = new ArrayList<>();
     MyQnaListAdapter adapter;

@@ -1,19 +1,18 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Context;
-
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
 import com.match.honey.adapters.list.NoticeAdapter;
@@ -36,7 +35,7 @@ import java.util.ArrayList;
  * 공지사항 페이지
  * 완료
  */
-public class NoticeAct extends Activity implements View.OnClickListener {
+public class NoticeAct extends AppCompatActivity implements View.OnClickListener {
 
     ActivityNoticeBinding binding;
 
@@ -48,7 +47,7 @@ public class NoticeAct extends Activity implements View.OnClickListener {
     public boolean isSearch = false;
     public int page;
     int lastPage = 0;
-    public static Activity act;
+    public static AppCompatActivity act;
     private InputMethodManager imm;
 
     @Override

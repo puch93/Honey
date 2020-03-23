@@ -1,14 +1,15 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
 import com.match.honey.adapters.RecyclerViewItemClick;
@@ -20,10 +21,10 @@ public class DlgListAdapter2 extends RecyclerView.Adapter<DlgListAdapter2.ViewHo
 
     private static RecyclerViewItemClick myClickListener;
     private int selectedPosition = -1;
-    Activity act;
+    AppCompatActivity act;
     ArrayList<PopData2> list;
 
-    public DlgListAdapter2(Activity act, ArrayList<PopData2> list) {
+    public DlgListAdapter2(AppCompatActivity act, ArrayList<PopData2> list) {
         this.act = act;
         this.list = list;
     }

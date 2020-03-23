@@ -1,18 +1,17 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
-
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivitySetbasicinfoBinding;
@@ -32,13 +31,13 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class BasicinfoSettingAct extends Activity implements View.OnClickListener {
+public class BasicinfoSettingAct extends AppCompatActivity implements View.OnClickListener {
 
     ActivitySetbasicinfoBinding binding;
 
     Geocoder geocoder;
 
-    public static Activity act;
+    public static AppCompatActivity act;
     boolean isAvailable = true;
 
     boolean nickCheck = true, locationCheck = true, marriageCheck = true;

@@ -1,13 +1,14 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
@@ -25,11 +26,11 @@ import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 
 public class ImagelistOtherAdapter2 extends RecyclerView.Adapter<ImagelistOtherAdapter2.ViewHolder> {
 
-    Activity act;
+    AppCompatActivity act;
     ArrayList<ImagesData> list;
     boolean isRead = false;
 
-    public ImagelistOtherAdapter2(Activity act, ArrayList<ImagesData> list) {
+    public ImagelistOtherAdapter2(AppCompatActivity act, ArrayList<ImagesData> list) {
         this.act = act;
         this.list = list;
     }

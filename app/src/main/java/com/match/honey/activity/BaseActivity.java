@@ -1,15 +1,16 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.match.honey.sharedPref.UserPref;
 
-public class BaseActivity extends Activity{
+public class BaseActivity extends AppCompatActivity {
 
     LocationManager locationmanager;
     protected double latitude,longitude;

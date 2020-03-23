@@ -1,15 +1,15 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.telephony.PhoneNumberUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
 import com.match.honey.listDatas.FriendBlockData;
@@ -18,10 +18,10 @@ import java.util.ArrayList;
 
 public class FriendBlockAdapter extends RecyclerView.Adapter<FriendBlockAdapter.ViewHolder> {
 
-    Activity act;
+    AppCompatActivity act;
     ArrayList<FriendBlockData> list;
 
-    public FriendBlockAdapter(Activity act, ArrayList<FriendBlockData> list) {
+    public FriendBlockAdapter(AppCompatActivity act, ArrayList<FriendBlockData> list) {
         this.act = act;
         this.list = list;
     }

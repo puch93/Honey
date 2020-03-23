@@ -1,13 +1,14 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.match.honey.R;
 import com.match.honey.adapters.list.TokboardAdapter;
@@ -24,14 +25,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class TokboardAct extends Activity implements View.OnClickListener {
+public class TokboardAct extends AppCompatActivity implements View.OnClickListener {
 
     ActivityToktokboardBinding binding;
 
     ArrayList<TokboardData> list = new ArrayList<>();
     TokboardAdapter adapter;
 
-    public static Activity act;
+    public static AppCompatActivity act;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -1,11 +1,11 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityQnaDetailBinding;
@@ -13,7 +13,7 @@ import com.match.honey.utils.StringUtil;
 
 public class QnaDetailAct extends AppCompatActivity {
     ActivityQnaDetailBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

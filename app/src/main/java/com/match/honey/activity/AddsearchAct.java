@@ -1,19 +1,20 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityAddsearchBinding;
 import com.match.honey.utils.DefaultValue;
 import com.match.honey.utils.StringUtil;
 
-public class AddsearchAct extends Activity implements View.OnClickListener {
+public class AddsearchAct extends AppCompatActivity implements View.OnClickListener {
 
     ActivityAddsearchBinding binding;
 

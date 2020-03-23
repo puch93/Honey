@@ -1,14 +1,14 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.match.honey.R;
 import com.match.honey.adapters.list.FirstAdapter;
@@ -32,7 +32,7 @@ import java.util.Date;
 
 public class FirstAct extends AppCompatActivity {
     ActivityFirstBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
     FirstAdapter adapter;
     ArrayList<MemberData> memlist = new ArrayList<>();

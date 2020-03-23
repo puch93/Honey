@@ -1,12 +1,12 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-
 import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.github.chrisbanes.photoview.PhotoView;
@@ -14,7 +14,7 @@ import com.match.honey.R;
 import com.match.honey.utils.StringUtil;
 
 
-public class MoreimgActivity extends Activity implements View.OnClickListener{
+public class MoreimgActivity extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

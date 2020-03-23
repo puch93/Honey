@@ -1,13 +1,14 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.billingclient.api.Purchase;
 import com.match.honey.R;
@@ -31,10 +32,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class ItemmanageAct extends Activity implements View.OnClickListener {
+public class ItemmanageAct extends AppCompatActivity implements View.OnClickListener {
 
     ActivityItemmanageBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
     private static final int MESSAGE = 1000;
     private static final int INTEREST = 1001;

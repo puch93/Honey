@@ -1,12 +1,13 @@
 package com.match.honey.adapters.list;
 
-import android.app.Activity;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
 import com.match.honey.listDatas.PurchaseData;
@@ -16,10 +17,10 @@ import java.util.ArrayList;
 
 public class PurchaseHistoryAdapter extends RecyclerView.Adapter<PurchaseHistoryAdapter.ViewHolder>{
 
-    Activity act;
+    AppCompatActivity act;
     ArrayList<PurchaseData> list;
 
-    public PurchaseHistoryAdapter(Activity act, ArrayList<PurchaseData> list){
+    public PurchaseHistoryAdapter(AppCompatActivity act, ArrayList<PurchaseData> list){
         this.act = act;
         this.list = list;
     }

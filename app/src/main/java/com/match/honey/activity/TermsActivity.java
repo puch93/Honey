@@ -1,16 +1,13 @@
 package com.match.honey.activity;
 
-import android.app.Activity;
-
-import androidx.databinding.DataBindingUtil;
-
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentActivity;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityTermBinding;
@@ -22,10 +19,10 @@ import com.match.honey.utils.StringUtil;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class TermsActivity extends FragmentActivity implements View.OnClickListener {
+public class TermsActivity extends AppCompatActivity implements View.OnClickListener {
 
     ActivityTermBinding binding;
-    Activity act;
+    AppCompatActivity act;
 
     private static final int TERM_TYPE01 = 0;
     private static final int TERM_TYPE02 = 1;
