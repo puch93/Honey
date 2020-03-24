@@ -49,7 +49,7 @@
 -dontwarn okio.**
 
 
--libraryjars libs/pushservice-6.5.0.75.jar
--dontwarn com.baidu.**
--keep class com.baidu.**{*; }
+#-libraryjars libs/pushservice-6.7.3.20.jar
+#-dontwarn com.baidu.**
+#-keep class com.baidu.**{*; }
 

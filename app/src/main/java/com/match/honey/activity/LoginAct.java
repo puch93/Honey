@@ -1,7 +1,7 @@
 package com.match.honey.activity;
 
 import android.app.Dialog;
-import android.app.NotificationChannel;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,22 +28,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.baidu.android.pushservice.BasicPushNotificationBuilder;
+import com.baidu.android.pushservice.CustomPushNotificationBuilder;
 import com.baidu.android.pushservice.PushConstants;
 import com.baidu.android.pushservice.PushManager;
-import com.baidu.android.pushservice.PushSettings;
-import com.facebook.CallbackManager;
-import com.kakao.auth.Session;
 import com.match.honey.R;
-import com.match.honey.callback.FacebookLoginCallback;
 import com.match.honey.databinding.ActivityLoginBinding;
 import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.DefaultValue;
-import com.match.honey.utils.NotificationHelper;
 import com.match.honey.utils.StringUtil;
-import com.nhn.android.naverlogin.OAuthLogin;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,17 +50,9 @@ import java.util.List;
 
 public class LoginAct extends BaseActivity implements View.OnClickListener {
     ActivityLoginBinding binding;
-
-    Session session;
-
-    OAuthLogin mOAuthLoginModule;
     Context mContext;
 
-    FacebookLoginCallback mLoginCallback;
-    CallbackManager mCallbackManager;
-
     Geocoder geocoder;
-
     String token;
 
     AppCompatActivity act;
@@ -107,32 +96,32 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
         /* 바이두 */
         PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
 
-//        PushSettings.enableDebugMode(act, true);
-        NotificationHelper helper = new NotificationHelper(act);
+//        NotificationHelper helper = new NotificationHelper(act);
+        BasicPushNotificationBuilder bBuilder = new BasicPushNotificationBuilder();
+        bBuilder.setChannelId("testDefaultChannelId");
+        bBuilder.setChannelName("testDefaultChannelName");
 
 
+        CustomPushNotificationBuilder cBuilder = new CustomPushNotificationBuilder(
+                R.layout.notification_custom_builder,
+                R.id.notification_icon,
+                R.id.notification_title,
+                R.id.notification_text);
 
-//        BasicPushNotificationBuilder bBuilder = new BasicPushNotificationBuilder();
-//        bBuilder.setChannelId("testDefaultChannelId");
-//        bBuilder.setChannelName("testDefaultChannelName");
-//        PushManager.setDefaultNotificationBuilder(this, bBuilder); //使自定义channel生效
-
-//        final PinpointConfiguration config =
-//                new PinpointConfiguration(getApplicationContext(),
-//                        IdentityManager.getDefaultIdentityManager().getCredentialsProvider(),
-//                        new AWSConfiguration(getApplicationContext()))
-//                        .withChannelType(ChannelType.BAIDU);
-//        PinpointManager pinpointManager = new PinpointManager(config);
-//
-//
-//        Log.e(StringUtil.TAG_BAIDU, "getDeviceToken: " + pinpointManager.getNotificationClient().getDeviceToken());
-
+        cBuilder.setNotificationFlags(Notification.FLAG_AUTO_CANCEL);
+        cBuilder.setNotificationDefaults(Notification.DEFAULT_VIBRATE);
+        cBuilder.setStatusbarIcon(this.getApplicationInfo().icon);
+        cBuilder.setLayoutDrawable(R.drawable.app_icon);
+        cBuilder.setNotificationSound(Uri.withAppendedPath(
+                MediaStore.Audio.Media.INTERNAL_CONTENT_URI, "6").toString());
+        cBuilder.setChannelId("testId");
+        cBuilder.setChannelName("testName");
+        PushManager.setNotificationBuilder(this, 1, cBuilder);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mCallbackManager = CallbackManager.Factory.create();
     }
 
     private void getHashKey() {
@@ -501,7 +490,6 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        mCallbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
 
         if (data == null) {

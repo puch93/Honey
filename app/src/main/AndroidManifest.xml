@@ -17,7 +17,6 @@
 
     <!-- 바이두 푸시용 -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -28,17 +27,17 @@
     <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
-
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 适配Android N系统必需的ContentProvider写权限声明，写权限包含应用包名-->
     <uses-permission android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.match.honey" />
     <permission
-        android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.match.honey"
-        android:protectionLevel="normal"/>
+        android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.match.honey" />
+    <!--android:protectionLevel="normal"-->
 
 
     <application
-        android:name=".GlobalApplication"
+        android:name=".CustomApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/app_icon"
@@ -214,9 +213,6 @@
             android:theme="@android:style/Theme.Translucent" />
         <activity
             android:name=".dialog.DlgUserlock"
-            android:theme="@style/myDialog" />
-        <activity
-            android:name=".dialog.DlgRegFiles"
             android:theme="@style/myDialog" />
         <activity
             android:name=".dialog.DlgHopestyle"
