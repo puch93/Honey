@@ -51,8 +51,26 @@ public class PushTestReceiver extends PushMessageReceiver {
     }
 
     @Override
-    public void onMessage(Context context, String s, String s1) {
-        Log.e(StringUtil.TAG_BAIDU, "baidu onMessage()");
+    public void onMessage(Context context, String message, String customContentString) {
+        Log.d(StringUtil.TAG_BAIDU, "baidu onMessage()");
+
+        String messageString = "onMessage=\"" + message
+                + "\" customContentString=" + customContentString;
+        Log.d(StringUtil.TAG_BAIDU, messageString);
+
+        // 自定义内容获取方式，mykey和myvalue对应透传消息推送时自定义内容中设置的键和值
+        if (!TextUtils.isEmpty(customContentString)) {
+            JSONObject customJson = null;
+            try {
+                customJson = new JSONObject(customContentString);
+                String myvalue = null;
+                if (!customJson.isNull("mykey")) {
+                    myvalue = customJson.getString("mykey");
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override

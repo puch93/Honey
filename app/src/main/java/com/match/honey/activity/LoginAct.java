@@ -31,6 +31,7 @@ import com.baidu.android.pushservice.BasicPushNotificationBuilder;
 import com.baidu.android.pushservice.CustomPushNotificationBuilder;
 import com.baidu.android.pushservice.PushConstants;
 import com.baidu.android.pushservice.PushManager;
+import com.baidu.android.pushservice.PushSettings;
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityLoginBinding;
 import com.match.honey.network.ReqBasic;
@@ -95,7 +96,6 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
 
         /* 바이두 */
         PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
-
 //        NotificationHelper helper = new NotificationHelper(act);
         BasicPushNotificationBuilder bBuilder = new BasicPushNotificationBuilder();
         bBuilder.setChannelId("testDefaultChannelId");
@@ -107,6 +107,7 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
                 R.id.notification_icon,
                 R.id.notification_title,
                 R.id.notification_text);
+
 
         cBuilder.setNotificationFlags(Notification.FLAG_AUTO_CANCEL);
         cBuilder.setNotificationDefaults(Notification.DEFAULT_VIBRATE);
