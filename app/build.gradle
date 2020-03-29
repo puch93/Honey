@@ -64,6 +64,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
 }
 
 dependencies {
@@ -113,8 +117,11 @@ dependencies {
 
 
     implementation project(path: ':matisse')
+
     implementation files('libs/pushservice-6.5.0.75')
 
+    /* 텐센트 */
+    implementation 'com.github.qcloudsms:qcloudsms:1.0.6'
 
 //    implementation 'com.amazonaws:aws-android-sdk-pinpoint:2.15.+'
 //    implementation ('com.amazonaws:aws-android-sdk-mobile-client:2.15.+@aar') { transitive = true }

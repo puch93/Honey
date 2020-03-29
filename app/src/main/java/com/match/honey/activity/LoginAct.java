@@ -118,6 +118,10 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
         cBuilder.setChannelId("testId");
         cBuilder.setChannelName("testName");
         PushManager.setNotificationBuilder(this, 1, cBuilder);
+
+
+        /* 텐센트 테스트 */
+        String appId = "1400340865";
     }
 
     @Override
