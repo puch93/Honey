@@ -38,6 +38,7 @@ import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.ChangeProfVal;
 import com.match.honey.utils.Common;
 import com.match.honey.utils.ItemOffsetDecorationJoin;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONArray;
@@ -71,6 +72,8 @@ public class ProfileDetailAct extends AppCompatActivity implements View.OnClickL
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         act = this;
+
+
         gender = getIntent().getStringExtra("gender");
         midx = getIntent().getStringExtra("midx");
 
@@ -79,6 +82,8 @@ public class ProfileDetailAct extends AppCompatActivity implements View.OnClickL
             finish();
         } else {
             binding = DataBindingUtil.setContentView(this, R.layout.activity_profiledetail);
+
+            StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
 
             cpv = new ChangeProfVal();
 

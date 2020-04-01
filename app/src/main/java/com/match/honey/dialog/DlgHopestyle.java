@@ -1,5 +1,6 @@
 package com.match.honey.dialog;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -21,8 +22,8 @@ import com.match.honey.utils.StringUtil;
 
 import java.util.ArrayList;
 
-public class DlgHopestyle extends AppCompatActivity implements View.OnClickListener {
-
+public class DlgHopestyle extends Activity implements View.OnClickListener {
+    Activity act;
     DlgHopestyleBinding binding;
 
     ArrayList<HopestyleData> list = new ArrayList<>();
@@ -44,7 +45,7 @@ public class DlgHopestyle extends AppCompatActivity implements View.OnClickListe
         lpWindow.height = (int) (deviceHeight * 0.85f);
         getWindow().setAttributes(lpWindow);
 
-
+        act = this;
         //////////////
         binding = DataBindingUtil.setContentView(this, R.layout.dlg_hopestyle);
 

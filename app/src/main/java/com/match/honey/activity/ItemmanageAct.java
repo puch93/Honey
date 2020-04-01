@@ -21,6 +21,7 @@ import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.Common;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONArray;
@@ -60,6 +61,7 @@ public class ItemmanageAct extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_itemmanage);
         act = this;
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
 
         if (StringUtil.isNull(UserPref.getUidx(act))) {
             Common.showToast(act, "앱을 종료 후 재실행해주시기 바랍니다.");

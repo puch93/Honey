@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.baidu.android.pushservice.PushMessageReceiver;
+import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONException;
@@ -16,14 +17,15 @@ import java.util.List;
 
 public class PushTestReceiver extends PushMessageReceiver {
     @Override
-    public void onBind(Context context, int i, String s, String s1, String s2, String s3) {
+    public void onBind(Context context, int errorCode, String appid, String userId, String channelId, String requestId) {
         Log.e(StringUtil.TAG_BAIDU, "baidu onBind()");
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() errorCode: " + i);
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() appid: " + s);
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() userId: " + s1);
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() channelId: " + s2);
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() requestId: " + s3);
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() errorCode: " + errorCode);
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() appid: " + appid);
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() userId: " + userId);
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() channelId: " + channelId);
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() requestId: " + requestId);
 
+        UserPref.setBaiduToken(context, channelId);
     }
 
     @Override
@@ -95,8 +97,6 @@ public class PushTestReceiver extends PushMessageReceiver {
                 e.printStackTrace();
             }
         }
-
-
     }
 
     @Override
@@ -122,8 +122,5 @@ public class PushTestReceiver extends PushMessageReceiver {
                 e.printStackTrace();
             }
         }
-        // Demo更新界面展示代码，应用请在这里加入自己的处理逻辑
-        // 你可以參考 onNotificationClicked中的提示从自定义内容获取具体值
-//        updateContent(context, notifyString);
     }
 }

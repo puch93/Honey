@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityServicecenterBinding;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 public class ServiceCenterAct extends AppCompatActivity implements View.OnClickListener {
@@ -21,6 +22,8 @@ public class ServiceCenterAct extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_servicecenter);
         act = this;
+
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
 
         binding.flBack.setOnClickListener(this);
         binding.btnQna.setOnClickListener(this);

@@ -39,6 +39,7 @@ import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.DefaultValue;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONException;
@@ -66,12 +67,9 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         act = this;
 
-        getHashKey();
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.GREY_STATUS_BAR);
 
-        //fcm 토큰 저장
-//        token = FirebaseInstanceId.getInstance().getToken();
-//        Log.e("TEST_HOME", "fcm_token: " + token);
-        UserPref.setFcmToken(this, token);
+        getHashKey();
 
         mContext = this;
         startLocationService();
@@ -95,29 +93,24 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
 
 
         /* 바이두 */
-        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
-//        NotificationHelper helper = new NotificationHelper(act);
-        BasicPushNotificationBuilder bBuilder = new BasicPushNotificationBuilder();
-        bBuilder.setChannelId("testDefaultChannelId");
-        bBuilder.setChannelName("testDefaultChannelName");
-
-
-        CustomPushNotificationBuilder cBuilder = new CustomPushNotificationBuilder(
-                R.layout.notification_custom_builder,
-                R.id.notification_icon,
-                R.id.notification_title,
-                R.id.notification_text);
-
-
-        cBuilder.setNotificationFlags(Notification.FLAG_AUTO_CANCEL);
-        cBuilder.setNotificationDefaults(Notification.DEFAULT_VIBRATE);
-        cBuilder.setStatusbarIcon(this.getApplicationInfo().icon);
-        cBuilder.setLayoutDrawable(R.drawable.app_icon);
-        cBuilder.setNotificationSound(Uri.withAppendedPath(
-                MediaStore.Audio.Media.INTERNAL_CONTENT_URI, "6").toString());
-        cBuilder.setChannelId("testId");
-        cBuilder.setChannelName("testName");
-        PushManager.setNotificationBuilder(this, 1, cBuilder);
+//        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
+//
+//        CustomPushNotificationBuilder cBuilder = new CustomPushNotificationBuilder(
+//                R.layout.notification_custom_builder,
+//                R.id.notification_icon,
+//                R.id.notification_title,
+//                R.id.notification_text);
+//
+//
+//        cBuilder.setNotificationFlags(Notification.FLAG_AUTO_CANCEL);
+//        cBuilder.setNotificationDefaults(Notification.DEFAULT_VIBRATE);
+//        cBuilder.setStatusbarIcon(this.getApplicationInfo().icon);
+//        cBuilder.setLayoutDrawable(R.drawable.app_icon);
+//        cBuilder.setNotificationSound(Uri.withAppendedPath(
+//                MediaStore.Audio.Media.INTERNAL_CONTENT_URI, "6").toString());
+//        cBuilder.setChannelId("testId");
+//        cBuilder.setChannelName("testName");
+//        PushManager.setNotificationBuilder(this, 1, cBuilder);
 
 
         /* 텐센트 테스트 */
@@ -156,7 +149,7 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
 //            Toast.makeText(LoginAct.this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
 //            return;
 //        } else {
-//            UserPref.setFcmToken(this, token);
+//            UserPref.setBaiduToken(this, token);
 //        }
 
         ReqBasic login = new ReqBasic(this, NetUrls.LOGIN) {
@@ -207,7 +200,7 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
 
         login.addParams("id", binding.etEmail.getText().toString());
         login.addParams("pw", binding.etPw.getText().toString());
-        login.addParams("fcm", UserPref.getFcmToken(this));
+        login.addParams("fcm", UserPref.getBaiduToken(this));
 
         if (!locationmanager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             login.addParams("lat", UserPref.getLocationLat(this));
@@ -225,7 +218,7 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
 //            Toast.makeText(LoginAct.this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
 //            return;
 //        } else {
-//            UserPref.setFcmToken(this, token);
+//            UserPref.setBaiduToken(this, token);
 //        }
 
         ReqBasic autologin = new ReqBasic(this, NetUrls.LOGIN) {
@@ -280,7 +273,7 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
         autologin.addParams("id", UserPref.getId(this));
         autologin.addParams("pw", UserPref.getPw(this));
         Log.e(TAG, "password: " + UserPref.getPw(this));
-        autologin.addParams("fcm", UserPref.getFcmToken(this));
+        autologin.addParams("fcm", UserPref.getBaiduToken(this));
 
         if (!locationmanager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             autologin.addParams("lat", UserPref.getLocationLat(this));
@@ -482,6 +475,8 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
                 break;
 
             case R.id.btn_join:
+                //TODO
+//                startActivity(new Intent(act, WeChatPayAct.class));
                 startActivity(new Intent(LoginAct.this, JoinAct.class));
                 break;
 

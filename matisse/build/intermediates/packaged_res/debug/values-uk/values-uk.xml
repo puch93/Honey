@@ -15,9 +15,6 @@
     <string name="empty_text">Пусто</string>
     <string name="error_file_type">Непідтримуваний тип файла</string>
     <string name="error_no_video_activity">Застосунок для перегляду відео не знайдений</string>
-    <string name="error_over_count_default">Вы обрали максимальну кількість файлів</string>
-    <string name="error_over_quality">Занадто висока якість</string>
     <string name="error_type_conflict">Неможливо обрати зображення і відео одночасно</string>
-    <string name="error_under_quality">Занадто низька якість</string>
     <string name="photo_grid_capture">Камера</string>
 </resources>

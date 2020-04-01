@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil;
 import com.match.honey.R;
 import com.match.honey.databinding.ActivitySethistoryBinding;
 import com.match.honey.sharedPref.SettingAlarmPref;
+import com.match.honey.utils.StatusBarUtil;
 
 public class HistorysetAct extends AppCompatActivity implements View.OnClickListener{
 
@@ -21,6 +22,8 @@ public class HistorysetAct extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sethistory);
+
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
 
         binding.flBack.setOnClickListener(this);
         binding.llHome.setOnClickListener(this);

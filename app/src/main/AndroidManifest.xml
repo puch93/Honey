@@ -12,15 +12,11 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="com.android.vending.BILLING" />
 
-    <uses-feature android:name="android.hardware.camera" />
-
-
-    <!-- 바이두 푸시용 -->
+    <uses-feature android:name="android.hardware.camera" /> <!-- 바이두 푸시용 -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -28,13 +24,10 @@
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- 适配Android N系统必需的ContentProvider写权限声明，写权限包含应用包名-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 适配Android N系统必需的ContentProvider写权限声明，写权限包含应用包名 -->
     <uses-permission android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.match.honey" />
-    <permission
-        android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.match.honey" />
-    <!--android:protectionLevel="normal"-->
 
+    <permission android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.match.honey" />
 
     <application
         android:name=".CustomApplication"
@@ -47,164 +40,66 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
+
+        <activity android:name=".activity.WeChatPayAct" />
         <activity android:name=".activity.PushAct" />
-        <activity
-            android:name=".activity.FirstAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.QnaReportAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.QnaReportDetailAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.QnaNomemberAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.PauseAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.FriendBlockAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.OnlineMemberActivity"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.TokboardCommentAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.ReviewRegAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.UserLockAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.QnaDetailAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.NoticeDetailAct"
-            android:theme="@style/status_matarial" />
-
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
+        <activity android:name=".activity.FirstAct" />
+        <activity android:name=".activity.QnaReportAct" />
+        <activity android:name=".activity.QnaReportDetailAct" />
+        <activity android:name=".activity.QnaNomemberAct" />
+        <activity android:name=".activity.PauseAct" />
+        <activity android:name=".activity.FriendBlockAct" />
+        <activity android:name=".activity.OnlineMemberActivity" />
+        <activity android:name=".activity.ReviewRegAct" />
+        <activity android:name=".activity.QnaDetailAct" />
+        <activity android:name=".activity.NoticeDetailAct" />
+        <activity android:name=".activity.JoinAct" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.MsgboxAct" />
+        <activity android:name=".activity.NoticeAct" />
+        <activity android:name=".activity.ReviewAct" />
+        <activity android:name=".activity.AddsearchAct" />
+        <activity android:name=".activity.BasicinfoSettingAct" />
+        <activity android:name=".activity.BlockmemberAct" />
+        <activity android:name=".activity.ItemmanageAct" />
+        <activity android:name=".activity.ServiceCenterAct" />
+        <activity android:name=".activity.AllianceAct" />
+        <activity android:name=".activity.HistorysetAct" />
+        <activity android:name=".activity.AlarmsetAct" />
+        <activity android:name=".activity.SecessionAct" />
+        <activity android:name=".activity.ReviewDetailAct" />
+        <activity android:name=".activity.QnaAct" />
+        <activity android:name=".activity.ProfileDetailAct" />
+        <activity android:name=".activity.MyProfileAct" />
+        <activity android:name=".activity.MyprofileModifyAct" />
+        <activity android:name=".activity.TermsActivity" />
+        <activity android:name=".activity.VideoPlayAct" />
+        <activity android:name=".activity.MoreimgActivity" />
+        <activity android:name=".activity.FindAccountAct" />
 
         <activity
-            android:name=".activity.SplashAct"
-            android:theme="@style/status_matarial_02">
+            android:name=".activity.LoginAct"
+            android:launchMode="singleTop" />
+
+        <activity android:name=".activity.SplashAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.PermissionActivity"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.QnaReportRegAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.LoginAct"
-            android:launchMode="singleTop"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.JoinAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.MainActivity"
-            android:theme="@style/status_matarial_02" />
-        <activity
-            android:name=".activity.MsgboxAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.NoticeAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.ReviewAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.LastnameSearchAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.AddsearchAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.BasicinfoSettingAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.BlockmemberAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.ItemmanageAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.ServiceCenterAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.AllianceAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.TokboardAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.HistorysetAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.AlarmsetAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.SecessionAct"
-            android:theme="@style/status_matarial" />
+        <activity android:name=".activity.PermissionActivity" />
+        <activity android:name=".activity.QnaReportRegAct" />
         <activity
             android:name=".activity.ChatAct"
-            android:theme="@style/status_matarial"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".activity.ReviewDetailAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.QnaAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.TokboardDetailAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.ProfileDetailAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.MyProfileAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.MyprofileModifyAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.RecordAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.RecordAudioAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.TermsActivity"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.VideoPlayAct"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.MoreimgActivity"
-            android:theme="@style/status_matarial" />
-        <activity
-            android:name=".activity.FindAccountAct"
-            android:theme="@style/status_matarial" />
         <activity
             android:name=".activity.ListDlgAct"
             android:theme="@android:style/Theme.Translucent" />
         <activity
             android:name=".activity.MultipleListDlgAct"
             android:theme="@android:style/Theme.Translucent" />
-        <activity
-            android:name=".dialog.DlgUserlock"
-            android:theme="@style/myDialog" />
         <activity
             android:name=".dialog.DlgHopestyle"
             android:theme="@android:style/Theme.Translucent" />
@@ -223,15 +118,9 @@
         <activity
             android:name=".dialog.DlgAdviewFullScreen"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-
         <activity
             android:name=".dialog.DlgPopUpAd"
             android:theme="@style/ActivityDialog" />
-
-        <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="@string/kakao_app_key" /> <!-- FCM ID -->
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -243,21 +132,20 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <!-- 바이두 -->
 
+        <!-- 바이두 -->
         <!-- 此处Receiver名字修改为当前包名路径 -->
         <receiver android:name=".callback.PushTestReceiver">
             <intent-filter>
+
                 <!-- 接收push消息 -->
                 <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
-                <!-- 接收bind、setTags等method的返回结果-->
+                <!-- 接收bind、setTags等method的返回结果 -->
                 <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
                 <!-- 接收通知点击事件，和通知自定义内容 -->
                 <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
             </intent-filter>
-        </receiver>
-
-        <!-- push service start -->
+        </receiver> <!-- push service start -->
         <!-- 用于接收系统消息以保证PushService正常运行 -->
         <receiver
             android:name="com.baidu.android.pushservice.PushServiceReceiver"
@@ -273,9 +161,7 @@
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
-        </receiver>
-
-        <!-- Push服务接收客户端发送的各种请求-->
+        </receiver> <!-- Push服务接收客户端发送的各种请求 -->
         <receiver
             android:name="com.baidu.android.pushservice.RegistrationReceiver"
             android:process=":bdservice_v1">
@@ -285,6 +171,7 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
@@ -296,14 +183,10 @@
             <intent-filter>
                 <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE" />
             </intent-filter>
-        </service>
-
-        <!-- 4.4版本新增的CommandService声明，提升小米和魅族手机上的实际推送到达率 -->
+        </service> <!-- 4.4版本新增的CommandService声明，提升小米和魅族手机上的实际推送到达率 -->
         <service
             android:name="com.baidu.android.pushservice.CommandService"
-            android:exported="true" />
-
-        <!-- 适配Android N系统必需的ContentProvider声明，写权限包含应用包名-->
+            android:exported="true" /> <!-- 适配Android N系统必需的ContentProvider声明，写权限包含应用包名 -->
         <provider
             android:name="com.baidu.android.pushservice.PushInfoProvider"
             android:authorities="com.match.honey.bdpush"
@@ -314,7 +197,6 @@
         <meta-data
             android:name="api_key"
             android:value="@string/baidu_api_key" />
-
     </application>
 
 </manifest>

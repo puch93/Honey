@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityQnaReportDetailBinding;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 public class QnaReportDetailAct extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class QnaReportDetailAct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_qna_report_detail, null);
-
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
         Intent from = getIntent();
 
         binding.tvQnaType.setText(from.getStringExtra("type"));

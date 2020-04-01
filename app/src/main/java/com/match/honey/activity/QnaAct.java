@@ -37,6 +37,7 @@ import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.DefaultValue;
 import com.match.honey.utils.ItemOffsetDecorationCustom;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONArray;
@@ -74,7 +75,7 @@ public class QnaAct extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_qna);
-
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
         binding.flBack.setOnClickListener(this);
         binding.llHome.setOnClickListener(this);
 

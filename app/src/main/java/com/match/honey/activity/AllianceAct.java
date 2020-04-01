@@ -17,6 +17,7 @@ import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.utils.DefaultValue;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONException;
@@ -39,7 +40,7 @@ public class AllianceAct extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_alliance);
-
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
         binding.flBack.setOnClickListener(this);
         binding.llHome.setOnClickListener(this);
 

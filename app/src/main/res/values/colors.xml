@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorPrimaryDark">#ec4e4e</color>
     <color name="colorAccent">#ec4e4e</color>
 
     <color name="white_color">#ffffff</color>
-    <color name="et_hint_color">#aaaaaa</color>
     <color name="color_34">#343434</color>
     <color name="color_snslogin">#2f3942</color>
     <color name="color_4d">#4d4d4d</color>
@@ -13,42 +12,21 @@
     <color name="color_2">#222222</color>
     <color name="color_ea34">#ea3434</color>
     <color name="color_fa">#fafafa</color>
-    <color name="color_femalenick">#f44260</color>
-    <color name="color_malenick">#00a3e0</color>
-    <color name="color_info1">#9a77ba</color>
-    <color name="color_info2">#c0c36a</color>
-    <color name="color_info3">#fc974c</color>
-    <color name="color_info4">#ed8372</color>
-    <color name="color_8345f3">#8345f3</color>
     <color name="color_fafafa">#fafafa</color>
-    <color name="color_f0eef6">#f0eef6</color>
-    <color name="color_eff1f8">#eff1f8</color>
-    <color name="color_b267b3">#b267b3</color>
-    <color name="color_f4f1fa">#f4f1fa</color>
-    <color name="color_ff6899">#ff6899</color>
     <color name="color_4d4d4d">#4d4d4d</color>
     <color name="color_ed1c24">#ed1c24</color>
-    <color name="color_f04242">#f04242</color>
     <color name="color_eaeaea">#eaeaea</color>
     <color name="color_aaaaaa">#aaaaaa</color>
     <color name="color_222222">#222222</color>
-    <color name="color_35353b">#35353b</color>
-    <color name="color_00a2e8">#00a2e8</color>
-    <color name="color_6a51b3">#6a51b3</color>
-    <color name="color_407ff3">#407ff3</color>
     <color name="color_f34075">#f34075</color>
     <color name="color_adapter_friend">#f34075</color>
     <color name="color_f7f5f5">#f7f5f5</color>
-    <color name="color_7c5ddd">#7c5ddd</color>
-    <color name="color_676767">#676767</color>
-    <color name="color_ffa8cc">#ffa8cc</color>
     <color name="color_wcolor">#ff6699</color>
     <color name="color_mcolor">#33ccff</color>
 
 
     <!-- 여보자기 -->
     <color name="color_ec4e4e">#ec4e4e</color>
-    <color name="color_cccccc">#cccccc</color>
     <color name="color_2f3942">#2f3942</color>
     <color name="color_b9babb">#b9babb</color>
     <color name="color_f6f6f6">#f6f6f6</color>
@@ -67,7 +45,6 @@
     <color name="color_a1a7aa">#a1a7aa</color>
     <color name="color_989c9f">#989c9f</color>
     <color name="color_e4e4e4">#e4e4e4</color>
-    <color name="color_73777a">#73777a</color>
     <color name="color_b7b7b7">#b7b7b7</color>
     <color name="color_434343">#434343</color>
     <color name="color_a9a9a9">#a9a9a9</color>

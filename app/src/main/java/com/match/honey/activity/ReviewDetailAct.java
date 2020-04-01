@@ -20,6 +20,7 @@ import com.match.honey.listDatas.ThanksData;
 import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONException;
@@ -36,7 +37,7 @@ public class ReviewDetailAct extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_thanksdetail);
         act = this;
-
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
         binding.flBack.setOnClickListener(this);
 
 //        bidx = getIntent().getStringExtra("bidx");

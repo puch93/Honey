@@ -38,6 +38,7 @@ import com.match.honey.utils.ChangeProfVal;
 import com.match.honey.utils.Common;
 import com.match.honey.utils.DefaultValue;
 import com.match.honey.utils.ItemOffsetDecorationJoin;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONArray;
@@ -81,7 +82,7 @@ public class MyprofileModifyAct extends AppCompatActivity implements View.OnClic
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_myprof_modify);
         act = this;
-
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
         geocoder = new Geocoder(this);
         cpv = new ChangeProfVal();
 
@@ -1037,11 +1038,6 @@ public class MyprofileModifyAct extends AppCompatActivity implements View.OnClic
                 setResult(RESULT_OK);
                 finish();
                 break;
-            case R.id.btn_home:
-                startActivity(new Intent(this, MainActivity.class));
-                finishAffinity();
-                break;
-
 
             case R.id.btn_regprofile:
                 //형제관계

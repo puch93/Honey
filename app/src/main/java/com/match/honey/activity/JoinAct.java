@@ -33,6 +33,7 @@ import com.match.honey.utils.ChangeProfVal;
 import com.match.honey.utils.Common;
 import com.match.honey.utils.DefaultValue;
 import com.match.honey.utils.ItemOffsetDecorationJoin;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONArray;
@@ -69,6 +70,9 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_join);
         act = this;
+
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
+
         cpv = new ChangeProfVal();
 
         token = null;
@@ -237,7 +241,7 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
 
         //
         reqJoin.addParams("type", "general");        // 회원가입형태(general,kakaotalk,naver,facebook)
-        reqJoin.addParams("fcm_token", UserPref.getFcmToken(this));
+        reqJoin.addParams("fcm_token", UserPref.getBaiduToken(this));
         if (!locationmanager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             Log.i(StringUtil.TAG, "loclat: " + UserPref.getLocationLat(this) + " loclon: " + UserPref.getLocationLon(this));
             reqJoin.addParams("lat", UserPref.getLocationLat(this));
@@ -775,11 +779,11 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
                 //푸시토큰
 //                if (StringUtil.isNull(token)) {
 //                    token = FirebaseInstanceId.getInstance().getToken();
-//                    UserPref.setFcmToken(this, token);
+//                    UserPref.setBaiduToken(this, token);
 //                    Toast.makeText(this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
 //                    return;
 //                } else {
-//                    UserPref.setFcmToken(this, token);
+//                    UserPref.setBaiduToken(this, token);
 //                }
 
                 //형제관계

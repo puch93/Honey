@@ -284,7 +284,7 @@
                         android:includeFontPadding="false"
                         android:layout_marginTop="7.7dp"
                         android:textColor="@color/col_main_menu"
-                        android:text="열람회원"
+                        android:text="NEW회원"
                         />
                 </LinearLayout>
 
@@ -355,7 +355,7 @@
                         android:includeFontPadding="false"
                         android:layout_marginTop="7.7dp"
                         android:textColor="@color/col_main_menu"
-                        android:text="열람회원"
+                        android:text="찜회원"
                         />
                 </LinearLayout>
 

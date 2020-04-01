@@ -1,5 +1,6 @@
 package com.match.honey.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -20,7 +21,7 @@ import com.match.honey.listDatas.PopData;
 
 import java.util.ArrayList;
 
-public class MultipleListDlgAct extends AppCompatActivity implements View.OnClickListener{
+public class MultipleListDlgAct extends Activity implements View.OnClickListener{
 
     RecyclerView rcv_list;
 
@@ -28,6 +29,8 @@ public class MultipleListDlgAct extends AppCompatActivity implements View.OnClic
     ArrayList<PopData> list = new ArrayList<>();
 
     String subject,select;
+
+    Activity act;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,6 +50,8 @@ public class MultipleListDlgAct extends AppCompatActivity implements View.OnClic
         getWindow().setAttributes(lpWindow);
 
         setContentView(R.layout.dlg_mutiplelist_popup);
+
+        act = this;
 
         subject = getIntent().getStringExtra("subject");
         select = getIntent().getStringExtra("select");

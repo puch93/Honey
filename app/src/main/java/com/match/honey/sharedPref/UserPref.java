@@ -126,15 +126,15 @@ public class UserPref {
         editor.commit();
     }
 
-    public static String getFcmToken(Context context){
+    public static String getBaiduToken(Context context){
         SharedPreferences pref = context.getSharedPreferences("userinfo", context.MODE_PRIVATE);
-        return pref.getString("fcm","");
+        return pref.getString("baidu","");
     }
 
-    public static void setFcmToken(Context context,String fcm){
+    public static void setBaiduToken(Context context,String fcm){
         SharedPreferences pref = context.getSharedPreferences("userinfo", context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putString("fcm",fcm);
+        editor.putString("baidu",fcm);
         editor.commit();
     }
 

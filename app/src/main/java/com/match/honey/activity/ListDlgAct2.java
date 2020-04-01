@@ -1,5 +1,6 @@
 package com.match.honey.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -7,7 +8,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +20,7 @@ import com.match.honey.listDatas.PopData2;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class ListDlgAct2 extends AppCompatActivity {
+public class ListDlgAct2 extends Activity {
 
     RecyclerView rcv_list;
 
@@ -29,6 +29,8 @@ public class ListDlgAct2 extends AppCompatActivity {
 
     String subject, select;
     int cyear;
+
+    Activity act;
 
 
     @Override
@@ -48,6 +50,8 @@ public class ListDlgAct2 extends AppCompatActivity {
         getWindow().setAttributes(lpWindow);
         setContentView(R.layout.dlg_list_popup);
 
+        act = this;
+
         subject = getIntent().getStringExtra("subject");
         select = getIntent().getStringExtra("select");
 
@@ -61,7 +65,7 @@ public class ListDlgAct2 extends AppCompatActivity {
             setList();
         }
 
-        adapter = new DlgListAdapter2(this, list);
+        adapter = new DlgListAdapter2(act, list);
         rcv_list.setLayoutManager(new LinearLayoutManager(this));
         rcv_list.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         rcv_list.setAdapter(adapter);

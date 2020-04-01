@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil;
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityAddsearchBinding;
 import com.match.honey.utils.DefaultValue;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 public class AddsearchAct extends AppCompatActivity implements View.OnClickListener {
@@ -25,6 +26,8 @@ public class AddsearchAct extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_addsearch);
+
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
 
         binding.flBtnBack.setOnClickListener(this);
 

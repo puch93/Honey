@@ -10,7 +10,6 @@
         android:gravity="center">
 
         <ProgressBar
-            android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:theme="@style/progress_bar_color"

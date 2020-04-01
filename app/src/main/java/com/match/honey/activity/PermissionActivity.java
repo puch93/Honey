@@ -36,84 +36,36 @@ public class PermissionActivity extends BaseActivity {
         }
     }
 
-    public void gpsStatusCheck(){
-        //GPS가 켜져있는지 체크
-        if(!locationmanager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-            AlertDialog.Builder alertDialogBuilder =
-                    new AlertDialog.Builder(this);
-            alertDialogBuilder.setTitle("GPS 설정");
-            alertDialogBuilder.setMessage("GPS가 꺼져있습니다. GPS를 켜시겠습니까?")
-                    .setPositiveButton("GPS 켜기", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                            intent.addCategory(Intent.CATEGORY_DEFAULT);
-                            startActivityForResult(intent, GPS_CHECK);
-                        }
-                    })
-                    .setNegativeButton("취소", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            startActivity(new Intent(PermissionActivity.this, SplashAct.class));
-                            finish();
-                        }
-                    });
-            AlertDialog alertDialog = alertDialogBuilder.create();
-            alertDialog.setCanceledOnTouchOutside(false);
-            alertDialog.show();
-        } else {
-            startActivity(new Intent(this, SplashAct.class));
-            finish();
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == GPS_CHECK) {
-            new Handler().postDelayed(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    startLocationService();
-                    startActivity(new Intent(PermissionActivity.this, SplashAct.class));
-                    finish();
-
-                }
-            }, 1500);
-        }
-    }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
-                    checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
-                    checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED ||
-                    checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
-                    checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED ||
-                    checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                    ) {
-                // 권한 허용안됨
-                PreferenceManager.getDefaultSharedPreferences(this).edit()
-                        .putBoolean("request_permissions",true)
-                        .commit();
 
-                finish();
+        setResult(RESULT_OK);
+        finish();
 
-            } else {
-                // 권한 허용됨
-                PreferenceManager.getDefaultSharedPreferences(this).edit()
-                        .putBoolean("request_permissions",false)
-                        .commit();
-
-                startLocationService();
-                gpsStatusCheck();
-
-            }
-        }
+//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+//                    checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+//                    checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED ||
+//                    checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
+//                    checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED ||
+//                    checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+//                    ) {
+//                // 권한 허용안됨
+//                PreferenceManager.getDefaultSharedPreferences(this).edit()
+//                        .putBoolean("request_permissions",true)
+//                        .commit();
+//
+//                finish();
+//            } else {
+//                // 권한 허용됨
+//                PreferenceManager.getDefaultSharedPreferences(this).edit()
+//                        .putBoolean("request_permissions",false)
+//                        .commit();
+//
+//                setResult(RESULT_OK);
+//                finish();
+//            }
+//        }
     }
 }

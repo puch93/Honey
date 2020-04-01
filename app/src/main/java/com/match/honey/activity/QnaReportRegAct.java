@@ -36,6 +36,7 @@ import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.Common;
 import com.match.honey.utils.DefaultValue;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONException;
@@ -76,7 +77,7 @@ public class QnaReportRegAct extends AppCompatActivity implements View.OnClickLi
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_qna_report_reg);
         act = this;
-
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
         yidx = getIntent().getStringExtra("yidx");
 
         binding.flBack.setOnClickListener(this);

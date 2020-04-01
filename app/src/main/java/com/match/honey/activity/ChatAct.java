@@ -40,6 +40,7 @@ import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.Common;
 import com.match.honey.utils.DefaultValue;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONArray;
@@ -106,7 +107,6 @@ public class ChatAct extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         act = this;
 
-
         if (!StringUtil.isNull(getIntent().getStringExtra("gender"))) {
             if (UserPref.getGender(act).equalsIgnoreCase(getIntent().getStringExtra("gender"))) {
                 Common.showToast(act, "* 동성간에는 채팅이 불가합니다 *");
@@ -115,7 +115,7 @@ public class ChatAct extends AppCompatActivity implements View.OnClickListener {
         }
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_chat);
-
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
         Log.e(StringUtil.TAG, "myIdx: " + UserPref.getUidx(act));
 
         if (!StringUtil.isNull(getIntent().getStringExtra("enter"))) {

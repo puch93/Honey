@@ -1,10 +1,8 @@
 <resources>
 
     <!--    <string name="facebook_app_id">2088440867936604</string> <string name="fb_login_protocol_scheme">fb2088440867936604</string>-->
-    <string name="facebook_app_id">954427768248835</string>
 
     <!--    <string name="kakao_app_key">e37c364e703dd30c3230178e6f449f62</string>-->
-    <string name="kakao_app_key">2e1bbc28306c422f99b96f1dca8ea045</string>
 
     <string name="app_name">여보자기</string>
 
@@ -19,7 +17,6 @@
     <string name="select_mainloc">지역을 선택해주세요</string>
     <string name="select_midloc">상세지역을 선택해주세요</string>
     <string name="select_hopeloc">배우자 희망지역을 선택해주세요</string>
-    <string name="select_gender">성별을 선택해주세요</string>
 
     <string name="email_char">&#64;</string>
 
@@ -29,9 +26,6 @@
 
 
     <string name="err_network">서버 또는 네트워크 연결상태가 좋지 않습니다. 관리자에게 문의해주세요.</string>
-    <string name="chat_notice01">·  카톡 및 SNS를 통한 음란채팅 사기협박주의.</string>
-    <string name="chat_notice02">·  조건만남을 가장한 선입금 사기주의.</string>
-    <string name="chat_notice03">·  욕설, 성매매, 불법적인 내용 적발시 영구차단.</string>
 
     <string name="baidu_api_key">Kc2SVZb6NS5dXGSUggnVKtlM</string>
 

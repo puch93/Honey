@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -29,6 +30,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.baidu.android.pushservice.PushConstants;
+import com.baidu.android.pushservice.PushManager;
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
 import com.match.honey.network.ReqBasic;
@@ -44,23 +47,26 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.List;
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class SplashAct extends BaseActivity {
     final static int GPS_CHECK = 20;
+    final static int PERMISSION = 21;
 
     private Handler handler = new Handler();
+    private Handler handler_baidu = new Handler();
     private Timer tokenTimer = new Timer();
+    private Timer tokenTimer_baidu = new Timer();
 
     String enter, msg_from, room_idx;
     String device_version;
 
     TextView tv_bottom;
 
-    boolean isOk = false;
     AppCompatActivity act;
 
     Geocoder geocoder;
-    String token;
+    private boolean isPushOk = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,22 +75,26 @@ public class SplashAct extends BaseActivity {
         setContentView(R.layout.activity_splash);
         act = this;
 
+        // 스플래시 gif이미지
         Glide.with(act)
                 .load(R.raw.splash_1440x2560_gif)
                 .into((ImageView) findViewById(R.id.splash));
 
+        // 바이두 푸시 토큰 요청 (바인딩)
+        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
+
         tv_bottom = (TextView) findViewById(R.id.tv_bottom);
 
+        // gps정보 가져오기위함
         geocoder = new Geocoder(this);
 
-        //뭔지 모르겠음
+        // 푸시관련
         enter = getIntent().getStringExtra("enter");
         msg_from = getIntent().getStringExtra("msg_from");
         room_idx = getIntent().getStringExtra("room_idx");
 
-        //fcm 토큰 저장
-//        getFcmToken();
 
+        // 버전 가져오기
         try {
             device_version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
             Log.e(TAG, "device_version: " + device_version);
@@ -104,24 +114,6 @@ public class SplashAct extends BaseActivity {
 
         checkVersion();
     }
-
-//    private void getFcmToken() {
-//        FirebaseInstanceId.getInstance().getInstanceId()
-//                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-//                        if (!task.isSuccessful()) {
-//                            Log.i(StringUtil.TAG, "getInstanceId failed", task.getException());
-//                            return;
-//                        }
-//                        // Get new Instance ID token
-//                        token = task.getResult().getToken();
-//                        Log.i(StringUtil.TAG, "myFcmToken: " + token);
-//                        UserPref.setFcmToken(act, token);
-//                        token = token.replace("%3", ":");
-//                    }
-//                });
-//    }
 
     private void checkVersion() {
         ReqBasic buyItem = new ReqBasic(this, NetUrls.TERMS) {
@@ -165,7 +157,6 @@ public class SplashAct extends BaseActivity {
                                         return;
                                     }
                                 }
-
                                 startProgram();
                             } else {
                                 startProgram();
@@ -183,13 +174,31 @@ public class SplashAct extends BaseActivity {
 
     public void startProgram() {
         if (isReqPermission()) {
-            startActivity(new Intent(SplashAct.this, PermissionActivity.class));
-            finish();
+            startActivityForResult(new Intent(SplashAct.this, PermissionActivity.class), PERMISSION);
         } else {
-//            handler.post(mrun);
+            handler.post(mrun_gps);
 
             startLocationService();
             gpsStatusCheck();
+        }
+    }
+
+    private void checkState(boolean isGps) {
+        if (isGps) {
+            tokenTimer.cancel();
+            handler.removeCallbacks(mrun_gps);
+
+            handler_baidu.post(mrun_baidu);
+        } else {
+            if (!StringUtil.isNull(UserPref.getBaiduToken(act)) && !isPushOk) {
+                isPushOk = true;
+
+                tokenTimer_baidu.cancel();
+                handler_baidu.removeCallbacks(mrun_baidu);
+
+                // 다음 프로세스
+                checkAutoLogin();
+            }
         }
     }
 
@@ -210,75 +219,97 @@ public class SplashAct extends BaseActivity {
         } else {
             return false;
         }
-
     }
 
-//    Runnable mrun = new Runnable() {
-//        @Override
-//        public void run() {
-//            TimerTask tokenTask = new TimerTask() {
-//                @Override
-//                public void run() {
-//                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            tv_bottom.setText("위치정보 받는중");
-//                            if (isOk && !StringUtil.isNull(token)) {
-//                                isOk = false;
-//                                tokenTimer.cancel();
-//                                handler.removeCallbacks(mrun);
-//                            }
-//                        }
-//                    }, 0);
-//
-//
-//                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            tv_bottom.setText("위치정보 받는중.");
-//                            if (isOk && !StringUtil.isNull(token)) {
-//                                isOk = false;
-//                                tokenTimer.cancel();
-//                                handler.removeCallbacks(mrun);
-//                            }
-//                        }
-//                    }, 250);
-//
-//                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            tv_bottom.setText("위치정보 받는중..");
-//                            if (isOk && !StringUtil.isNull(token)) {
-//                                isOk = false;
-//                                tokenTimer.cancel();
-//                                handler.removeCallbacks(mrun);
-//                            }
-//                        }
-//                    }, 500);
-//
-//                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            tv_bottom.setText("위치정보 받는중...");
-//                            if (isOk && !StringUtil.isNull(token)) {
-//                                isOk = false;
-//                                tokenTimer.cancel();
-//                                handler.removeCallbacks(mrun);
-//                            }
-//                        }
-//                    }, 750);
-//                }
-//            };
-//            tokenTimer.schedule(tokenTask, 1000, 1000);
-//        }
-//    };
+    Runnable mrun_gps = new Runnable() {
+        @Override
+        public void run() {
+            TimerTask tokenTask = new TimerTask() {
+                @Override
+                public void run() {
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv_bottom.setText("위치정보 받는중");
+                        }
+                    }, 0);
+
+
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv_bottom.setText("위치정보 받는중.");
+                        }
+                    }, 250);
+
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv_bottom.setText("위치정보 받는중..");
+                        }
+                    }, 500);
+
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv_bottom.setText("위치정보 받는중...");
+                        }
+                    }, 750);
+                }
+            };
+            tokenTimer.schedule(tokenTask, 1000, 1000);
+        }
+    };
+
+    Runnable mrun_baidu = new Runnable() {
+        @Override
+        public void run() {
+            TimerTask tokenTask = new TimerTask() {
+                @Override
+                public void run() {
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv_bottom.setText("푸시정보 받는중");
+                            checkState(false);
+                        }
+                    }, 0);
+
+
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv_bottom.setText("푸시정보 받는중.");
+                            checkState(false);
+                        }
+                    }, 250);
+
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv_bottom.setText("푸시정보 받는중..");
+                            checkState(false);
+                        }
+                    }, 500);
+
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv_bottom.setText("푸시정보 받는중...");
+                            checkState(false);
+                        }
+                    }, 750);
+                }
+            };
+            tokenTimer_baidu.schedule(tokenTask, 1000, 1000);
+        }
+    };
 
     private void checkAutoLogin() {
         //원래위치 (onResume)
         if (UserPref.isLogin(act)) {
             reqAutoLogin();
         } else {
-            Log.e(TAG, "checkAutoLogin");
             if (StringUtil.isNull(enter)) {
                 startActivity(new Intent(SplashAct.this, FirstAct.class));
                 finish();
@@ -304,7 +335,7 @@ public class SplashAct extends BaseActivity {
 //            Toast.makeText(act, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
 //            return;
 //        } else {
-//            UserPref.setFcmToken(this, token);
+//            UserPref.setBaiduToken(this, token);
 //        }
 
         ReqBasic autologin = new ReqBasic(this, NetUrls.LOGIN) {
@@ -359,7 +390,7 @@ public class SplashAct extends BaseActivity {
         autologin.addParams("id", UserPref.getId(this));
         autologin.addParams("pw", UserPref.getPw(this));
         Log.e(TAG, "password: " + UserPref.getPw(this));
-        autologin.addParams("fcm", UserPref.getFcmToken(this));
+        autologin.addParams("fcm", UserPref.getBaiduToken(this));
 
         if (!locationmanager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             autologin.addParams("lat", UserPref.getLocationLat(this));
@@ -527,7 +558,6 @@ public class SplashAct extends BaseActivity {
     public void gpsStatusCheck() {
         //GPS가 켜져있는지 체크
         if (!locationmanager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            isOk = false;
 
             AlertDialog.Builder alertDialogBuilder =
                     new AlertDialog.Builder(this);
@@ -544,7 +574,7 @@ public class SplashAct extends BaseActivity {
                     .setNegativeButton("취소", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            checkAutoLogin();
+                            checkState(true);
                         }
                     });
             AlertDialog alertDialog = alertDialogBuilder.create();
@@ -554,21 +584,7 @@ public class SplashAct extends BaseActivity {
                 alertDialog.show();
             }
         } else {
-            isOk = true;
-
-            checkAutoLogin();
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        if (locationmanager != null) {
-            if (!locationmanager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                gpsStatusCheck();
-            } else {
-                checkAutoLogin();
-            }
+            checkState(true);
         }
     }
 
@@ -583,9 +599,17 @@ public class SplashAct extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == GPS_CHECK) {
-            startLocationService();
-            checkAutoLogin();
+        if (resultCode == RESULT_OK) {
+            Log.e(StringUtil.TAG, "gps check ok");
+            if (requestCode == GPS_CHECK) {
+                startLocationService();
+                gpsStatusCheck();
+            } else if (requestCode == PERMISSION) {
+                startProgram();
+            }
+        } else {
+            Log.e(StringUtil.TAG, "gps check cancel");
+            checkState(true);
         }
     }
 }

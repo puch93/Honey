@@ -1,5 +1,6 @@
 package com.match.honey.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -24,7 +25,7 @@ import com.match.honey.utils.StringUtil;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class ListDlgAct extends AppCompatActivity {
+public class ListDlgAct extends Activity {
 
     RecyclerView rcv_list;
 
@@ -32,6 +33,7 @@ public class ListDlgAct extends AppCompatActivity {
     ArrayList<PopData> list = new ArrayList<>();
 
     String subject, select, mloc;
+    Activity act;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class ListDlgAct extends AppCompatActivity {
         getWindow().setAttributes(lpWindow);
 
         setContentView(R.layout.dlg_list_popup);
+        act = this;
 
         subject = getIntent().getStringExtra("subject");
         select = getIntent().getStringExtra("select");
@@ -380,7 +383,7 @@ public class ListDlgAct extends AppCompatActivity {
             setList(R.array.gender);
         }
 
-        adapter = new DlgListAdapter(this, list);
+        adapter = new DlgListAdapter(act, list);
         rcv_list.setLayoutManager(new LinearLayoutManager(this));
         rcv_list.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         rcv_list.setAdapter(adapter);

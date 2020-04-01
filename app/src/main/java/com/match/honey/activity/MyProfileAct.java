@@ -47,6 +47,7 @@ import com.match.honey.utils.Common;
 import com.match.honey.utils.DefaultValue;
 import com.match.honey.utils.Glide4Engine;
 import com.match.honey.utils.ItemOffsetDecorationMatisse;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
@@ -94,6 +95,7 @@ public class MyProfileAct extends AppCompatActivity implements View.OnClickListe
         binding = DataBindingUtil.setContentView(this, R.layout.activity_myprofile);
 
         act = this;
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
         binding.flBack.setOnClickListener(this);
 
         binding.llBtnMyprof.setOnClickListener(this);

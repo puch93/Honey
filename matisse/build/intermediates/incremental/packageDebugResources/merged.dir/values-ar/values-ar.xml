@@ -10,9 +10,6 @@
     <string name="error_file_type">نوع ملف غير مدعوم</string>
     <string name="error_no_video_activity">لم يتم العثور على التطبيق دعم معاينة الفيديو</string>
     <string name="error_over_count">يمكنك تحديد ما يصل إلى %1$d من ملفات الوسائط فقط</string>
-    <string name="error_over_count_default">لقد وصلت إلى الحد الأقصى للاختيار</string>
-    <string name="error_over_quality">فوق الجودة</string>
     <string name="error_type_conflict">لا يمكن تحديد الصور ومقاطع الفيديو في نفس الوقت</string>
-    <string name="error_under_quality">تحت الجودة</string>
     <string name="photo_grid_capture">كاميرا</string>
 </resources>

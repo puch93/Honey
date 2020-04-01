@@ -22,10 +22,7 @@
     <string name="empty_text">Keine Medien gewählt</string>
     <string name="button_ok">OK</string>
 
-    <string name="error_over_count_default">Sie haben die maximale Anzahl an Medien ausgewählt.</string>
     <string name="error_over_count">Sie können nur %1$d Medien auswählen</string>
-    <string name="error_under_quality">Unter Qualität</string>
-    <string name="error_over_quality">Über Qualität</string>
     <string name="error_file_type">Dateityp nicht unterstützt</string>
     <string name="error_type_conflict">Sie können Bilder und Videos nicht gleichzeitig auswählen</string>
     <string name="error_no_video_activity">Keine App zur Videovorschau gefunden</string>

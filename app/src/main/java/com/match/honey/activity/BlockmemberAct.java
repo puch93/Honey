@@ -20,6 +20,7 @@ import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
 import com.match.honey.utils.Common;
 import com.match.honey.utils.ItemOffsetDecorationBlock;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONArray;
@@ -43,7 +44,7 @@ public class BlockmemberAct extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_blockmem);
-
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
         binding.flBack.setOnClickListener(this);
         binding.btnBlockcancel.setOnClickListener(this);
         binding.llHome.setOnClickListener(this);

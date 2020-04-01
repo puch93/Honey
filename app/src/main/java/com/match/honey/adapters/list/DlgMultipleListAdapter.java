@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
@@ -24,13 +24,13 @@ public class DlgMultipleListAdapter extends RecyclerView.Adapter<DlgMultipleList
 
     private static RecyclerViewItemClick myClickListener;
     private int selectedPosition = -1;
-    AppCompatActivity act;
+    Activity act;
     ArrayList<PopData> list;
     int limitnum = 0;
     boolean isLimit = false;
     public int count = 0;
 
-    public DlgMultipleListAdapter(AppCompatActivity act, ArrayList<PopData> list) {
+    public DlgMultipleListAdapter(Activity act, ArrayList<PopData> list) {
         this.act = act;
         this.list = list;
     }

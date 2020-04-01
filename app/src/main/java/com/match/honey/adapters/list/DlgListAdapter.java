@@ -1,5 +1,6 @@
 package com.match.honey.adapters.list;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +9,6 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
@@ -21,10 +21,10 @@ public class DlgListAdapter extends RecyclerView.Adapter<DlgListAdapter.ViewHold
 
     private static RecyclerViewItemClick myClickListener;
     private int selectedPosition = -1;
-    AppCompatActivity act;
+    Activity act;
     ArrayList<PopData> list;
 
-    public DlgListAdapter(AppCompatActivity act, ArrayList<PopData> list) {
+    public DlgListAdapter(Activity act, ArrayList<PopData> list) {
         this.act = act;
         this.list = list;
     }

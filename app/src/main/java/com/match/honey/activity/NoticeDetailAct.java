@@ -13,6 +13,7 @@ import com.match.honey.databinding.ActivityNoticeDetailBinding;
 import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
+import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
 
 import org.json.JSONException;
@@ -27,7 +28,7 @@ public class NoticeDetailAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_notice_detail, null);
         act = this;
-
+        StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
         Intent from = getIntent();
 
         setPlusCount(from.getStringExtra("idx"));

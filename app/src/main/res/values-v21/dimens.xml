@@ -1,8 +1,0 @@
-<resources>
-  <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="dimen_8">8dp</dimen>
-    <dimen name="dimen_10">10dp</dimen>
-    <dimen name="dimen_hope01">2.7dp</dimen>
-    <dimen name="dimen_hope02">5.3dp</dimen>
-    <dimen name="dimen_7">7dp</dimen>
-</resources>

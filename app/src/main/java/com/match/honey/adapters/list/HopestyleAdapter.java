@@ -7,7 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.match.honey.R;
@@ -17,10 +17,10 @@ import java.util.ArrayList;
 
 public class HopestyleAdapter extends RecyclerView.Adapter<HopestyleAdapter.ViewHolder> {
 
-    AppCompatActivity act;
+    Activity act;
     ArrayList<HopestyleData> list;
 
-    public HopestyleAdapter(AppCompatActivity act, ArrayList<HopestyleData> list) {
+    public HopestyleAdapter(Activity act, ArrayList<HopestyleData> list) {
         this.act = act;
         this.list = list;
     }
