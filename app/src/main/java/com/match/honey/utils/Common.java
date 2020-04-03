@@ -1,5 +1,6 @@
 package com.match.honey.utils;
 
+import android.content.Context;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,7 +40,9 @@ public class Common {
         });
     }
 
-
+    public static void showToastLongContext(final Context ctx, final String msg) {
+        Toast.makeText(ctx, msg, Toast.LENGTH_LONG).show();
+    }
 
     public static void showToastNet(final AppCompatActivity act) {
         act.runOnUiThread(new Runnable() {

@@ -1615,8 +1615,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(act, BlockmemberAct.class));
                 break;
             case R.id.ll_buy_item:
+                //TODO
+                startActivity(new Intent(act, WeChatPayAct.class));
                 // 아이템관리
-                startActivity(new Intent(act, ItemmanageAct.class).putExtra("from", "main"));
+//                startActivity(new Intent(act, ItemmanageAct.class).putExtra("from", "main"));
                 break;
             case R.id.ll_service_center:
                 // 고객센터

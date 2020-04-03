@@ -2,6 +2,7 @@ package com.match.honey.activity;
 
 import android.Manifest;
 import android.app.Dialog;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -30,8 +31,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.baidu.android.pushservice.BasicPushNotificationBuilder;
 import com.baidu.android.pushservice.PushConstants;
 import com.baidu.android.pushservice.PushManager;
+import com.baidu.android.pushservice.PushService;
+import com.baidu.android.pushservice.PushSettings;
 import com.bumptech.glide.Glide;
 import com.match.honey.R;
 import com.match.honey.network.ReqBasic;
@@ -81,7 +85,15 @@ public class SplashAct extends BaseActivity {
                 .into((ImageView) findViewById(R.id.splash));
 
         // 바이두 푸시 토큰 요청 (바인딩)
-        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
+//        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
+//        PushManager.deleteNotificationChannel(getApplicationContext(), "云推送");
+//        PushManager.deleteNotificationChannel(getApplicationContext(), "Cloud push");
+//        PushManager.deleteNotificationChannel(getApplicationContext(), "클라우드 푸시");
+
+//        BasicPushNotificationBuilder bBuilder = new BasicPushNotificationBuilder();
+//        bBuilder.setChannelId("여보자기기본");
+//        bBuilder.setChannelName("여보자기기본이름");
+//        PushManager.setDefaultNotificationBuilder(getApplicationContext(), bBuilder);
 
         tv_bottom = (TextView) findViewById(R.id.tv_bottom);
 

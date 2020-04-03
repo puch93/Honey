@@ -475,8 +475,6 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
                 break;
 
             case R.id.btn_join:
-                //TODO
-//                startActivity(new Intent(act, WeChatPayAct.class));
                 startActivity(new Intent(LoginAct.this, JoinAct.class));
                 break;
 

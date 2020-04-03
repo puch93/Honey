@@ -261,6 +261,7 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
         } else {
             email = binding.etEmail.getText().toString() + "@" + binding.tvPortal.getText().toString();
         }
+
         pw = binding.etPw.getText().toString();
         pw_check = binding.etPwcheck.getText().toString();
 

@@ -15,6 +15,6 @@ public class CustomApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Log.d(TAG, "Application is onCreated!");
-//        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
+        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
     }
 }

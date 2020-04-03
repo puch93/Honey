@@ -7,10 +7,13 @@ import androidx.databinding.DataBindingUtil;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
@@ -21,8 +24,13 @@ import android.widget.Toast;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityWeChatPayBinding;
+import com.match.honey.utils.StringUtil;
 
 import org.apache.http.util.EncodingUtils;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class WeChatPayAct extends AppCompatActivity {
     ActivityWeChatPayBinding binding;
@@ -38,26 +46,79 @@ public class WeChatPayAct extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
 
-        binding.webView.setWebChromeClient(new WebChromeClient());
-        binding.webView.setWebViewClient(new MyWebViewClient());
+//        binding.webView.setWebChromeClient(new WebChromeClient());
+//        binding.webView.setWebViewClient(new MyWebViewClient());
+        binding.webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                Uri uri = Uri.parse(view.getUrl());
+
+                String url = uri.toString();
+                System.out.println("loadurl : " + url);
+
+                if (url.startsWith("weixin://")) {
+                    System.out.println("loadurl2222 : " + url);
+                    startActivity(new Intent("android.intent.action.VIEW", Uri.parse(url)));
+                    return true;
+                }
+                return super.shouldOverrideUrlLoading(view, request);
+            }
+        });
 
         // url의 경우에는 밑의 코드 참고
 //        Base64.encodeToString(resulturl.getBytes(), 0)
         String str =
-                "outTradeNo=1234" + "&" +
-                "whereFrom=testFrom" + "&" +
-                "mobile=01074717614" + "&" +
-                "sumMoney=1000" + "&" +
-                "notifyUrl=about:blank" + "&" +
-                "redirectUrl=about:blank" + "&" +
-                "body=testBody" + "&" +
-                "userName=testName" + "&" +
-                "message=testMessage" + "&" +
-                "ext=testExt";
+                        "Referer: http://pay.82ucc.com/" + "&" +
+                        "url=/wxpay/H5Pay" + "&" +
+                        "outTradeNo=1234" + "&" +
+                        "whereFrom=testFrom" + "&" +
+                        "mobile=01074717614" + "&" +
+                        "sumMoney=1000" + "&" +
+                        "notifyUrl=about:blank" + "&" +
+                        "redirectUrl=about:blank" + "&" +
+                        "body=testBody" + "&" +
+                        "userName=testName" + "&" +
+                        "message=testMessage" + "&" +
+                        "ext=testExt";
+
+//        Map<String, String> extraHeaders = new HashMap<String, String>();
+//        extraHeaders.put("Referer", "http://pay.82ucc.com");
 
 //        binding.webView.loadUrl("http://pay.82ucc.com/");
 //        EncodingUtils.getBytes(str, "BASE64")
-        binding.webView.postUrl("http://pay.82ucc.com/wxpay/H5Pay", str.getBytes());
+        binding.webView.postUrl("http://pay.82ucc.com", str.getBytes());
+
+
+
+
+        Map<String, String> mapParams = new HashMap<String, String>();
+        mapParams.put("outTradeNo", "1234");
+        mapParams.put("whereFrom", "Android hunliain");
+        mapParams.put("mobile", "01074717614");
+        mapParams.put("sumMoney", "1000");
+
+        mapParams.put("notifyUrl", "1234");
+        mapParams.put("redirectUrl", "1234");
+
+        mapParams.put("body", "testBody");
+        mapParams.put("userName", "testName");
+        mapParams.put("message", "testMessage");
+        mapParams.put("ext", "testExt");
+
+    }
+
+    public static void webview_ClientPost(WebView webView, String url, Collection< Map.Entry<String, String>> postData){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("<html><head></head>");
+        sb.append("<body onload='form1.submit()'>");
+        sb.append(String.format("<form id='form1' action='%s' method='%s'>", url, "post"));
+        for (Map.Entry<String, String> item : postData) {
+            sb.append(String.format("<input name='%s' type='hidden' value='%s' />", item.getKey(), item.getValue()));
+        }
+        sb.append("</form></body></html>");
+
+        webView.loadData(sb.toString(), "text/html", "UTF-8");
     }
 
     private class MyWebViewClient extends WebViewClient {
