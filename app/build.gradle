@@ -139,5 +139,5 @@ dependencies {
 //    implementation 'com.amazonaws:aws-android-sdk-pinpoint:2.15.+'
 //    implementation ('com.amazonaws:aws-android-sdk-mobile-client:2.15.+@aar') { transitive = true }
 }
+
 apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.amplifyframework.amplifytools'

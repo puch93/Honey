@@ -1,6 +1,7 @@
 package com.match.honey.activity;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -49,12 +50,14 @@ public class WeChatPayAct extends AppCompatActivity {
 //        binding.webView.setWebChromeClient(new WebChromeClient());
 //        binding.webView.setWebViewClient(new MyWebViewClient());
         binding.webView.setWebViewClient(new WebViewClient() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                Uri uri = Uri.parse(view.getUrl());
+//                Uri uri = Uri.parse(view.getUrl());
+                Uri uri = request.getUrl();
 
                 String url = uri.toString();
-                System.out.println("loadurl : " + url);
+                Log.e(StringUtil.TAG, "loadurl: " + url);
 
                 if (url.startsWith("weixin://")) {
                     System.out.println("loadurl2222 : " + url);
@@ -87,6 +90,7 @@ public class WeChatPayAct extends AppCompatActivity {
 //        binding.webView.loadUrl("http://pay.82ucc.com/");
 //        EncodingUtils.getBytes(str, "BASE64")
         binding.webView.postUrl("http://pay.82ucc.com", str.getBytes());
+//        binding.webView.loadUrl("http://pay.82ucc.com");
 
 
 
