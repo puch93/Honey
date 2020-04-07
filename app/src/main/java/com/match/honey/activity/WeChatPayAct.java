@@ -25,9 +25,17 @@ import android.widget.Toast;
 
 import com.match.honey.R;
 import com.match.honey.databinding.ActivityWeChatPayBinding;
+import com.match.honey.network.ReqBasic;
+import com.match.honey.network.netUtil.HttpResult;
+import com.match.honey.network.netUtil.NetUrls;
+import com.match.honey.sharedPref.UserPref;
+import com.match.honey.utils.Common;
 import com.match.honey.utils.StringUtil;
 
 import org.apache.http.util.EncodingUtils;
+import org.apache.http.util.NetUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -35,7 +43,18 @@ import java.util.Map;
 
 public class WeChatPayAct extends AppCompatActivity {
     ActivityWeChatPayBinding binding;
-    Activity act;
+    AppCompatActivity act;
+
+    String outTradeNo = "";
+    String whereFrom = "Android hunliain";
+    String mobile = "01074717614";
+    String sumMoney = "100";
+    String notifyUrl = NetUrls.RETURN_WECHATPAY;
+    String redirectUrl = "";
+    String body = "testBody";
+    String userName = "testName";
+    String message = "testMessage";
+    String ext = "testExt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +62,10 @@ public class WeChatPayAct extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_we_chat_pay, null);
         act = this;
 
+        requestPay();
+    }
+
+    private void request_h5_pay() {
         WebSettings webSettings = binding.webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
@@ -70,129 +93,84 @@ public class WeChatPayAct extends AppCompatActivity {
 
         // url의 경우에는 밑의 코드 참고
 //        Base64.encodeToString(resulturl.getBytes(), 0)
-        String str =
-                        "Referer: http://pay.82ucc.com/" + "&" +
+//        String str =
+//                "Referer: http://pay.82ucc.com" + "&" +
+//                        "url=/wxpay/H5Pay" + "&" +
+//                        "outTradeNo="+ System.currentTimeMillis() + "&" +
+//                        "whereFrom=Android hunliain" + "&" +
+//                        "mobile=01074717614" + "&" +
+//                        "sumMoney=100" + "&" +
+//                        "notifyUrl=" + NetUrls.RETURN_WECHATPAY + "&" +
+//                        "redirectUrl=" + "&" +
+//                        "body=testBody" + "&" +
+//                        "userName=testName" + "&" +
+//                        "message=testMessage" + "&" +
+//                        "ext=testExt";
+
+//                Log.e(StringUtil.TAG, "전달값: " + str);
+
+        String request_values =
+                        "Referer: http://pay.82ucc.com" + "&" +
                         "url=/wxpay/H5Pay" + "&" +
-                        "outTradeNo=1234" + "&" +
-                        "whereFrom=testFrom" + "&" +
-                        "mobile=01074717614" + "&" +
-                        "sumMoney=1000" + "&" +
-                        "notifyUrl=about:blank" + "&" +
-                        "redirectUrl=about:blank" + "&" +
-                        "body=testBody" + "&" +
-                        "userName=testName" + "&" +
-                        "message=testMessage" + "&" +
-                        "ext=testExt";
+                        "outTradeNo=" + outTradeNo + "&" +
+                        "whereFrom=" + whereFrom + "&" +
+                        "mobile=" + mobile + "&" +
+                        "sumMoney=" + sumMoney+ "&" +
+                        "notifyUrl=" + notifyUrl + "&" +
+                        "redirectUrl=" + redirectUrl + "&" +
+                        "body=" + body + "&" +
+                        "userName=" + userName + "&" +
+                        "message=" + message + "&" +
+                        "ext=" + ext;
+
+        Log.e(StringUtil.TAG, "request_h5_pay: " + request_values.replaceAll("&", "\n") );
+        Common.showToastLong(act, request_values.replaceAll("&", "\n"));
+
+        binding.webView.postUrl("http://pay.82ucc.com", request_values.getBytes());
 
 //        Map<String, String> extraHeaders = new HashMap<String, String>();
 //        extraHeaders.put("Referer", "http://pay.82ucc.com");
 
 //        binding.webView.loadUrl("http://pay.82ucc.com/");
 //        EncodingUtils.getBytes(str, "BASE64")
-        binding.webView.postUrl("http://pay.82ucc.com", str.getBytes());
 //        binding.webView.loadUrl("http://pay.82ucc.com");
-
-
-
-
-        Map<String, String> mapParams = new HashMap<String, String>();
-        mapParams.put("outTradeNo", "1234");
-        mapParams.put("whereFrom", "Android hunliain");
-        mapParams.put("mobile", "01074717614");
-        mapParams.put("sumMoney", "1000");
-
-        mapParams.put("notifyUrl", "1234");
-        mapParams.put("redirectUrl", "1234");
-
-        mapParams.put("body", "testBody");
-        mapParams.put("userName", "testName");
-        mapParams.put("message", "testMessage");
-        mapParams.put("ext", "testExt");
-
     }
 
-    public static void webview_ClientPost(WebView webView, String url, Collection< Map.Entry<String, String>> postData){
-        StringBuilder sb = new StringBuilder();
 
-        sb.append("<html><head></head>");
-        sb.append("<body onload='form1.submit()'>");
-        sb.append(String.format("<form id='form1' action='%s' method='%s'>", url, "post"));
-        for (Map.Entry<String, String> item : postData) {
-            sb.append(String.format("<input name='%s' type='hidden' value='%s' />", item.getKey(), item.getValue()));
-        }
-        sb.append("</form></body></html>");
+    private void requestPay() {
+        ReqBasic logout = new ReqBasic(this, NetUrls.REQ_WECHATPAY) {
+            @Override
+            public void onAfter(int resultCode, HttpResult resultData) {
 
-        webView.loadData(sb.toString(), "text/html", "UTF-8");
-    }
+                if (resultData.getResult() != null) {
+                    try {
+                        JSONObject jo = new JSONObject(resultData.getResult());
+                        if (StringUtil.getStr(jo, "result").equalsIgnoreCase("success")) {
+                            outTradeNo = StringUtil.getStr(jo, "outTradeNo");
+                            UserPref.setPayNum(act, outTradeNo);
 
-    private class MyWebViewClient extends WebViewClient {
+                            Common.showToastLong(act, jo.toString());
 
-        @Nullable
-        @Override
-        public void onPageFinished(WebView view, String url) {
-            super.onPageFinished(view, url);
-            //Log.d(HoUtils.TAG, "url : " + url);
-            binding.webView.loadUrl("javascript:window.AndroidInterface.getHtml(document.getElementsByTagName('body')[0].innerHTML);");
+                            request_h5_pay();
+                        } else {
+                            Common.showToastNet(act);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else {
 
-        }
-
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                binding.webView.loadUrl(request.getUrl().toString());
-            } else {
-                Toast.makeText(act, "안드로이드 버전 미달", Toast.LENGTH_SHORT).show();
-            }
-            return true;
-        }
-
-
-        @Override
-        public void onReceivedSslError(WebView view, final SslErrorHandler handler, SslError error) {
-            super.onReceivedSslError(view, handler, error);
-
-            StringBuilder sb = new StringBuilder();
-
-            if (error != null) {
-                switch (error.getPrimaryError()) {
-                    case SslError.SSL_EXPIRED:
-                        sb.append("이 사이트의  보안 인증서가 만료되었습니다.\n");
-                        break;
-                    case SslError.SSL_IDMISMATCH:
-                        sb.append("이 사이트의 보안 인증서 ID가 일치하지 않습니다.\n");
-                        break;
-                    case SslError.SSL_NOTYETVALID:
-                        sb.append("이 사이트의 보안 인증서가 아직 유효하지 않습니다.\n");
-                        break;
-                    case SslError.SSL_UNTRUSTED:
-                        sb.append("이 사이트의 이 사이트의 보안 인증서는 신뢰할 수 없습니다.\n");
-                        break;
-                    default:
-                        sb.append("보안 인증서에 오류가 있습니다.\n");
-                        break;
                 }
             }
-
-            sb.append("계속 진행하시겠습니까?");
-
-            final AlertDialog.Builder builder = new AlertDialog.Builder(act);
-            builder.setMessage(sb.toString());
-            builder.setPositiveButton("진행", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    handler.proceed();
-                }
-            });
-
-            builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    handler.cancel();
-                }
-            });
-
-            final AlertDialog dialog = builder.create();
-            dialog.show();
-        }
+        };
+        logout.setTag("Request Pay");
+        logout.addParams("whereFrom", whereFrom);
+        logout.addParams("mobile", mobile);
+        logout.addParams("sumMoney", sumMoney);
+        logout.addParams("body", body);
+        logout.addParams("userName", userName);
+        logout.addParams("message", message);
+        logout.addParams("ext",ext);
+        logout.execute(true, false);
     }
 }

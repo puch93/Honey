@@ -38,6 +38,7 @@ import com.match.honey.network.ReqBasic;
 import com.match.honey.network.netUtil.HttpResult;
 import com.match.honey.network.netUtil.NetUrls;
 import com.match.honey.sharedPref.UserPref;
+import com.match.honey.utils.Common;
 import com.match.honey.utils.DefaultValue;
 import com.match.honey.utils.StatusBarUtil;
 import com.match.honey.utils.StringUtil;
@@ -61,6 +62,7 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
     String enter, msg_from, room_idx;
 
     private NotificationManager manager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -188,7 +190,7 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
 
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        Log.e("TEST_HOME", "error2");
+                        Common.showToast(act, e.getMessage());
                         Toast.makeText(LoginAct.this, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
                     }
                 } else {
@@ -259,8 +261,8 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        Log.e("TEST_HOME", "error4");
-                        Toast.makeText(LoginAct.this, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
+                        Common.showToast(act, e.getMessage());
+//                        Toast.makeText(LoginAct.this, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Log.e("TEST_HOME", "error5");

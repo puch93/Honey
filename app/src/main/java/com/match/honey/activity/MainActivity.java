@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<LastnameData> lastnames_arr = new ArrayList<>();
     ArrayList<MemberData> memlist = new ArrayList<>();
     MemberListMainAdapter adapter;
-//    LinearLayoutManagerWrapper layoutManager2;
+    //    LinearLayoutManagerWrapper layoutManager2;
     LinearLayoutManager layoutManager;
 
     String addsearch = "";
@@ -708,7 +708,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void getListCheck(boolean isFirst) {
-        if(isFirst) {
+        if (isFirst) {
             page = 1;
             memlist.clear();
             memlist = new ArrayList<>();
@@ -802,7 +802,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     adapter.setList(memlist);
                                     adapter.notifyDataSetChanged();
 
-                                    if(page == 1) {
+                                    if (page == 1) {
                                         binding.frameMain.rcvMember.scrollToPosition(0);
                                     }
                                 }
@@ -1439,6 +1439,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding.frameMain.gendersearchText.setText("성별");
         binding.frameMain.genderArrow.setSelected(false);
     }
+
     @Override
     public void onClick(View v) {
         binding.frameMain.rcvMember.stopScroll();
@@ -1604,7 +1605,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //이용후기
             case R.id.ll_review:
-                startActivity(new Intent(act, ReviewAct.class));
+                getPayResult();
+//                startActivity(new Intent(act, ReviewAct.class));
                 break;
             case R.id.ll_profile_revise:
                 // 기본정보관리
@@ -1665,5 +1667,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(act, AllianceAct.class));
                 break;
         }
+    }
+
+    private void getPayResult() {
+        ReqBasic logout = new ReqBasic(this, NetUrls.RETURN_WECHATPAY) {
+            @Override
+            public void onAfter(int resultCode, HttpResult resultData) {
+
+                if (resultData.getResult() != null) {
+                    try {
+                        JSONObject jo = new JSONObject(resultData.getResult());
+                        Common.showToastLong(act, jo.toString());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+
+                }
+            }
+        };
+        logout.setTag("Pay Result");
+//        logout.addParams("outTradeNo", UserPref.getPayNum(act));
+        logout.execute(true, false);
     }
 }

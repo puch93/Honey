@@ -25,7 +25,6 @@ public abstract class ReqBasic extends BaseReq{
             res.setResult(jsonString);
             if(!StringUtil.isNull(TAG))
                 Log.e(StringUtil.TAG, TAG + " Get Info: " + jsonString);
-
         }
         return res;
     }

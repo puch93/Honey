@@ -38,22 +38,22 @@ import static android.content.Context.ACTIVITY_SERVICE;
 public class PushTestReceiver extends PushMessageReceiver {
     @Override
     public void onBind(Context context, int errorCode, String appid, String userId, String channelId, String requestId) {
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind()");
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() errorCode: " + errorCode);
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() appid: " + appid);
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() userId: " + userId);
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() channelId: " + channelId);
-        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() requestId: " + requestId);
-
-        Common.showToastLongContext(context,
-                "errorCode: " + errorCode + "\n" +
-                        "appid: " + appid + "\n" +
-                        "userId: " + userId  + "\n" +
-                        "channelId: " + channelId  + "\n" +
-                        "requestId: " + requestId
-        );
-
-        UserPref.setBaiduToken(context, channelId);
+//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind()");
+//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() errorCode: " + errorCode);
+//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() appid: " + appid);
+//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() userId: " + userId);
+//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() channelId: " + channelId);
+//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() requestId: " + requestId);
+//
+//        Common.showToastLongContext(context,
+//                "errorCode: " + errorCode + "\n" +
+//                        "appid: " + appid + "\n" +
+//                        "userId: " + userId  + "\n" +
+//                        "channelId: " + channelId  + "\n" +
+//                        "requestId: " + requestId
+//        );
+//
+//        UserPref.setBaiduToken(context, channelId);
 
     }
 

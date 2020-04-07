@@ -341,4 +341,20 @@ public class UserPref {
         editor.putInt("like_id",noti_id);
         editor.commit();
     }
+
+
+
+
+    // 위챗페이 테스트
+    public static String getPayNum(Context context){
+        SharedPreferences pref = context.getSharedPreferences("userinfo", context.MODE_PRIVATE);
+        return pref.getString("pay","");
+    }
+
+    public static void setPayNum(Context context,String uidx){
+        SharedPreferences pref = context.getSharedPreferences("userinfo", context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("pay",uidx);
+        editor.commit();
+    }
 }

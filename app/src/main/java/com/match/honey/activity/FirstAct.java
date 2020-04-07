@@ -2,6 +2,7 @@ package com.match.honey.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -78,6 +79,7 @@ public class FirstAct extends AppCompatActivity {
                 }
             }
         });
+
     }
 
 
@@ -85,7 +87,6 @@ public class FirstAct extends AppCompatActivity {
         ReqBasic memList = new ReqBasic(act, NetUrls.MEMBERLIST) {
             @Override
             public void onAfter(int resultCode, HttpResult resultData) {
-
                 if (resultData.getResult() != null) {
 
                     try {
@@ -166,14 +167,16 @@ public class FirstAct extends AppCompatActivity {
                         }
                         adapter.notifyDataSetChanged();
                         e.printStackTrace();
-                        Toast.makeText(act, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(act, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
+//                        Common.showToast(act, e.getMessage());
                     }
                 } else {
                     if (memlist.size() > 0) {
                         memlist.clear();
                     }
                     adapter.notifyDataSetChanged();
-                    Toast.makeText(act, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
+//                    Common.showToast(act, "resultData.getResult() == null");
+//                    Toast.makeText(act, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
                 }
 
             }

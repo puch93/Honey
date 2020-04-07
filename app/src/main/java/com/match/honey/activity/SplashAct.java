@@ -90,11 +90,6 @@ public class SplashAct extends BaseActivity {
 //        PushManager.deleteNotificationChannel(getApplicationContext(), "Cloud push");
 //        PushManager.deleteNotificationChannel(getApplicationContext(), "클라우드 푸시");
 
-//        BasicPushNotificationBuilder bBuilder = new BasicPushNotificationBuilder();
-//        bBuilder.setChannelId("여보자기기본");
-//        bBuilder.setChannelName("여보자기기본이름");
-//        PushManager.setDefaultNotificationBuilder(getApplicationContext(), bBuilder);
-
         tv_bottom = (TextView) findViewById(R.id.tv_bottom);
 
         // gps정보 가져오기위함
@@ -202,7 +197,9 @@ public class SplashAct extends BaseActivity {
 
             handler_baidu.post(mrun_baidu);
         } else {
-            if (!StringUtil.isNull(UserPref.getBaiduToken(act)) && !isPushOk) {
+            //TODO
+//            if (!StringUtil.isNull(UserPref.getBaiduToken(act)) && !isPushOk) {
+            if (!isPushOk) {
                 isPushOk = true;
 
                 tokenTimer_baidu.cancel();

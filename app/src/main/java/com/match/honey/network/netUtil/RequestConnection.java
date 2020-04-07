@@ -1,10 +1,13 @@
 package com.match.honey.network.netUtil;
 
+import android.app.Application;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.match.honey.CustomApplication;
 import com.match.honey.network.inter.OnAfterConnection;
 import com.match.honey.network.inter.OnParsingResult;
+import com.match.honey.utils.Common;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -115,6 +118,7 @@ public class RequestConnection {
             }
             resultString = totalResultText.toString();
             Log.i("TEST_HOME", "resultString: " + resultString);
+            Common.showToast(CustomApplication.ctx, resultString);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();

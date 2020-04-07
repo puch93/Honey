@@ -1,5 +1,7 @@
 package com.match.honey.network.netUtil;
 
+import java.lang.reflect.Member;
+
 public class NetUrls {
 //    public static final String DOMAIN = "http://app.yeobo.co.kr";
     public static final String DOMAIN = "http://yeobohoney.adamstore.co.kr";
@@ -88,6 +90,9 @@ public class NetUrls {
     public static final String FINDPWREG = DOMAIN + "/Member/findpw_regi";       // 비밀번호 찾기
 
     public static final String POPUPADS = DOMAIN + "/Board/ads_popup";       // 비밀번호 찾기
+    public static final String REQ_WECHATPAY = DOMAIN + "/Member/H5Pay";       // 비밀번호 찾기
+//    public static final String RETURN_WECHATPAY = DOMAIN + "/Member/H5Pay_check";       // 비밀번호 찾기
+    public static final String RETURN_WECHATPAY = DOMAIN + "/Member/H5Pay_Servercheck";       // 비밀번호 찾기
 
     /**
      * 기본정보 설정

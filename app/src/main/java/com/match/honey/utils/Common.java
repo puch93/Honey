@@ -1,6 +1,8 @@
 package com.match.honey.utils;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +26,15 @@ public class Common {
     public static void showToast(final AppCompatActivity act, final String msg) {
 
         act.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(act, msg, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public static void showToast(final Context act, final String msg) {
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
                 Toast.makeText(act, msg, Toast.LENGTH_SHORT).show();
