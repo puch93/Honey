@@ -22,8 +22,8 @@ public class CustomApplication extends Application {
         PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
 
         BasicPushNotificationBuilder bBuilder = new BasicPushNotificationBuilder();
-        bBuilder.setChannelId("여보자기기본");
-        bBuilder.setChannelName("여보자기기본이름");
+        bBuilder.setChannelId("여보자기");
+//        bBuilder.setChannelName("여보자기기본이름");
         PushManager.setDefaultNotificationBuilder(getApplicationContext(), bBuilder);
     }
 }

@@ -19,37 +19,27 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-ignorewarnings
+
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep public class * extends com.bumptech.glide.module.AppGlideModule
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
   **[] $VALUES;
   public *;
 }
--ignorewarnings
-
--keep class com.kakao.** { *; }
--keepattributes Signature
--keepclassmembers class * {
-  public static <fields>;
-  public *;
-}
-
-#-dontwarn com.google.firebase.messaging.**
 
 -keep public class com.android.vending.billing.**
-
--keep public class com.nhn.android.naverlogin.** {
-       public protected *;
-}
-
--keep class com.naver.mei.sdk.**{*;}
 -keep class android.support.v7.widget.**{*;}
 -keep class com.bumptech.glide.**{*;}
+-keep class org.json.** { *;}
 -dontwarn okhttp3.**
 -dontwarn okio.**
 
+-libraryjars libs/pushservice-6.7.3.20.jar
+-dontwarn com.baidu.**
+-keep class com.baidu.**{*; }
 
-#-libraryjars libs/pushservice-6.7.3.20.jar
-#-dontwarn com.baidu.**
-#-keep class com.baidu.**{*; }
+# 변수명변경
+-renamesourcefileattribute SourceFile
 

@@ -50,6 +50,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -79,18 +80,12 @@ public class SplashAct extends BaseActivity {
         setContentView(R.layout.activity_splash);
         act = this;
 
+        tv_bottom = (TextView) findViewById(R.id.tv_bottom);
+
         // 스플래시 gif이미지
         Glide.with(act)
                 .load(R.raw.splash_1440x2560_gif)
                 .into((ImageView) findViewById(R.id.splash));
-
-        // 바이두 푸시 토큰 요청 (바인딩)
-//        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, getString(R.string.baidu_api_key));
-//        PushManager.deleteNotificationChannel(getApplicationContext(), "云推送");
-//        PushManager.deleteNotificationChannel(getApplicationContext(), "Cloud push");
-//        PushManager.deleteNotificationChannel(getApplicationContext(), "클라우드 푸시");
-
-        tv_bottom = (TextView) findViewById(R.id.tv_bottom);
 
         // gps정보 가져오기위함
         geocoder = new Geocoder(this);
@@ -117,6 +112,17 @@ public class SplashAct extends BaseActivity {
             SystemPref.setDeviceWidth(act, width);
 
             Log.e(StringUtil.TAG, "device width: " + width);
+        }
+
+        Locale systemLocale = getApplicationContext().getResources().getConfiguration().locale;
+        String strCountry = systemLocale.getCountry(); // KR
+        Log.i(TAG, "strCountry: " + strCountry);
+        if(!StringUtil.isNull(strCountry)) {
+            if(strCountry.equalsIgnoreCase("CN")) {
+                UserPref.setCountry(act, "country");
+            } else {
+                UserPref.setCountry(act, "international");
+            }
         }
 
         checkVersion();
@@ -385,7 +391,7 @@ public class SplashAct extends BaseActivity {
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        Log.e("TEST_HOME", "error4");
+                        Log.e("TEST_HOME", "error4: " + e.getMessage() + "\n" + e.getLocalizedMessage());
                         Toast.makeText(act, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
                     }
                 } else {

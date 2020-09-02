@@ -211,7 +211,6 @@ public class FindAccountAct extends AppCompatActivity implements View.OnClickLis
                 if (resultData.getResult() != null) {
 
                     try {
-
                         JSONObject jo = new JSONObject(resultData.getResult());
                         Log.e("TEST_HOME", "Find PW Get Info: " + jo);
 

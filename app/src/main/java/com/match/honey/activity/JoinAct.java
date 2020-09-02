@@ -62,6 +62,9 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
     HopestyleJoinAdapter adapter;
     ArrayList<HopestyleData> list = new ArrayList<>();
 
+    String type = "";
+    String id = "";
+
     boolean isMen = true;
 
     @Override
@@ -73,10 +76,15 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
 
         StatusBarUtil.setStatusBarColor(this, StatusBarUtil.StatusBarColorType.WHITE_STATUS_BAR);
 
-        cpv = new ChangeProfVal();
+        type = getIntent().getStringExtra("type");
+        if (!StringUtil.isNull(type) && type.equalsIgnoreCase("tencent")) {
+            binding.llGeneral.setVisibility(View.GONE);
+            id = getIntent().getStringExtra("id");
+        } else {
+            type = "general";
+        }
 
-        token = null;
-        Log.d(StringUtil.TAG, "jtoken: " + token);
+        cpv = new ChangeProfVal();
 
         geocoder = new Geocoder(this);
         startLocationService();
@@ -240,7 +248,7 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
         };
 
         //
-        reqJoin.addParams("type", "general");        // 회원가입형태(general,kakaotalk,naver,facebook)
+        reqJoin.addParams("type", type);        // 회원가입형태(general,tencent)
         reqJoin.addParams("fcm_token", UserPref.getBaiduToken(this));
         if (!locationmanager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             Log.i(StringUtil.TAG, "loclat: " + UserPref.getLocationLat(this) + " loclon: " + UserPref.getLocationLon(this));
@@ -256,11 +264,17 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
         String pw = "";
         String pw_check = "";
 
-        if (binding.llPortalInput.getVisibility() == View.VISIBLE) {
-            email = binding.etEmail.getText().toString() + "@" + binding.etPortal.getText().toString();
+        if (type.equalsIgnoreCase("general")) {
+            if (binding.llPortalInput.getVisibility() == View.VISIBLE) {
+                email = binding.etEmail.getText().toString() + "@" + binding.etPortal.getText().toString();
+            } else {
+                email = binding.etEmail.getText().toString();
+            }
         } else {
-            email = binding.etEmail.getText().toString() + "@" + binding.tvPortal.getText().toString();
+            email = id;
         }
+
+        Log.e(TAG, "type" + type + "email: " + email);
 
         pw = binding.etPw.getText().toString();
         pw_check = binding.etPwcheck.getText().toString();
@@ -442,7 +456,7 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
         binding.tvGirl.setOnClickListener(this);
 
         binding.flTerm.setOnClickListener(this);
-}
+    }
 
     private void calFamilyOrder(int male, int female) {
 
@@ -651,26 +665,28 @@ public class JoinAct extends BaseActivity implements View.OnClickListener {
             case R.id.btn_join:
                 //일반 회원가입일때만
                 //이메일
-                if (binding.etEmail.length() == 0) {
-                    Toast.makeText(this, getString(R.string.input_email), Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                // 포털 직접입력(naver.com,google.com ...  등)
-                if (binding.llPortalInput.getVisibility() == View.VISIBLE) {
-                    if (binding.etPortal.length() == 0) {
-                        Toast.makeText(this, getString(R.string.input_portal), Toast.LENGTH_SHORT).show();
+                if(type.equalsIgnoreCase("general")) {
+                    if (binding.etEmail.length() == 0) {
+                        Toast.makeText(this, getString(R.string.input_email), Toast.LENGTH_SHORT).show();
                         return;
                     }
 
-                    if (!checkEmail(binding.etEmail.getText().toString() + "@" + binding.etPortal.getText().toString())) {
-                        Toast.makeText(this, "이메일을 확인해주세요.", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                } else {
-                    if (!checkEmail(binding.etEmail.getText().toString() + "@" + binding.tvPortal.getText().toString())) {
-                        Toast.makeText(this, "이메일을 확인해주세요.", Toast.LENGTH_SHORT).show();
-                        return;
+                    // 포털 직접입력(naver.com,google.com ...  등)
+                    if (binding.llPortalInput.getVisibility() == View.VISIBLE) {
+                        if (binding.etPortal.length() == 0) {
+                            Toast.makeText(this, getString(R.string.input_portal), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        if (!checkEmail(binding.etEmail.getText().toString() + "@" + binding.etPortal.getText().toString())) {
+                            Toast.makeText(this, "이메일을 확인해주세요.", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                    } else {
+                        if (!checkEmail(binding.etEmail.getText().toString() + "@" + binding.tvPortal.getText().toString())) {
+                            Toast.makeText(this, "이메일을 확인해주세요.", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
                     }
                 }
 

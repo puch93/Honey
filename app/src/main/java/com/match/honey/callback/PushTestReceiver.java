@@ -38,23 +38,22 @@ import static android.content.Context.ACTIVITY_SERVICE;
 public class PushTestReceiver extends PushMessageReceiver {
     @Override
     public void onBind(Context context, int errorCode, String appid, String userId, String channelId, String requestId) {
-//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind()");
-//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() errorCode: " + errorCode);
-//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() appid: " + appid);
-//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() userId: " + userId);
-//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() channelId: " + channelId);
-//        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() requestId: " + requestId);
-//
-//        Common.showToastLongContext(context,
-//                "errorCode: " + errorCode + "\n" +
-//                        "appid: " + appid + "\n" +
-//                        "userId: " + userId  + "\n" +
-//                        "channelId: " + channelId  + "\n" +
-//                        "requestId: " + requestId
-//        );
-//
-//        UserPref.setBaiduToken(context, channelId);
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind()");
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() errorCode: " + errorCode);
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() appid: " + appid);
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() userId: " + userId);
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() channelId: " + channelId);
+        Log.e(StringUtil.TAG_BAIDU, "baidu onBind() requestId: " + requestId);
 
+        Common.showToastLongContext(context,
+                "errorCode: " + errorCode + "\n" +
+                        "appid: " + appid + "\n" +
+                        "userId: " + userId + "\n" +
+                        "channelId: " + channelId + "\n" +
+                        "requestId: " + requestId
+        );
+
+        UserPref.setBaiduToken(context, channelId);
     }
 
     @Override
@@ -108,47 +107,67 @@ public class PushTestReceiver extends PushMessageReceiver {
     public void onNotificationClicked(Context context, String title, String description, String customContentString) {
         Log.e(StringUtil.TAG_BAIDU, "baidu onNotificationClicked()");
 
-//        String notifyString = "通知点击 onNotificationClicked title=\"" + title + "\" description=\""
-//                + description + "\" customContent=" + customContentString;
-//        Log.d(TAG, notifyString);
+        String notifyString = "onNotificationClicked title=\"" + title + "\" description=\""
+                + description + "\" customContent=" + customContentString;
+        Log.d(TAG, notifyString);
 
-        // 自定义内容获取方式，mykey和myvalue对应通知推送时自定义内容中设置的键和值
-//        if (!TextUtils.isEmpty(customContentString)) {
-//            JSONObject customJson = null;
-//            try {
-//                customJson = new JSONObject(customContentString);
-//
-//                String type = StringUtil.getStr(customJson, "type");
-//                String msg = description;
-//                String msg_from = customJson.getString("user_idx");
-//                String room_idx = customJson.getString("room_idx");
-//
-//                if (StringUtil.isImage(msg)) {
-//                    msg = "사진을 받았습니다.";
-//                } else if (msg.contains(StringUtil.IMOTICON)) {
-//                    msg = "\'찜♡\'을 받았습니다.";
-//                }
-//
-//                Intent intent = null;
-//
-//                if (isAppRun(context)) {
-//                    intent = new Intent(context, ChatAct.class);
-//                    intent.putExtra("enter", "push");
-//                    intent.putExtra("msg_from", msg_from);
-//                    intent.putExtra("room_idx", room_idx);
-//                } else {
-//                    intent = new Intent(context, SplashAct.class);
-//                    intent.putExtra("enter", "push");
-//                    intent.putExtra("msg_from", msg_from);
-//                    intent.putExtra("room_idx", room_idx);
-//                }
-//
-//                chatNoti(context, title, description, customJson, UserPref.getChatNotiPref(context));
-//            } catch (JSONException e) {
-//                // TODO Auto-generated catch block
-//                e.printStackTrace();
-//            }
-//        }
+        if (!TextUtils.isEmpty(customContentString)) {
+            JSONObject customJson = null;
+            try {
+                customJson = new JSONObject(customContentString);
+
+                String type = StringUtil.getStr(customJson, "type");
+
+                Intent intent = null;
+                if (!StringUtil.isNull(type) && !UserPref.isPause(context)) {
+                    switch (type) {
+                        case "notice":
+                        case "like":
+                        case "newcomer":
+                        case "view":
+
+                            intent = new Intent(context, PushAct.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(intent);
+                            break;
+
+
+                        case "chatting":
+                            String msg_from = customJson.getString("user_idx");
+                            String room_idx = customJson.getString("room_idx");
+
+                            if (isAppRun(context)) {
+                                intent = new Intent(context, ChatAct.class);
+                                intent.putExtra("enter", "push");
+                                intent.putExtra("msg_from", msg_from);
+                                intent.putExtra("room_idx", room_idx);
+                            } else {
+                                intent = new Intent(context, SplashAct.class);
+                                intent.putExtra("enter", "push");
+                                intent.putExtra("msg_from", msg_from);
+                                intent.putExtra("room_idx", room_idx);
+                            }
+
+                            context.startActivity(intent);
+                            break;
+
+
+                        case "notification_front":
+                            frontadminpush(context, title, description, customJson);
+                            break;
+
+                        case "notification_top":
+                            topadminpush(context, title, description, customJson);
+                            break;
+                    }
+                }
+
+
+            } catch (JSONException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
@@ -170,94 +189,30 @@ public class PushTestReceiver extends PushMessageReceiver {
 
                 if (!StringUtil.isNull(type) && !UserPref.isPause(context)) {
                     switch (type) {
-                        case "notice":
-                            if (SettingAlarmPref.isAlarmNotice(context)) {
-                                if (UserPref.getNoticeNotiPref(context) == 201) {
-                                    UserPref.setNoticeNotiPref(context, 101);
-                                } else {
-                                    UserPref.setNoticeNotiPref(context, UserPref.getNoticeNotiPref(context) + 1);
-                                }
-
-                                noticeNoti(context, title, description, customJson, UserPref.getNoticeNotiPref(context));
-                            }
-                            break;
-
-
-
                         case "chatting":
-                            if (SettingAlarmPref.isAlarmNewmsg(context)) {
-                                if (UserPref.getChatNotiPref(context) == 501) {
-                                    UserPref.setChatNotiPref(context, 401);
-                                } else {
-                                    UserPref.setChatNotiPref(context, UserPref.getChatNotiPref(context) + 1);
-                                }
-
-                                chatNoti(context, title, description, customJson, UserPref.getChatNotiPref(context));
+                            if (MainActivity.act != null) {
+                                ((MainActivity) MainActivity.act).setMessageCount();
                             }
 
                             break;
 
                         case "like":
-                            if (!StringUtil.getStr(customJson, "user_idx").equalsIgnoreCase(UserPref.getUidx(context))) {
-                                if (MainActivity.act != null) {
-                                    ((MainActivity) MainActivity.act).setMenuCount(NetUrls.LIKECOUNT);
-                                }
-                                if (SettingAlarmPref.isAlarmLike(context)) {
-                                    if (UserPref.getLikeNotiPref(context) == 701) {
-                                        UserPref.setLikeNotiPref(context, 601);
-                                    } else {
-                                        UserPref.setLikeNotiPref(context, UserPref.getLikeNotiPref(context) + 1);
-                                    }
-
-                                    noticeNoti(context, title, description, customJson, UserPref.getNoticeNotiPref(context));
-                                }
+                            if (MainActivity.act != null) {
+                                ((MainActivity) MainActivity.act).setMenuCount(NetUrls.LIKECOUNT);
                             }
+
                             break;
 
                         case "newcomer":
-                            if (!StringUtil.getStr(customJson, "user_idx").equalsIgnoreCase(UserPref.getUidx(context))) {
-                                if (MainActivity.act != null) {
-                                    ((MainActivity) MainActivity.act).setMenuCount(NetUrls.NEWCOUNT);
-                                }
-
-                                if (SettingAlarmPref.isAlarmNewuser(context)) {
-                                    if (UserPref.getNewNotiPref(context) == 601) {
-                                        UserPref.setNewNotiPref(context, 501);
-                                    } else {
-                                        UserPref.setNewNotiPref(context, UserPref.getNewNotiPref(context) + 1);
-                                    }
-
-                                    noticeNoti(context, title, description, customJson, UserPref.getNewNotiPref(context));
-                                }
+                            if (MainActivity.act != null) {
+                                ((MainActivity) MainActivity.act).setMenuCount(NetUrls.NEWCOUNT);
                             }
                             break;
 
                         case "view":
-                            if (!StringUtil.getStr(customJson, "user_idx").equalsIgnoreCase(UserPref.getUidx(context))) {
-                                if (MainActivity.act != null) {
-                                    ((MainActivity) MainActivity.act).setMenuCount(NetUrls.VIEWCOUNT);
-                                }
-
-                                if (SettingAlarmPref.isAlarmProfread(context)) {
-                                    if (UserPref.getViewNotiPref(context) == 401) {
-                                        UserPref.setViewNotiPref(context, 301);
-                                    } else {
-                                        UserPref.setViewNotiPref(context, UserPref.getViewNotiPref(context) + 1);
-                                    }
-
-                                    noticeNoti(context, title, description, customJson, UserPref.getViewNotiPref(context));
-                                }
+                            if (MainActivity.act != null) {
+                                ((MainActivity) MainActivity.act).setMenuCount(NetUrls.VIEWCOUNT);
                             }
-                            break;
-
-
-
-                        case "notification_front":
-                            frontadminpush(context, title, description, customJson);
-                            break;
-
-                        case "notification_top":
-                            topadminpush(context, title, description, customJson);
                             break;
                     }
                 }

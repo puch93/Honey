@@ -118,7 +118,7 @@ public class RequestConnection {
             }
             resultString = totalResultText.toString();
             Log.i("TEST_HOME", "resultString: " + resultString);
-            Common.showToast(CustomApplication.ctx, resultString);
+//            Common.showToast(CustomApplication.ctx, resultString);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();

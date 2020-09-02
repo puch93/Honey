@@ -1,6 +1,22 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('honeyKey.jks') // 기준은 App 폴더 기준이다.
+            storePassword "core0318"
+            keyAlias "key0"
+            keyPassword "core0318"
+        }
+
+        release {
+            storeFile file('honeyKey.jks') // 기준은 App 폴더 기준이다.
+            storePassword "core0318"
+            keyAlias "key0"
+            keyPassword "core0318"
+        }
+    }
+
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.match.honey"
@@ -29,15 +45,6 @@ android {
 
     }
 
-    signingConfigs {
-        release {
-            storeFile file('honeyKey.jks') // 기준은 App 폴더 기준이다.
-            storePassword "core0318"
-            keyAlias "key0"
-            keyPassword "core0318"
-        }
-    }
-
     bundle {
         language {
             // Specifies that the app bundle should not support
@@ -63,12 +70,12 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
-//            signingConfig signingConfigs.release
         }
 
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
 

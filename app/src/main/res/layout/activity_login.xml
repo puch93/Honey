@@ -167,6 +167,27 @@
         </LinearLayout>
 
         <FrameLayout
+            android:id="@+id/tv_sns_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/btn_nomember" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="전화번호로 로그인"
+                android:textColor="@color/color_aaaaaa"
+                android:textSize="16dp" />
+        </FrameLayout>
+
+        <FrameLayout
             android:id="@+id/tv_nomember_qna"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

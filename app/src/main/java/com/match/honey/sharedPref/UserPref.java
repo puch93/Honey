@@ -357,4 +357,21 @@ public class UserPref {
         editor.putString("pay",uidx);
         editor.commit();
     }
+
+
+
+
+
+    // 나라
+    public static String getCountry(Context context){
+        SharedPreferences pref = context.getSharedPreferences("userinfo", context.MODE_PRIVATE);
+        return pref.getString("country","international");
+    }
+
+    public static void setCountry(Context context,String country){
+        SharedPreferences pref = context.getSharedPreferences("userinfo", context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("country",country);
+        editor.commit();
+    }
 }

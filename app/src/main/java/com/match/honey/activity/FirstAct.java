@@ -95,7 +95,7 @@ public class FirstAct extends AppCompatActivity {
                         if (jo.getString("result").equalsIgnoreCase(StringUtil.RSUCCESS)) {
                             Log.e(StringUtil.TAG, "First List Get Info: " + jo);
 
-                            JSONArray ja = new JSONArray(jo.getString("value"));
+                            JSONArray ja = jo.getJSONArray("value");
                             ArrayList<MemberData> tmplist = new ArrayList<>();
 
                             for (int i = 0; i < ja.length(); i++) {
@@ -168,7 +168,7 @@ public class FirstAct extends AppCompatActivity {
                         adapter.notifyDataSetChanged();
                         e.printStackTrace();
 //                        Toast.makeText(act, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
-//                        Common.showToast(act, e.getMessage());
+                        Common.showToast(act, e.getMessage());
                     }
                 } else {
                     if (memlist.size() > 0) {

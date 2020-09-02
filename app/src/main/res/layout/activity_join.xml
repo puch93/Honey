@@ -262,78 +262,76 @@
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:background="@drawable/getmarried_img_1pxline_190902" />
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="78dp"
-                                android:layout_height="@dimen/join_menu_height"
-                                android:gravity="center_vertical"
-                                android:paddingLeft="16dp"
-                                android:text="비밀번호"
-                                android:textColor="@color/color_4d4d4d"
-                                android:textSize="13dp" />
-
-                            <EditText
-                                android:id="@+id/et_pw"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:background="@null"
-                                android:hint="비밀번호(영어+숫자 4-12자)"
-                                android:inputType="textPassword"
-                                android:paddingLeft="10dp"
-                                android:paddingRight="10dp"
-                                android:textColor="@color/color_222222"
-                                android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="13dp" />
-                        </LinearLayout>
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@drawable/getmarried_img_1pxline_190902" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="78dp"
-                                android:layout_height="@dimen/join_menu_height"
-                                android:gravity="center_vertical"
-                                android:lineSpacingExtra="1dp"
-                                android:paddingLeft="16dp"
-                                android:text="비밀번호\n확인하기"
-                                android:textColor="@color/color_4d4d4d"
-                                android:textSize="13dp" />
-
-                            <EditText
-                                android:id="@+id/et_pwcheck"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:background="@null"
-                                android:hint="비밀번호를 한번 더 입력해주세요"
-                                android:inputType="textPassword"
-                                android:paddingLeft="10dp"
-                                android:paddingRight="10dp"
-                                android:textColor="@color/color_222222"
-                                android:textColorHint="@color/color_aaaaaa"
-                                android:textSize="13dp" />
-                        </LinearLayout>
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@drawable/getmarried_img_1pxline_190902" />
-
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="78dp"
+                            android:layout_height="@dimen/join_menu_height"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="16dp"
+                            android:text="비밀번호"
+                            android:textColor="@color/color_4d4d4d"
+                            android:textSize="13dp" />
+
+                        <EditText
+                            android:id="@+id/et_pw"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="비밀번호(영어+숫자 4-12자)"
+                            android:inputType="textPassword"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textColor="@color/color_222222"
+                            android:textColorHint="@color/color_aaaaaa"
+                            android:textSize="13dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@drawable/getmarried_img_1pxline_190902" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="78dp"
+                            android:layout_height="@dimen/join_menu_height"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="1dp"
+                            android:paddingLeft="16dp"
+                            android:text="비밀번호\n확인하기"
+                            android:textColor="@color/color_4d4d4d"
+                            android:textSize="13dp" />
+
+                        <EditText
+                            android:id="@+id/et_pwcheck"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="비밀번호를 한번 더 입력해주세요"
+                            android:inputType="textPassword"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textColor="@color/color_222222"
+                            android:textColorHint="@color/color_aaaaaa"
+                            android:textSize="13dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@drawable/getmarried_img_1pxline_190902" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1350,47 +1348,47 @@
                                     android:layout_width="40dp"
                                     android:layout_height="7dp"
                                     android:layout_gravity="center_horizontal|bottom"
-                                    android:layout_marginBottom="5dp"
                                     android:layout_marginRight="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:background="#fcff00" />
 
 
-                                    <LinearLayout
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="45dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="16dp">
+
+                                    <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="45dp"
-                                        android:paddingLeft="16dp"
-                                        android:gravity="center"
-                                        android:orientation="vertical">
+                                        android:layout_height="wrap_content"
+                                        android:text="혈액형"
+                                        android:textColor="@color/color_4d4d4d"
+                                        android:textSize="13dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="종"
+                                            android:textColor="@color/color_4d4d4d"
+                                            android:textSize="13dp" />
+
 
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="혈액형"
+                                            android:text="교"
                                             android:textColor="@color/color_4d4d4d"
                                             android:textSize="13dp" />
-
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:orientation="horizontal">
-
-                                            <TextView
-                                                android:layout_width="0dp"
-                                                android:layout_height="wrap_content"
-                                                android:layout_weight="1"
-                                                android:text="종"
-                                                android:textColor="@color/color_4d4d4d"
-                                                android:textSize="13dp" />
-
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:text="교"
-                                                android:textColor="@color/color_4d4d4d"
-                                                android:textSize="13dp" />
-                                        </LinearLayout>
                                     </LinearLayout>
+                                </LinearLayout>
 
                             </FrameLayout>
                         </LinearLayout>

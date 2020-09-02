@@ -20,6 +20,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +51,7 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class LoginAct extends BaseActivity implements View.OnClickListener {
     ActivityLoginBinding binding;
@@ -140,20 +142,13 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
     private void setClick() {
         binding.btnLogin.setOnClickListener(this);
         binding.btnJoin.setOnClickListener(this);
+        binding.tvSnsLogin.setOnClickListener(this);
 
         binding.btnFindaccount.setOnClickListener(this);
         binding.tvNomemberQna.setOnClickListener(this);
     }
 
     private void reqLogin() {
-//        if (StringUtil.isNull(token)) {
-//            token = FirebaseInstanceId.getInstance().getToken();
-//            Toast.makeText(LoginAct.this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
-//            return;
-//        } else {
-//            UserPref.setBaiduToken(this, token);
-//        }
-
         ReqBasic login = new ReqBasic(this, NetUrls.LOGIN) {
             @Override
             public void onAfter(int resultCode, HttpResult resultData) {
@@ -191,7 +186,7 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
                     } catch (JSONException e) {
                         e.printStackTrace();
                         Common.showToast(act, e.getMessage());
-                        Toast.makeText(LoginAct.this, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(LoginAct.this, getString(R.string.err_network), Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Log.e("TEST_HOME", "error3");
@@ -215,14 +210,6 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
     }
 
     private void reqAutoLogin() {
-//        if (StringUtil.isNull(token)) {
-//            token = FirebaseInstanceId.getInstance().getToken();
-//            Toast.makeText(LoginAct.this, "푸시토큰을 가져오는 중입니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
-//            return;
-//        } else {
-//            UserPref.setBaiduToken(this, token);
-//        }
-
         ReqBasic autologin = new ReqBasic(this, NetUrls.LOGIN) {
             @Override
             public void onAfter(int resultCode, HttpResult resultData) {
@@ -476,8 +463,12 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
                 reqLogin();
                 break;
 
+            case R.id.tv_sns_login:
+                showDlgReg();
+                break;
+
             case R.id.btn_join:
-                startActivity(new Intent(LoginAct.this, JoinAct.class));
+                startActivity(new Intent(LoginAct.this, JoinAct.class).putExtra("type", "general"));
                 break;
 
 
@@ -487,6 +478,139 @@ public class LoginAct extends BaseActivity implements View.OnClickListener {
                 break;
         }
     }
+
+    private void showDlgReg() {
+        LayoutInflater dialog = LayoutInflater.from(this);
+        View dialogLayout = dialog.inflate(R.layout.dlg_sns_popup, null);
+        final Dialog resDlg = new Dialog(this);
+
+        resDlg.setContentView(dialogLayout);
+        resDlg.setCancelable(false);
+
+        resDlg.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        resDlg.show();
+
+        final EditText et_number = (EditText) dialogLayout.findViewById(R.id.et_number);
+
+        TextView btn_ok = (TextView) dialogLayout.findViewById(R.id.btn_ok);
+        TextView btn_cancel = (TextView) dialogLayout.findViewById(R.id.btn_cancel);
+
+
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (et_number.length() == 0) {
+                    Common.showToast(act, "전화번호를 입력해주세요");
+                    return;
+                }
+
+                ReqBasic block = new ReqBasic(act, NetUrls.REQAUTHNUM) {
+                    @Override
+                    public void onAfter(int resultCode, HttpResult resultData) {
+                        if (resultData.getResult() != null) {
+                            showAuthDlg(et_number.getText().toString());
+                        } else {
+                            Common.showToastNet(act);
+                        }
+                    }
+                };
+                block.setTag("Centent Request");
+                block.addParams("type", UserPref.getCountry(act));
+                block.addParams("cell_number", et_number.getText().toString());
+                block.execute(true, false);
+
+
+                if (resDlg.isShowing()) {
+                    resDlg.dismiss();
+                }
+            }
+        });
+
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (resDlg.isShowing()) {
+                    resDlg.dismiss();
+                }
+            }
+        });
+    }
+
+    private void showAuthDlg(String cell_number) {
+        LayoutInflater dialog = LayoutInflater.from(this);
+        View dialogLayout = dialog.inflate(R.layout.dlg_sns_auth_num, null);
+        final Dialog resDlg = new Dialog(this);
+
+        resDlg.setContentView(dialogLayout);
+        resDlg.setCancelable(false);
+
+        resDlg.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        resDlg.show();
+
+        final EditText et_number = (EditText) dialogLayout.findViewById(R.id.et_number);
+
+        TextView btn_ok = (TextView) dialogLayout.findViewById(R.id.btn_ok);
+        TextView btn_cancel = (TextView) dialogLayout.findViewById(R.id.btn_cancel);
+
+
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (et_number.length() == 0) {
+                    Common.showToast(act, "인증번호를 입력해주세요");
+                    return;
+                }
+
+                ReqBasic block = new ReqBasic(act, NetUrls.CHECKAUTHNUM) {
+                    @Override
+                    public void onAfter(int resultCode, HttpResult resultData) {
+                        if (resultData.getResult() != null) {
+
+                            try {
+                                JSONObject jo = new JSONObject(resultData.getResult());
+                                if (jo.getString("result").equalsIgnoreCase(StringUtil.RSUCCESS)) {
+                                    Common.showToast(act, "인증이 완료되었습니다.");
+                                    Intent intent = new Intent(act, JoinAct.class);
+                                    intent.putExtra("type", "tencent");
+                                    intent.putExtra("id", cell_number);
+                                    startActivity(intent);
+                                } else {
+
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                Common.showToastNet(act);
+                            }
+                        } else {
+                            Common.showToastNet(act);
+                        }
+                    }
+                };
+                block.setTag("Centent Auth");
+                block.addParams("cell_number", cell_number);
+                block.addParams("auth_number", et_number.getText().toString());
+                block.execute(true, false);
+
+
+                if (resDlg.isShowing()) {
+                    resDlg.dismiss();
+                }
+            }
+        });
+
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (resDlg.isShowing()) {
+                    resDlg.dismiss();
+                }
+            }
+        });
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
